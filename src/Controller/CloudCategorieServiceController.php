@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\CloudCategorieService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,8 +13,12 @@ class CloudCategorieServiceController extends AbstractController
      */
     public function index()
     {
+        $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
+
+        $listCloudCategorieService = $repo ->findAll();
+
         return $this->render('cloud_categorie_service/index.html.twig', [
-            'controller_name' => 'CloudCategorieServiceController',
+            'listCloudCategorieService' => $listCloudCategorieService,
         ]);
     }
 }
