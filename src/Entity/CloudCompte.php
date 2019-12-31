@@ -19,157 +19,157 @@ class CloudCompte
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $code;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $designation;
-
-    /**
-     * @ORM\Column(type="string", length=30, nullable=true)
-     */
-    private $logo;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $adresse;
-
-    /**
-     * @ORM\Column(type="string", length=40)
-     */
-    private $email;
+    private $codeCloudCompte;
 
     /**
      * @ORM\Column(type="string", length=30)
      */
-    private $telephone1;
+    private $designationCloudCompte;
 
     /**
      * @ORM\Column(type="string", length=30, nullable=true)
      */
-    private $telephone2;
+    private $logoCloudCompte;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adresseCloudCompte;
+
+    /**
+     * @ORM\Column(type="string", length=40)
+     */
+    private $emailCloudCompte;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $telephone1CloudCompte;
+
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $telephone2CloudCompte;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $profondeur;
+    private $profondeurCloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=15)
      */
-    private $sigle;
+    private $sigleCloudCompte;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCode(): ?string
+    public function getCodeCloudCompte(): ?string
     {
-        return $this->code;
+        return $this->codeCloudCompte;
     }
 
-    public function setCode(string $code): self
+    public function setCodeCloudCompte(string $codeCloudCompte): self
     {
-        $this->code = $code;
+        $this->codeCloudCompte = $codeCloudCompte;
 
         return $this;
     }
 
-    public function getDesignation(): ?string
+    public function getDesignationCloudCompte(): ?string
     {
-        return $this->designation;
+        return $this->designationCloudCompte;
     }
 
-    public function setDesignation(string $designation): self
+    public function setDesignationCloudCompte(string $designationCloudCompte): self
     {
-        $this->designation = $designation;
+        $this->designationCloudCompte = $designationCloudCompte;
 
         return $this;
     }
 
-    public function getLogo(): ?string
+    public function getLogoCloudCompte(): ?string
     {
-        return $this->logo;
+        return $this->logoCloudCompte;
     }
 
-    public function setLogo(?string $logo): self
+    public function setLogoCloudCompte(?string $logoCloudCompte): self
     {
-        $this->logo = $logo;
+        $this->logoCloudCompte = $logoCloudCompte;
 
         return $this;
     }
 
-    public function getAdresse(): ?string
+    public function getAdresseCloudCompte(): ?string
     {
-        return $this->adresse;
+        return $this->adresseCloudCompte;
     }
 
-    public function setAdresse(?string $adresse): self
+    public function setAdresseCloudCompte(?string $adresseCloudCompte): self
     {
-        $this->adresse = $adresse;
+        $this->adresseCloudCompte = $adresseCloudCompte;
 
         return $this;
     }
 
-    public function getEmail(): ?string
+    public function getEmailCloudCompte(): ?string
     {
-        return $this->email;
+        return $this->emailCloudCompte;
     }
 
-    public function setEmail(string $email): self
+    public function setEmailCloudCompte(string $emailCloudCompte): self
     {
-        $this->email = $email;
+        $this->emailCloudCompte = $emailCloudCompte;
 
         return $this;
     }
 
-    public function getTelephone1(): ?string
+    public function getTelephone1CloudCompte(): ?string
     {
-        return $this->telephone1;
+        return $this->telephone1CloudCompte;
     }
 
-    public function setTelephone1(string $telephone1): self
+    public function setTelephone1CloudCompte(string $telephone1CloudCompte): self
     {
-        $this->telephone1 = $telephone1;
+        $this->telephone1CloudCompte = $telephone1CloudCompte;
 
         return $this;
     }
 
-    public function getTelephone2(): ?string
+    public function getTelephone2CloudCompte(): ?string
     {
-        return $this->telephone2;
+        return $this->telephone2CloudCompte;
     }
 
-    public function setTelephone2(?string $telephone2): self
+    public function setTelephone2CloudCompte(?string $telephone2CloudCompte): self
     {
-        $this->telephone2 = $telephone2;
+        $this->telephone2CloudCompte = $telephone2CloudCompte;
 
         return $this;
     }
 
-    public function getProfondeur(): ?int
+    public function getProfondeurCloudCompte(): ?int
     {
-        return $this->profondeur;
+        return $this->profondeurCloudCompte;
     }
 
-    public function setProfondeur(int $profondeur): self
+    public function setProfondeurCloudCompte(int $profondeurCloudCompte): self
     {
-        $this->profondeur = $profondeur;
+        $this->profondeurCloudCompte = $profondeurCloudCompte;
 
         return $this;
     }
 
-    public function getSigle(): ?string
+    public function getSigleCloudCompte(): ?string
     {
-        return $this->sigle;
+        return $this->sigleCloudCompte;
     }
 
-    public function setSigle(string $sigle): self
+    public function setSigleCloudCompte(string $sigleCloudCompte): self
     {
-        $this->sigle = $sigle;
+        $this->sigleCloudCompte = $sigleCloudCompte;
 
         return $this;
     }

@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Repository")
+ * @ORM\Entity(repositoryClass="App\Repository\CloudFamilleCompteRepository")
  */
 class CloudFamilleCompte
 {
@@ -17,91 +17,91 @@ class CloudFamilleCompte
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=30)
      */
-    private $designation;
-
-    /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $codeAcces;
+    private $designationCloudFamilleCompte;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $description;
+    private $descriptionCloudFamilleCompte;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=50)
      */
-    private $cleAcces;
+    private $codeAccesCloudFamilleCompte;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=50)
      */
-    private $sigle;
+    private $cleAccesCloudFamilleCompte;
+
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $sigleCloudFamilleCompte;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDesignation(): ?string
+    public function getDesignationCloudFamilleCompte(): ?string
     {
-        return $this->designation;
+        return $this->designationCloudFamilleCompte;
     }
 
-    public function setDesignation(string $designation): self
+    public function setDesignationCloudFamilleCompte(string $designationCloudFamilleCompte): self
     {
-        $this->designation = $designation;
+        $this->designationCloudFamilleCompte = $designationCloudFamilleCompte;
 
         return $this;
     }
 
-    public function getCodeAcces(): ?string
+    public function getDescriptionCloudFamilleCompte(): ?string
     {
-        return $this->codeAcces;
+        return $this->descriptionCloudFamilleCompte;
     }
 
-    public function setCodeAcces(string $codeAcces): self
+    public function setDescriptionCloudFamilleCompte(?string $descriptionCloudFamilleCompte): self
     {
-        $this->codeAcces = $codeAcces;
+        $this->descriptionCloudFamilleCompte = $descriptionCloudFamilleCompte;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getCodeAccesCloudFamilleCompte(): ?string
     {
-        return $this->description;
+        return $this->codeAccesCloudFamilleCompte;
     }
 
-    public function setDescription(?string $description): self
+    public function setCodeAccesCloudFamilleCompte(string $codeAccesCloudFamilleCompte): self
     {
-        $this->description = $description;
+        $this->codeAccesCloudFamilleCompte = $codeAccesCloudFamilleCompte;
 
         return $this;
     }
 
-    public function getCleAcces(): ?string
+    public function getCleAccesCloudFamilleCompte(): ?string
     {
-        return $this->cleAcces;
+        return $this->cleAccesCloudFamilleCompte;
     }
 
-    public function setCleAcces(string $cleAcces): self
+    public function setCleAccesCloudFamilleCompte(string $cleAccesCloudFamilleCompte): self
     {
-        $this->cleAcces = $cleAcces;
+        $this->cleAccesCloudFamilleCompte = $cleAccesCloudFamilleCompte;
 
         return $this;
     }
 
-    public function getSigle(): ?string
+    public function getSigleCloudFamilleCompte(): ?string
     {
-        return $this->sigle;
+        return $this->sigleCloudFamilleCompte;
     }
 
-    public function setSigle(string $sigle): self
+    public function setSigleCloudFamilleCompte(string $sigleCloudFamilleCompte): self
     {
-        $this->sigle = $sigle;
+        $this->sigleCloudFamilleCompte = $sigleCloudFamilleCompte;
 
         return $this;
     }

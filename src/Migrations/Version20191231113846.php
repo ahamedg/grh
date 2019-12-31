@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20191221181605 extends AbstractMigration
+final class Version20191231113846 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -28,8 +28,8 @@ final class Version20191221181605 extends AbstractMigration
         $this->addSql('CREATE SEQUENCE cloud_type_compte_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE SEQUENCE cloud_type_service_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
         $this->addSql('CREATE TABLE cloud_categorie_service (id INT NOT NULL, code VARCHAR(10) NOT NULL, libelle VARCHAR(30) NOT NULL, description VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))');
-        $this->addSql('CREATE TABLE cloud_compte (id INT NOT NULL, code VARCHAR(10) NOT NULL, designation VARCHAR(50) NOT NULL, logo VARCHAR(30) DEFAULT NULL, adresse VARCHAR(255) DEFAULT NULL, email VARCHAR(40) NOT NULL, telephone1 VARCHAR(30) NOT NULL, telephone2 VARCHAR(30) DEFAULT NULL, profondeur INT NOT NULL, sigle VARCHAR(10) NOT NULL, PRIMARY KEY(id))');
-        $this->addSql('CREATE TABLE cloud_famille_compte (id INT NOT NULL, designation VARCHAR(50) NOT NULL, code_acces VARCHAR(20) NOT NULL, description VARCHAR(255) DEFAULT NULL, cle_acces VARCHAR(20) NOT NULL, sigle VARCHAR(10) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE cloud_compte (id INT NOT NULL, code_cloud_compte VARCHAR(10) NOT NULL, designation_cloud_compte VARCHAR(30) NOT NULL, logo_cloud_compte VARCHAR(30) DEFAULT NULL, adresse_cloud_compte VARCHAR(255) DEFAULT NULL, email_cloud_compte VARCHAR(40) NOT NULL, telephone1_cloud_compte VARCHAR(30) NOT NULL, telephone2_cloud_compte VARCHAR(30) DEFAULT NULL, profondeur_cloud_compte INT NOT NULL, sigle_cloud_compte VARCHAR(15) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE cloud_famille_compte (id INT NOT NULL, designation_cloud_famille_compte VARCHAR(30) NOT NULL, description_cloud_famille_compte VARCHAR(255) DEFAULT NULL, code_acces_cloud_famille_compte VARCHAR(50) NOT NULL, cle_acces_cloud_famille_compte VARCHAR(50) NOT NULL, sigle_cloud_famille_compte VARCHAR(15) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE cloud_type_compte (id INT NOT NULL, code VARCHAR(10) NOT NULL, libelle VARCHAR(30) NOT NULL, description VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE cloud_type_service (id INT NOT NULL, code VARCHAR(10) NOT NULL, libelle VARCHAR(30) NOT NULL, description VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id))');
     }
