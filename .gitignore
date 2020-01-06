@@ -22,4 +22,3 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 /package-lock.json
 /test.json
-.env
