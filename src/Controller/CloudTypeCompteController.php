@@ -28,6 +28,9 @@ class CloudTypeCompteController extends AbstractController
         $form->handleRequest($request);
 
         dump($request);
+        if ($form->submi) {
+            # code...
+        }
         /*if ($form->isSubmitted()){
         //if ($form->isSubmitted() && $form->isValid()) {
            // $em = $this->getDoctrine()->getManager();
