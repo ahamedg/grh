@@ -10,14 +10,15 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $cloudCategorieService = new CloudCategorieService();
+        for ($i = 1; $i <= 15; $i++) {
+            $cloudCategorieService = new CloudCategorieService();
 
-        $cloudCategorieService->setCode("CODECAT")
-            ->setLibelle("Organisation")
-            ->setDescription("");
+            $cloudCategorieService->setCode("CODECAT$i")
+                ->setLibelle("Organisation **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudCategorieService);
+        }
 
-        // $product = new Product();
-        $manager->persist($cloudCategorieService);
         $manager->flush();
     }
 }
