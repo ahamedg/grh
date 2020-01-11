@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Entity\CloudTypeService;
 use App\Form\CloudTypeServiceFormType;
-use Symfony\Component\BrowserKit\Request;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,17 +15,18 @@ class CloudTypeServiceController extends AbstractController
 {
     /**
      * Undocumented function
-     * @Route('/cloud/type/service', name='cloud_type_servicenew')
+     * @Route("/cloud/type/service", name="cloud_type_servicenew")
      * @param Request $request
      * @return Response
      */
-    public function ajouter(Request $request, ObjectManager $em)
+    public function ajouter(Request $request)
     {
         $cloudTypeService = new CloudTypeService();
         $form = $this->createForm(CloudTypeServiceFormType::class, $cloudTypeService);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $em = $this->getDoctrine()->getManager();
             $em->persist($cloudTypeService);
             $em->flush();
         }

@@ -31,7 +31,6 @@ class CloudTypeServiceFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add( 'code', TextType::class, $this->getConfiguration( 'Code', 'Saisir un code...' ) )
             ->add('libelle', TextType::class, $this->getConfiguration('Libellé', 'Saisir un libellé...'))
             ->add('description', TextareaType::class, $this->getConfiguration('Description', 'Mettre une description...'));
     }
