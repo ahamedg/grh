@@ -17,7 +17,6 @@ class CloudTypeCompteFormType extends AbstractType {
     *@param string $placeholder
     *@return array
     * */
-
     private function getConfiguration( $label, $placeholder ) {
         return [
             'label' => $label,
