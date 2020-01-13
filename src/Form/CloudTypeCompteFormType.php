@@ -13,24 +13,25 @@ class CloudTypeCompteFormType extends AbstractType {
 
     /*
     * Permet d'avoir la configuration de base d'un champ !
-    *@param string $label
-    *@param string $placeholder
+    * @param string $label
+    * @param string $placeholder
+    * @param array $options
     *@return array
     * */
-    private function getConfiguration( $label, $placeholder ) {
-        return [
+    private function getConfiguration( $label, $placeholder, $options = [] ) {
+        return array_merge([
             'label' => $label,
             'attr' => [
                 'placeholder' => $placeholder
             ]
-        ];
+        ], $options);
     }
 
     public function buildForm( FormBuilderInterface $builder, array $options ) {
         $builder
         //->add( 'code', TextType::class, $this->getConfiguration( 'Code', 'Saisir un code...' ) )
         ->add( 'libelle', TextType::class, $this->getConfiguration( 'Libellé', 'Saisir un libellé...' ) )
-        ->add( 'description', TextareaType::class, $this->getConfiguration( 'Description', 'Mettre une description...' ) );
+        ->add( 'description', TextareaType::class, $this->getConfiguration( 'Description', 'Mettre une description...', ['required'=>false ]) );
     }
 
     public function configureOptions( OptionsResolver $resolver ) {
