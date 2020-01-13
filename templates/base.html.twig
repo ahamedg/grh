@@ -59,18 +59,14 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 {% block body %}
     <div class="wrapper">
-
         {% include 'partials/header.html.twig' %}
         {% include 'partials/sidebar.html.twig' %}
         <!-- Content Wrapper. Contains page content -->
         <div
                 class="content-wrapper">
             <!-- Content Header (Page header) -->
-
-
             <div class="content-header">
                 <div class="container-fluid">
-
                     <div class="row mb-2">
                         <div class="col-sm-6"></div>
                         <!-- /.col -->
@@ -91,31 +87,24 @@
                 <!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     {% block body_inside %}{% endblock %}
                 </div>
             </section>
-
-
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
         {% include 'partials/footer.html.twig' %}
-
-
         <!-- Control Sidebar -->
         <aside
                 class="control-sidebar control-sidebar-dark"><!-- Control sidebar content goes here -->
         </aside>
-
-
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
-
+{{dump(app)}}
 
 {% endblock %}
 {% block javascripts %}
