@@ -44,18 +44,18 @@ class CloudTypeCompteController extends AbstractController
 
         $form = $this->createForm(CloudTypeCompteFormType::class, $cloudTypeCompte);
         $form->handleRequest($request);
-        dump($cloudTypeCompte);
+        //dump($cloudTypeCompte);
         if ($form->isSubmitted() && $form->isValid()) {
             $rand = rand(100, 1000);
             $code = "CODE$rand";
-            dump($code);
+            //dump($code);
             $cloudTypeCompte->setCode($code);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudTypeCompte);
             $manager->flush();
             $listCloudTypeCompte = $this->getListCloudTypeCompte();
+            $cloudTypeCompte = new CloudTypeCompte();
             $this->addFlash("success", "Enregistrement effectué avec succès !");
-            //return new Response('Type compte ajouté...');
         }
         //$formView = $form->createView();
         return $this->render('cloud_type_compte/index.html.twig', [

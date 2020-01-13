@@ -1,7 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body_inside %}
-    <div class="tab">
+
+    <nav class="nav nav-pills nav-justified">
+        <a class="nav-link active" href="#">Categorie service</a>
+        <a class="nav-link" href="#">Type service</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled" href="#">Disabled</a>
+    </nav>
+
+    <br/>
+
+    <div class="tab bodre-0">
         <button class="tablinks" onclick="openCity(event, 'CloudCategorieService')" id="defaultOpen">Categorie service
         </button>
         <button class="tablinks" onclick="openCity(event, 'CloudTypeService')">Type service</button>
