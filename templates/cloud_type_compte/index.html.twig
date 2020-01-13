@@ -3,57 +3,57 @@
 
 {% block body_inside %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Nouveau</h3>
-                </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card card-primary">
+					<div class="card-header">
+						<h3 class="card-title">Nouveau</h3>
+					</div>
 
-                <div class="card-body">
-                    {{ form_start(form) }}
+					<div class="card-body">
+						{{ form_start(form) }}
 
-                    {{ form_widget(form) }}
-                    <button type="submit" class="btn btn-primary float-right">Enregistrer</button>
-                    {{ form_end(form) }}
-                </div>
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-primary float-right">Enregistrer</button>
+						{{ form_end(form) }}
+					</div>
 
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Les différentes types de compte</h3>
-                </div>
-                <div class="card-body">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th style="width: 3%">N°</th>
-                            <th style="width: 40%">Libellé</th>
-                            <th style="width: 30%">Description</th>
-                            <th style="width: 7%">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for tc in listCloudTypeCompte %}
-                            <tr>
-                                <td>1</td>
-                                <td>{{ tc.libelle }}</td>
-                                <td>{{ tc.description }}</td>
-                                <td>
-                                    <i class="fas fa-edit"></i>
-                                    &#160;&#160;
-                                    <i class="fas fa-trash-alt"></i>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Les différentes types de compte</h3>
+					</div>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width: 12%">N°</th>
+									<th style="width: 40%">Libellé</th>
+									<th style="width: 30%">Description</th>
+									<th style="width: 7%">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for tc in listCloudTypeCompte %}
+									<tr>
+										<td>1</td>
+										<td>{{ tc.libelle }}</td>
+										<td>{{ tc.description }}</td>
+										<td>
+											<i class="fas fa-edit"></i>
+											&#160;&#160;
+											<i class="fas fa-trash-alt"></i>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    {% endblock %}
+	{% endblock %}

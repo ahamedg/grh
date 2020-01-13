@@ -18,8 +18,41 @@
 						{{ form_end(form) }}
 					</div>
 				</div>
-				<div class="col-md-8"></div>
 			</div>
-		</div>
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Les différentes types de compte</h3>
+					</div>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width: 3%">N°</th>
+									<th style="width: 40%">Libellé</th>
+									<th style="width: 30%">Description</th>
+									<th style="width: 7%">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for tc in listCloudTypeService %}
+									<tr>
+										<td>1</td>
+										<td>{{ tc.libelle }}</td>
+										<td>{{ tc.description }}</td>
+										<td>
+											<i class="fas fa-edit"></i>
+											&#160;&#160;
+											<i class="fas fa-trash-alt"></i>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 
-	{% endblock %}
+		</div>
+	</div>
+{% endblock %}

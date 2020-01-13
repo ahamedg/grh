@@ -13,6 +13,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CloudTypeServiceController extends AbstractController
 {
+    /*
+     * Permet d'avoir la liste des types service issus de la base !
+     * @return array
+     * */
+    private function getListCloudTypeService()
+    {
+        $repo = $this->getDoctrine()->getRepository(CloudTypeCompte::class);
+        return $repo->findAll();
+    }
     /**
      * Undocumented function
      * @Route("/cloud/type/service", name="cloud_type_servicenew")
@@ -21,17 +30,24 @@ class CloudTypeServiceController extends AbstractController
      */
     public function ajouter(Request $request)
     {
+        $listCloudTypeService = $this->getListCloudTypeService();
         $cloudTypeService = new CloudTypeService();
+
         $form = $this->createForm(CloudTypeServiceFormType::class, $cloudTypeService);
         $form->handleRequest($request);
+        dump($cloudTypeService);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($cloudTypeService);
-            $em->flush();
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cloudTypeService);
+            $manager->flush();
+
+            $listCloudTypeService = $this->getListCloudTypeService();
+            $this->addFlash("success", "Enregistrement effectué avec succes");
         }
 
         return $this->render('cloud_type_service/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'listCloudTypeService' => $listCloudTypeService,
 
         ]);
     }
@@ -39,10 +55,12 @@ class CloudTypeServiceController extends AbstractController
     /**
      * @Route("/cloud/type/service", name="cloud_type_service")
      */
-    public function index()
+    /*public function index()
     {
         return $this->render('cloud_type_service/index.html.twig', [
             'controller_name' => 'CloudTypeServiceController',
+
         ]);
     }
+    */
 }

@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CloudTypeServiceFormType extends AbstractType
 {
+
     /*
     * Permet d'avoir la configuration de base d'un champ !
     *@param string $label
