@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\CloudTypeCompte;
 use App\Entity\CloudTypeService;
 use App\Form\CloudTypeServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,13 +18,12 @@ class CloudTypeServiceController extends AbstractController
      * */
     private function getListCloudTypeService()
     {
-        $repo = $this->getDoctrine()->getRepository(CloudTypeCompte::class);
+        $repo = $this->getDoctrine()->getRepository(CloudTypeService::class);
         return $repo->findAll();
     }
     /**
      * Undocumented function
      * @Route("/cloud/type/service", name="cloud_type_servicenew")
-     * @param Request $request
      * @return Response
      */
     public function ajouter(Request $request)
@@ -42,7 +40,7 @@ class CloudTypeServiceController extends AbstractController
             $manager->flush();
 
             $listCloudTypeService = $this->getListCloudTypeService();
-            $this->addFlash("success", "Enregistrement effectué avec succes");
+            //$this->addFlash("success", "Enregistrement effectué avec succes");
         }
 
         return $this->render('cloud_type_service/index.html.twig', [
