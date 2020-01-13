@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\CloudTypeCompte;
 use App\Entity\CloudTypeService;
 use App\Form\CloudTypeServiceFormType;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +25,6 @@ class CloudTypeServiceController extends AbstractController
         $form = $this->createForm(CloudTypeServiceFormType::class, $cloudTypeService);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($cloudTypeService);
             $em->flush();
