@@ -8,7 +8,7 @@ use App\Form\CloudCompte\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class CloudCategorieServiceController extends AbstractController
 {
@@ -34,7 +34,7 @@ class CloudCategorieServiceController extends AbstractController
         $form->handleRequest($request);
         //dump($cloudCategorieService);
         if ($form->isSubmitted() && $form->isValid()) {
-            $now = new Date();
+            $now = new DateTime();
             $rand = rand(100, 1000);
             $code = "CODE$rand";
             //dump($code);
