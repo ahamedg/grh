@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     message="Cette catégorie de service existe déjà !"
  * )
  */
-class CloudCategorieService
+class CloudCategorieService extends BaseEntity
 {
     /**
      * @ORM\Id()

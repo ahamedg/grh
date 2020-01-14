@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\CompteControllers\Params;
 use App\Entity\CloudTypeCompte;
 
 use App\Form\CloudCompte\Params\CloudTypeCompteFormType;

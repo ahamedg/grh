@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\CompteControllers\Params;
 use App\Entity\CloudTypeService;
 
 use App\Form\CloudCompte\Params\CloudTypeServiceFormType;
@@ -26,6 +26,10 @@ class CloudTypeServiceController extends AbstractController
         $form->handleRequest($request);
         dump($cloudTypeService);
         if ($form->isSubmitted() && $form->isValid()) {
+            $rand = rand(100, 1000);
+            $code = "CODE$rand";
+            //dump($code);
+            $cloudTypeService->setCode($code);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudTypeService);
             $manager->flush();

@@ -13,7 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     message="Ce type de compte existe déjà !"
  * )
  */
-class CloudTypeCompte
+class CloudTypeCompte extends BaseEntity
 {
     /**
      * @ORM\Id()
