@@ -35,17 +35,17 @@ class CloudCategorieServiceController extends AbstractController
         $form->handleRequest($request);
         //dump($cloudCategorieService);
         if ($form->isSubmitted() && $form->isValid()) {
-            $date = new Date();
-            $now = $date instanceof Date;
+            //$date = new Date();
+            //$now = $date instanceof Date;
             $rand = rand(100, 1000);
             $code = "CODE$rand";
             //dump($code);
-            dump($now);
+            //dump($now);
             $cloudCategorieService->setCode($code);
             $cloudCategorieService->setActif(true);
             $cloudCategorieService->setSupprimer(true);
-            $cloudCategorieService->setIdCompte(null);
-            $cloudCategorieService->setDateAjout($now);
+            //$cloudCategorieService->setIdCompte(1);
+            $cloudCategorieService->setDateAjout(null);
             $cloudCategorieService->setDateEdit(null);
             $cloudCategorieService->setIdUserAuteur(null);
             $cloudCategorieService->setIdUserEdit(null);
@@ -56,7 +56,7 @@ class CloudCategorieServiceController extends AbstractController
             $listCloudCategorieService = $this->getListCloudCategorieService();
             $cloudCategorieService = new CloudCategorieService();
             $this->addFlash("success", "Enregistrement effectué avec succès !");
-            return $cloudCategorieService;
+            //return $cloudCategorieService;
         }
         $formView = $form->createView();
         return $this->render('/cloud_compte/params/cloudCategorieService.html.twig', [

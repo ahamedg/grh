@@ -3,58 +3,51 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping\Column;
+
 
 /** @ORM\MappedSuperclass() */
 class BaseEntity
 {
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\IsNull()
+     * @Column(type="integer", nullable=true)
      */
     protected $idCompte;
 
     /**
-     * @ORM\Column(type="boolean")
-     * @Assert\IsTrue()
+     * @Column(type="boolean", nullable=true)
      */
     protected $actif = true;
 
     /**
-     * @ORM\Column(type="boolean")
-     * @Assert\IsFalse()
+     * @Column(type="boolean", nullable=true)
      */
     protected $supprimer = false;
 
     /**
-     * @ORM\Column(type="string")
-     * @Assert\NotNull()
+     * @Column(type="string", nullable=true)
      */
     protected $dateAjout;
 
     /**
-     * @ORM\Column(type="string")
-     * @Assert\IsNull()
+     * @Column(type="string", nullable=true)
      */
     protected $dateEdit;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\IsNull()
+     * @Column(type="integer", nullable=true)
      */
     protected $idUserAuteur;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\IsNull()
+     * @Column(type="integer", nullable=true)
      */
     protected $idUserEdit;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotNull()
+     * @Column(type="integer")
      */
-    protected $version ;
+    protected $version = true;
 
     /**
      * @return mixed

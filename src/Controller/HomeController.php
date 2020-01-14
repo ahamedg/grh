@@ -7,6 +7,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+    /*
+     * @Route("/", name="home")
+     * */
+    public function defaultUser(){
+
+    }
+
     /**
      * @Route("/", name="home")
      */
