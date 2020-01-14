@@ -3,9 +3,15 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CloudTypeServiceRepository")
+ * @UniqueEntity(
+ *     fields={"libellé"},
+ *     message="Ce type de service existe déjà !"
+ * )
  */
 class CloudTypeService
 {
@@ -23,6 +29,7 @@ class CloudTypeService
 
     /**
      * @ORM\Column(type="string", length=30)
+     * @Assert\Length(max="30", maxMessage="Le libellé ne peut pas dépasser 30 caractères !")
      */
     private $libelle;
 

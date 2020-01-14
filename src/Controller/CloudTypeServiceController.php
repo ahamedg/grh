@@ -1,29 +1,20 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\CloudTypeService;
-use App\Form\CloudTypeServiceFormType;
+
+use App\Form\CloudCompte\Params\CloudTypeServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CloudTypeServiceController extends AbstractController
 {
-    /*
-     * Permet d'avoir la liste des types service issus de la base !
-     * @return array
-     * */
-    private function getListCloudTypeService()
-    {
-        $repo = $this->getDoctrine()->getRepository(CloudTypeService::class);
-        return $repo->findAll();
-    }
+
     /**
      * Undocumented function
-     * @Route("/cloud/type/service", name="cloud_type_servicenew")
+     * @Route("/compte/type_service", name="type_service")
      * @return Response
      */
     public function ajouter(Request $request)
@@ -40,25 +31,23 @@ class CloudTypeServiceController extends AbstractController
             $manager->flush();
 
             $listCloudTypeService = $this->getListCloudTypeService();
-            //$this->addFlash("success", "Enregistrement effectué avec succes");
+            $this->addFlash("success", "Enregistrement effectué avec succes");
         }
-
-        return $this->render('cloud_type_service/index.html.twig', [
-            'form' => $form->createView(),
+        $formView = $form->createView();
+        return $this->render('/cloud_compte/params/cloudTypeService.html.twig', [
+            'form' => $formView,
             'listCloudTypeService' => $listCloudTypeService,
 
         ]);
     }
 
-    /**
-     * @Route("/cloud/type/service", name="cloud_type_service")
-     */
-    /*public function index()
+    /*
+     * Permet d'avoir la liste des types service issus de la base !
+     * @return array
+     * */
+    private function getListCloudTypeService()
     {
-        return $this->render('cloud_type_service/index.html.twig', [
-            'controller_name' => 'CloudTypeServiceController',
-
-        ]);
+        $repo = $this->getDoctrine()->getRepository(CloudTypeService::class);
+        return $repo->findAll();
     }
-    */
 }

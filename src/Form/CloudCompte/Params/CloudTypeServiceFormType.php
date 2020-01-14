@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\CloudCompte\Params;
 
 use App\Entity\CloudTypeService;
 use Symfony\Component\Form\AbstractType;
