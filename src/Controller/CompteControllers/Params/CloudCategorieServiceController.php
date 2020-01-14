@@ -16,10 +16,11 @@ class CloudCategorieServiceController extends AbstractController
     /**
      * CloudCategorieServiceController constructor.
      */
-    /*public function __construct()
+    private $listCloudCategorieService;
+    public function __construct()
     {
         $listCloudCategorieService = $this->getListCloudCategorieService();
-    }*/
+    }
 
     /**
      * @Route("/compte/categorie_service", name="categorie_service")
@@ -28,7 +29,7 @@ class CloudCategorieServiceController extends AbstractController
      */
     public function ajouter(Request $request)
     {
-        $listCloudCategorieService = $this->getListCloudCategorieService();
+        //$listCloudCategorieService = $this->getListCloudCategorieService();
         $cloudCategorieService = new CloudCategorieService();
 
         $form = $this->createForm(CloudCategorieServiceFormType::class, $cloudCategorieService);
