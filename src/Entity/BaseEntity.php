@@ -15,22 +15,22 @@ class BaseEntity
     protected $idCompte;
 
     /**
-     * @Column(type="boolean", nullable=true)
+     * @Column(type="boolean")
      */
     protected $actif = true;
 
     /**
-     * @Column(type="boolean", nullable=true)
+     * @Column(type="boolean")
      */
     protected $supprimer = false;
 
     /**
-     * @Column(type="string", nullable=true)
+     * @Column(type="datetime", nullable=true)
      */
     protected $dateAjout;
 
     /**
-     * @Column(type="string", nullable=true)
+     * @Column(type="datetime", nullable=true)
      */
     protected $dateEdit;
 

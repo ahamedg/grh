@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Controller\CompteControllers\Params;
+
 use App\Entity\CloudCategorieService;
 
+use App\Repository\CloudCategorieServiceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\CloudCompte\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,16 +21,21 @@ class CloudCategorieServiceController extends AbstractController
     {
         $listCloudCategorieService = $this->getListCloudCategorieService();
     }*/
+    private $listCloudCategorieService = [];
 
     /*
-     * @Route("/compte/categorie_service", name="categorie_service")
+     * @Route("/compte/categorie", name="categorie")
      * */
-    public function index(){
-        return $this->render('/cloud_compte/params/cloudCategorieService.html.twig');
+    public function index(CloudCategorieServiceRepository $repo)
+    {
+        $listCloudCategorieService = $repo->findAll();
+        return $this->render('/cloud_compte/params/cloudCategorieService.html.twig', [
+            'listCloudCategorieService' => $listCloudCategorieService,
+        ]);
     }
 
     /**
-     * @Route("/compte/categorie_service/new", name="categorie_service_add")
+     * @Route("/compte/categorie_service", name="categorie_service")
      * Permet de créer un nouveau CloudCategorieService
      * @return Response
      */
@@ -47,21 +54,21 @@ class CloudCategorieServiceController extends AbstractController
             $code = "CODE$rand";
             //dump($code);
             //dump($now);
-            $cloudCategorieService->setCode($code);
-            $cloudCategorieService->setActif(true);
-            $cloudCategorieService->setSupprimer(true);
-            //$cloudCategorieService->setIdCompte(1);
-            $cloudCategorieService->setDateAjout(null);
-            $cloudCategorieService->setDateEdit(null);
-            $cloudCategorieService->setIdUserAuteur(null);
-            $cloudCategorieService->setIdUserEdit(null);
-            $cloudCategorieService->setVersion(1);
+            $cloudCategorieService->setCode($code)
+                ->setActif(true)
+                ->setSupprimer(true)
+                ->setIdCompte(1)
+                ->setDateAjout(null)
+                ->setDateEdit(null)
+                ->setIdUserAuteur(null)
+                ->setIdUserEdit(null)
+                ->setVersion(1);
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCategorieService);
             $manager->flush();
             $listCloudCategorieService = $this->getListCloudCategorieService();
-            $cloudCategorieService = new CloudCategorieService();
+            //$cloudCategorieService = new CloudCategorieService();
             $this->addFlash("success", "Enregistrement effectué avec succès !");
             //return $cloudCategorieService;
         }
@@ -82,4 +89,5 @@ class CloudCategorieServiceController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         return $repo->findAll();
     }
+
 }
