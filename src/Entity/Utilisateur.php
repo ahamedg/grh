@@ -3,11 +3,21 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+<<<<<<< HEAD
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  */
 class Utilisateur extends BaseEntity
+=======
+use Symfony\Component\Security\Core\User\UserInterface;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Utilisateur extends BaseEntity implements UserInterface
+>>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 {
     /**
      * @ORM\Id()
@@ -156,4 +166,31 @@ class Utilisateur extends BaseEntity
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @inheritDoc
+     */
+    public function getRoles()
+    {
+        // TODO: Implement getRoles() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+>>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+<<<<<<< HEAD
 {% block body_inside %}
 
     <div class="container">
@@ -35,3 +36,44 @@
 
 {% endblock %}
 
+=======
+{% block body %}
+    <br/>
+    <div class="contain">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card card-info text-center">
+                    <div class="card-header">
+                        pro6- GRH <br/>
+                        <h4>Page de connexion</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="username" class="float-left">Nom d'utilisateur ou email</label>
+                                <input type="text" name="_username" id="username" class="form-control"
+                                       placeholder="Nom d'utilisateur ou email...">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="float-left">Mot de passe</label>
+                                <input type="text" name="_password" id="password" class="form-control"
+                                       placeholder="Mot de passe...">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success float-right">Se connecter</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <strong>
+                            Copyright &copy; <a href="http://tgprosystems.com"> TOGO PROSYSTEMS SARL 2019</a>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+{% endblock %}
+>>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
