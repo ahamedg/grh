@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200115151927 extends AbstractMigration
+final class Version20200115153036 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -35,7 +35,7 @@ final class Version20200115151927 extends AbstractMigration
         $this->addSql('CREATE TABLE cloud_type_compte (id INT NOT NULL, code VARCHAR(10) NOT NULL, libelle VARCHAR(30) NOT NULL, description VARCHAR(255) DEFAULT NULL, id_compte INT DEFAULT NULL, actif BOOLEAN NOT NULL, supprimer BOOLEAN NOT NULL, date_ajout TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, date_edit TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, id_user_auteur INT DEFAULT NULL, id_user_edit INT DEFAULT NULL, version INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE cloud_type_service (id INT NOT NULL, code VARCHAR(10) NOT NULL, libelle VARCHAR(30) NOT NULL, description VARCHAR(255) DEFAULT NULL, id_compte INT DEFAULT NULL, actif BOOLEAN NOT NULL, supprimer BOOLEAN NOT NULL, date_ajout TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, date_edit TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, id_user_auteur INT DEFAULT NULL, id_user_edit INT DEFAULT NULL, version INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE test (id INT NOT NULL, code VARCHAR(255) NOT NULL, id_compte INT DEFAULT NULL, actif BOOLEAN NOT NULL, supprimer BOOLEAN NOT NULL, date_ajout TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, date_edit TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, id_user_auteur INT DEFAULT NULL, id_user_edit INT DEFAULT NULL, version INT NOT NULL, PRIMARY KEY(id))');
-        $this->addSql('CREATE TABLE utilisateur (id INT NOT NULL, code VARCHAR(10) NOT NULL, username VARCHAR(20) NOT NULL, password VARCHAR(255) NOT NULL, lost_password_url VARCHAR(50) NOT NULL, date_lost_password TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, change_password VARCHAR(30) DEFAULT NULL, email_compte VARCHAR(50) NOT NULL, nom_photo_profil VARCHAR(50) DEFAULT NULL, id_compte INT DEFAULT NULL, actif BOOLEAN NOT NULL, supprimer BOOLEAN NOT NULL, date_ajout TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, date_edit TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, id_user_auteur INT DEFAULT NULL, id_user_edit INT DEFAULT NULL, version INT NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE utilisateur (id INT NOT NULL, code VARCHAR(10) NOT NULL, username VARCHAR(30) NOT NULL, password VARCHAR(255) NOT NULL, lost_password_url VARCHAR(255) NOT NULL, date_lost_password TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, change_password VARCHAR(255) DEFAULT NULL, email_compte VARCHAR(255) NOT NULL, nom_photo_profil VARCHAR(255) DEFAULT NULL, id_compte INT DEFAULT NULL, actif BOOLEAN NOT NULL, supprimer BOOLEAN NOT NULL, date_ajout TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, date_edit TIMESTAMP(0) WITHOUT TIME ZONE DEFAULT NULL, id_user_auteur INT DEFAULT NULL, id_user_edit INT DEFAULT NULL, version INT NOT NULL, PRIMARY KEY(id))');
     }
 
     public function down(Schema $schema) : void
