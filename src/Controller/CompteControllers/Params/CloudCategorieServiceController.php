@@ -1,32 +1,25 @@
 <?php
 
 namespace App\Controller\CompteControllers\Params;
-<<<<<<< HEAD
 use App\Entity\CloudCategorieService;
 
-=======
 
 use App\Entity\CloudCategorieService;
 
 use App\Repository\CloudCategorieServiceRepository;
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\CloudCompte\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-<<<<<<< HEAD
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
-=======
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 
 class CloudCategorieServiceController extends AbstractController
 {
     /**
      * CloudCategorieServiceController constructor.
      */
-<<<<<<< HEAD
     /*public function __construct()
     {
         $listCloudCategorieService = $this->getListCloudCategorieService();
@@ -92,16 +85,12 @@ class CloudCategorieServiceController extends AbstractController
                 ->setIdUserEdit(null)
                 ->setVersion(1);
 
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCategorieService);
             $manager->flush();
             $listCloudCategorieService = $this->getListCloudCategorieService();
-<<<<<<< HEAD
             $cloudCategorieService = new CloudCategorieService();
-=======
             //$cloudCategorieService = new CloudCategorieService();
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
             $this->addFlash("success", "Enregistrement effectué avec succès !");
             //return $cloudCategorieService;
         }
@@ -122,8 +111,4 @@ class CloudCategorieServiceController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         return $repo->findAll();
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 }
