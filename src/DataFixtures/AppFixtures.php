@@ -16,7 +16,7 @@ class AppFixtures extends Fixture
 
         //Nous gérons les utilisateurs
         $listUtilisateur = [];
-        for ($i = 1, $i <= 3, $i++) {
+        for ($i = 1; $i <= 3; $i++) {
             $utilisateur = new Utilisateur();
             $rand = rand(100, 1000);
             $code = "CODE$rand";

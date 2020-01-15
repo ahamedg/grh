@@ -8,28 +8,33 @@ use App\Form\CloudCompte\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Date;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class CloudCategorieServiceController extends AbstractController
 {
     /**
      * CloudCategorieServiceController constructor.
      */
-    private $listCloudCategorieService;
+    /*private $listCloudCategorieService;
     public function __construct()
     {
         $listCloudCategorieService = $this->getListCloudCategorieService();
+    }*/
+
+    /*
+     * @Route("/compte/categorie_service", name="categorie_service")
+     * */
+    public function index(){
+        return $this->render('/cloud_compte/params/cloudCategorieService.html.twig');
     }
 
     /**
-     * @Route("/compte/categorie_service", name="categorie_service")
+     * @Route("/compte/categorie_service/new", name="categorie_service_add")
      * Permet de créer un nouveau CloudCategorieService
      * @return Response
      */
     public function ajouter(Request $request)
     {
-        //$listCloudCategorieService = $this->getListCloudCategorieService();
+        $listCloudCategorieService = $this->getListCloudCategorieService();
         $cloudCategorieService = new CloudCategorieService();
 
         $form = $this->createForm(CloudCategorieServiceFormType::class, $cloudCategorieService);
@@ -51,6 +56,7 @@ class CloudCategorieServiceController extends AbstractController
             $cloudCategorieService->setIdUserAuteur(null);
             $cloudCategorieService->setIdUserEdit(null);
             $cloudCategorieService->setVersion(1);
+
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCategorieService);
             $manager->flush();
