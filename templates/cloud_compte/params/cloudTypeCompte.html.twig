@@ -3,83 +3,78 @@
 
 {% block body_inside %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-success">
-                    <div class="card-header">
-                        <h3 class="card-title">Nouveau</h3>
-                    </div>
-                    <div class="card-body">
-                        {{ form_start(form) }}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card card-success">
+					<div class="card-header">
+						<h3 class="card-title">Nouveau</h3>
+					</div>
+					<div class="card-body">
+						{{ form_start(form) }}
 
-                        {{ form_widget(form) }}
-                        <button type="submit" class="btn btn-success float-right">Enregistrer</button>
-                        {{ form_end(form) }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="card card-secondary">
-                    <div class="card-header">
-                        <h3 class="card-title">Les différentes types de compte</h3>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th style="width: 12%">N°</th>
-                                <th style="width: 40%">Libellé</th>
-                                <th style="width: 30%">Description</th>
-                                <th style="width: 7%">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {% for tc in listCloudTypeCompte %}
-                                <tr>
-                                    <td>1</td>
-                                    <td>{{ tc.libelle }}</td>
-                                    <td>{{ tc.description }}</td>
-                                    <td>
-                                        <i data-toggle="modal" data-target="#editCloudTypeCompteModalLeft"
-                                          href="{{ path('type_compte_edit') }}" class="btn-default fa fa-edit"></i>
-                                        &#160;&#160;
-                                        <i class="fas fa-trash-alt"></i>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-success float-right">Enregistrer</button>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card card-secondary">
+					<div class="card-header">
+						<h3 class="card-title">Les différentes types de compte</h3>
+					</div>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th style="width: 12%">N°</th>
+									<th style="width: 40%">Libellé</th>
+									<th style="width: 30%">Description</th>
+									<th style="width: 7%">Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for tc in listCloudTypeCompte %}
+									<tr>
+										<td>1</td>
+										<td>{{ tc.libelle }}</td>
+										<td>{{ tc.description }}</td>
+										<td>
+											<i data-toggle="modal" data-target="#editCloudTypeCompteModalLeft" href="{{ path('type_compte_edit') }}" class="btn-default fa fa-edit"></i>
+											&#160;&#160;
+											<i class="fas fa-trash-alt"></i>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="modal fade" id="editCloudTypeCompteModalLeft" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modification</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {{ form_start(form) }}
+	<div class="modal fade" id="editCloudTypeCompteModalLeft" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Modification</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					{{ form_start(form) }}
 
-                    {{ form_widget(form) }}
+					{{ form_widget(form) }}
 
-                    {{ form_end(form) }}
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success float-right">Enregistrer</button>
-                </div>
-            </div>
-        </div>
-    </div>
-{% endblock %}
-{% block modal_edit %}
-
+					{{ form_end(form) }}
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success float-right">Enregistrer</button>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
