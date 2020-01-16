@@ -24,3 +24,5 @@ yarn-error.log
 /test.json
 .env
 src/Migrations/Version20200114133920.php
+composer.json
+composer.lock
