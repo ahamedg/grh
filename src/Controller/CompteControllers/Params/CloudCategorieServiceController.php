@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controller\CompteControllers\Params;
+use App\Entity\CloudCategorieService;
+
 
 use App\Entity\CloudCategorieService;
 
@@ -10,12 +12,19 @@ use App\Form\CloudCompte\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class CloudCategorieServiceController extends AbstractController
 {
     /**
      * CloudCategorieServiceController constructor.
      */
+    /*public function __construct()
+    {
+        $listCloudCategorieService = $this->getListCloudCategorieService();
+    }*/
+=======
     /*private $listCloudCategorieService;
     public function __construct()
     {
@@ -33,6 +42,7 @@ class CloudCategorieServiceController extends AbstractController
             'listCloudCategorieService' => $listCloudCategorieService,
         ]);
     }
+>>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
 
     /**
      * @Route("/compte/categorie_service", name="categorie_service")
@@ -54,6 +64,17 @@ class CloudCategorieServiceController extends AbstractController
             $code = "CODE$rand";
             //dump($code);
             //dump($now);
+<<<<<<< HEAD
+            $cloudCategorieService->setCode($code);
+            $cloudCategorieService->setActif(true);
+            $cloudCategorieService->setSupprimer(true);
+            //$cloudCategorieService->setIdCompte(1);
+            $cloudCategorieService->setDateAjout(null);
+            $cloudCategorieService->setDateEdit(null);
+            $cloudCategorieService->setIdUserAuteur(null);
+            $cloudCategorieService->setIdUserEdit(null);
+            $cloudCategorieService->setVersion(1);
+=======
             $cloudCategorieService->setCode($code)
                 ->setActif(true)
                 ->setSupprimer(true)
@@ -68,6 +89,7 @@ class CloudCategorieServiceController extends AbstractController
             $manager->persist($cloudCategorieService);
             $manager->flush();
             $listCloudCategorieService = $this->getListCloudCategorieService();
+            $cloudCategorieService = new CloudCategorieService();
             //$cloudCategorieService = new CloudCategorieService();
             $this->addFlash("success", "Enregistrement effectué avec succès !");
             //return $cloudCategorieService;
@@ -89,5 +111,4 @@ class CloudCategorieServiceController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         return $repo->findAll();
     }
-
 }

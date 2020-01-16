@@ -14,3 +14,30 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+$(function () {
+    $(".editClientBtn").on("click", function () {
+        $("#modal-wrapper").load("edit/" + $(this).attr("data-id"), {}, function () {
+            $("#editClient").modal("show");
+            var $monForm = $("#editClientForm");
+            $("#btnEditClientSubmit").on("click", function () {
+                $('#spinner').css('display', 'block');
+                $monForm.validate();
+                if ($monForm.valid()) {
+                    $.ajax({
+                        type: 'POST',
+                        url: $monForm.attr('action'),
+                        headers: { "name": "editclientvalidation" },
+                        data: $monForm.serialize(),
+                        dataType: "json",
+                        success: function (response) {
+                            window.location.reload();
+                        }
+                    });
+                }
+                return false;
+            });
+        });
+    });
+}());
+
