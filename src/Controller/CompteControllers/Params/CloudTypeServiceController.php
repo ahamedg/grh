@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controller\CompteControllers\Params;
-use App\Entity\CloudTypeService;
 
+use App\Entity\CloudTypeService;
+use App\Form\CloudCompte\Compte\CloudCompteFormType;
 use App\Form\CloudCompte\Params\CloudTypeServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,7 +45,32 @@ class CloudTypeServiceController extends AbstractController
 
         ]);
     }
+    /**
+     * 
+     * @Route("/compte/type_service/{id}", name="editcloudtypeservice", requirements={"id" : "\d+"})
+     */
+    public function EditAction(CloudTypeService $cloudTypeService, Request $request)
+    {
+        $manager = $this->getDoctrine()->getManager();
 
+        $form = $this->get('form.factory')->create(CloudCompteFormType::class, $cloudTypeService, array(
+            'action' => $this->generateUrl('editcloudTypeservice',  array('id' => $cloudTypeService->getId())),
+        ));
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+            if (($form->isSubmitted()) && ($form->isValid())) {
+                $manager->flush();
+
+                return $this->json(array('message' => 'OK'));
+            }
+        }
+
+        return $this->render('/cloud_compte/params/cloudTypeService.html.twig', array(
+            'cloudtypeservice' => $cloudTypeService,
+            'form' => $form->createView()
+        ));
+    }
     /*
      * Permet d'avoir la liste des types service issus de la base !
      * @return array
