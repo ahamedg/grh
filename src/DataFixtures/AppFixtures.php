@@ -35,12 +35,12 @@ class AppFixtures extends Fixture
             $pictureId = $faker->numberBetween(1, 99) . 'jpg';
             $picture .= ($genre == 'male' ? 'men/' : 'women/') . $pictureId;
 
-            $password = $this->encoder->encodePassword($utilisateur,'grh$i');
+            $password = $this->encoder->encodePassword($utilisateur,'password');
 
             $rand = rand(100, 1000);
             $code = "CODE$rand";
             $utilisateur->setUsername($faker->firstName($genre))
-                ->setPassword("grh$i")
+                ->setPassword($password)
                 ->setCode($code)
                 ->setChangePassword($password)
                 ->setDateLostPassword($faker->dateTime)

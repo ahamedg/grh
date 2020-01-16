@@ -3,11 +3,16 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="L'email saisi est déjà utilisé"
+ * )
  */
 class Utilisateur extends BaseEntity implements UserInterface
 {
@@ -30,6 +35,7 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
      */
     private $password;
 
@@ -50,6 +56,7 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $emailCompte;
 
@@ -159,27 +166,17 @@ class Utilisateur extends BaseEntity implements UserInterface
         return $this;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        return ['ROLE_USER'];
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+
     }
 
-    /**
-     * @inheritDoc
-     */
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
     }
 }
