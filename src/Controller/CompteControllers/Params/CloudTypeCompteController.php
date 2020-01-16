@@ -56,8 +56,8 @@ class CloudTypeCompteController extends AbstractController
     }
 
     /**
-     * @Route( "/compte/type_compte/edit", name = "type_compte_edit" )
-     * Permet de créer un nouveau CloudTypeCompte
+     * @Route( "/compte/type_compte_edit", name = "type_compte_edit" )
+     * Permet de modifier un CloudTypeCompte
      * @param Request $request
      * @return Response
      */
@@ -68,9 +68,8 @@ class CloudTypeCompteController extends AbstractController
 
         $formEdit = $this->createForm(CloudTypeCompteFormType::class, $cloudTypeCompte);
         $formEdit->handleRequest($request);
-        dump("test");
         $formView = $formEdit->createView();
-        return $this->render('/cloud_compte/params/cloudTypeCompte.html.twig', [
+        return $this->render('/cloud_compte/params/cloudTypeCompteEdit.html.twig', [
             //'cloudTypeCompte' => $cloudTypeCompte,
             'formEdit' => $formView,
             'listCloudTypeCompte' => $listCloudTypeCompte,

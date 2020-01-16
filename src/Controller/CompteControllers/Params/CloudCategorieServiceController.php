@@ -55,14 +55,7 @@ class CloudCategorieServiceController extends AbstractController
             //dump($code);
             //dump($now);
             $cloudCategorieService->setCode($code)
-                ->setActif(true)
-                ->setSupprimer(true)
-                ->setIdCompte(1)
-                ->setDateAjout(null)
-                ->setDateEdit(null)
-                ->setIdUserAuteur(null)
-                ->setIdUserEdit(null)
-                ->setVersion(1);
+                ->setActif(true);
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCategorieService);

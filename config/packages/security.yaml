@@ -9,7 +9,7 @@ security:
     in_database:
       entity:
         class: App\Entity\Utilisateur
-        property: username
+        property: emailCompte
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -23,6 +23,10 @@ security:
         check_path: login
         default_target_path: /accueil
         always_use_default_target_path: true
+      logout:
+        path: logout
+        target: login
+        invalidate_session: true
 
       # activate different ways to authenticate
       # https://symfony.com/doc/current/security.html#firewalls-authentication
