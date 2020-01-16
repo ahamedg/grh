@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller\CompteControllers\Params;
+
 use App\Entity\CloudTypeCompte;
 
 use App\Form\CloudCompte\Params\CloudTypeCompteFormType;
@@ -54,6 +55,27 @@ class CloudTypeCompteController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route( "/compte/type_compte/edit", name = "type_compte_edit" )
+     * Permet de créer un nouveau CloudTypeCompte
+     * @param Request $request
+     * @return Response
+     */
+    public function editer(Request $request)
+    {
+        $listCloudTypeCompte = $this->getListCloudTypeCompte();
+        $cloudTypeCompte = new CloudTypeCompte();
+
+        $formEdit = $this->createForm(CloudTypeCompteFormType::class, $cloudTypeCompte);
+        $formEdit->handleRequest($request);
+        dump("test");
+        $formView = $formEdit->createView();
+        return $this->render('/cloud_compte/params/cloudTypeCompte.html.twig', [
+            //'cloudTypeCompte' => $cloudTypeCompte,
+            'formEdit' => $formView,
+            'listCloudTypeCompte' => $listCloudTypeCompte,
+        ]);
+    }
 
     /*
      * Permet d'avoir la liste des types compte issus de la base !
