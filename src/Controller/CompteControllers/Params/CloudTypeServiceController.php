@@ -45,6 +45,7 @@ class CloudTypeServiceController extends AbstractController
       'form' => $formView,
       'listCloudTypeService' => $listCloudTypeService,
 
+
     ]);
   }
 
