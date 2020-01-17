@@ -14,14 +14,14 @@ class CloudParamsController extends AbstractController
 
     public function index()
     {
-        //$numeroLigne = 0;
+        $numeroLigne = 0;
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         $listCloudCategorieService = $repo->findAll();
 
         return $this->render('cloud_params/index.html.twig', [
             'controller_name' => 'CloudParamsController',
             'listCloudCategorieService' => $listCloudCategorieService,
-            //'numeroLigne' => $numeroLigne
+            'numeroLigne' => $numeroLigne
         ]);
     }
 

@@ -56,7 +56,7 @@ class CloudTypeCompteController extends AbstractController
     }
 
     /**
-     * @Route( "/compte/type_compte_edit", name = "type_compte_edit" )
+     * @Route( "/compte/type_compte_edit", name = "type_compte_edit", methods={"GET", "POST"})
      * Permet de modifier un CloudTypeCompte
      * @param Request $request
      * @return Response

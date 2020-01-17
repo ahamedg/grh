@@ -2,36 +2,59 @@
 
 
 {% block body_inside %}
+	{% include 'cloud_compte/params/paramComptePills.html.twig' %}
+	<br/>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card card-success">
+					<div class="card-header">
+						<h3 class="card-title">Nouveau</h3>
+					</div>
+					<div class="card-body">
+						{{ form_start(form) }}
 
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
-
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ 'D:/TPS/grh/src/Controller/CloudFamilleController.php'|file_link(0) }}">src/Controller/CloudFamilleController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ 'D:/TPS/grh/templates/cloud_famille/index.html.twig'|file_link(0) }}">templates/cloud_famille/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
+						{{ form_widget(form) }}
+						<button type="submit" class="btn btn-success float-right">Enregistrer</button>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="card card-secondary">
+					<div class="card-header">
+						<h3 class="card-title">Les différentes familles de comptes</h3>
+					</div>
+					<div class="card-body">
+						<table class="table table-bordered">
+							<thead>
+							<tr>
+								<th style="width: 3%">N°</th>
+								<th style="width: 40%">Désignation</th>
+								<th style="width: 8%">Sigle</th>
+								<th style="width: 30%">Type compte</th>
+								<th style="width: 7%">Action</th>
+							</tr>
+							</thead>
+							<tbody>
+							{% for fc in listCloudFamilleCompte %}
+								<tr>
+									<td>1</td>
+									<td>{{ fc.designationCloudFamilleCompte }}</td>
+									<td>{{ fc.sigleCloudFamilleCompte }}</td>
+									<td>{{ fc.cloudTypeCompte.libelle }}</td>
+									<td>
+										<i class="fas fa-edit"></i>
+										&#160;&#160;
+										<i class="fas fa-list-alt"></i>
+									</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}

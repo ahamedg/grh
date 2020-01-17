@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -37,6 +39,16 @@ class CloudTypeCompte extends BaseEntity
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CloudFamilleCompte", mappedBy="cloudTypeCompte")
+     */
+    private $cloudFamilleComptes;
+
+    public function __construct()
+    {
+        $this->cloudFamilleComptes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +87,37 @@ class CloudTypeCompte extends BaseEntity
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CloudFamilleCompte[]
+     */
+    public function getCloudFamilleComptes(): Collection
+    {
+        return $this->cloudFamilleComptes;
+    }
+
+    public function addCloudFamilleCompte(CloudFamilleCompte $cloudFamilleCompte): self
+    {
+        if (!$this->cloudFamilleComptes->contains($cloudFamilleCompte)) {
+            $this->cloudFamilleComptes[] = $cloudFamilleCompte;
+            $cloudFamilleCompte->setCloudTypeCompte($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCloudFamilleCompte(CloudFamilleCompte $cloudFamilleCompte): self
+    {
+        if ($this->cloudFamilleComptes->contains($cloudFamilleCompte)) {
+            $this->cloudFamilleComptes->removeElement($cloudFamilleCompte);
+            // set the owning side to null (unless already changed)
+            if ($cloudFamilleCompte->getCloudTypeCompte() === $this) {
+                $cloudFamilleCompte->setCloudTypeCompte(null);
+            }
+        }
 
         return $this;
     }

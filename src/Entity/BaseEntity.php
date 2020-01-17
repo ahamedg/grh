@@ -15,38 +15,22 @@ class BaseEntity
     protected $idCompte;
 
     /**
-<<<<<<< HEAD
-     * @Column(type="boolean", nullable=true)
-=======
      * @Column(type="boolean")
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
      */
     protected $actif = true;
 
     /**
-<<<<<<< HEAD
      * @Column(type="boolean", nullable=true)
-=======
-     * @Column(type="boolean")
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
      */
     protected $supprimer = false;
 
     /**
-<<<<<<< HEAD
      * @Column(type="string", nullable=true)
-=======
-     * @Column(type="datetime", nullable=true)
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
      */
     protected $dateAjout;
 
     /**
-<<<<<<< HEAD
      * @Column(type="string", nullable=true)
-=======
-     * @Column(type="datetime", nullable=true)
->>>>>>> b39acfbadf63655bcc470aa6e210cde08f97c6db
      */
     protected $dateEdit;
 

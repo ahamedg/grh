@@ -41,6 +41,12 @@ class CloudFamilleCompte
      */
     private $sigleCloudFamilleCompte;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudTypeCompte", inversedBy="cloudFamilleComptes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudTypeCompte;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +108,18 @@ class CloudFamilleCompte
     public function setSigleCloudFamilleCompte(string $sigleCloudFamilleCompte): self
     {
         $this->sigleCloudFamilleCompte = $sigleCloudFamilleCompte;
+
+        return $this;
+    }
+
+    public function getCloudTypeCompte(): ?CloudTypeCompte
+    {
+        return $this->cloudTypeCompte;
+    }
+
+    public function setCloudTypeCompte(?CloudTypeCompte $cloudTypeCompte): self
+    {
+        $this->cloudTypeCompte = $cloudTypeCompte;
 
         return $this;
     }
