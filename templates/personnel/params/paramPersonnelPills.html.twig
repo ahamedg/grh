@@ -1,0 +1,23 @@
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Civilité</a></li>
+        <li class="active"><a href="#">Groupe de personnel</a></li>
+        <li class="active"><a href="#">Fonction</a></li>
+        <li class="active"><a href="#">Poste</a></li>
+        <li class="active"><a href="#">Diplôme</a></li>
+        <li class="active"><a href="#">Statut</a></li>
+        <li class="active"><a href="#">Convention</a></li>
+        <li class="active"><a href="#">Absence</a></li>
+        <li class="active"><a href="#">Retard</a></li>
+
+    </ul>
+    {% for label, messages in app.flashes %}
+        <div class="container">
+            <div class="alert alert-{{ label }}">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

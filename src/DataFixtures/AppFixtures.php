@@ -33,9 +33,9 @@ class AppFixtures extends Fixture
             $genre = $faker->randomElement($genres);
             $picture = 'https://randomuser.me/api/portraits/';
             $pictureId = $faker->numberBetween(1, 99) . 'jpg';
-            $picture .= ($genre == 'male' ? 'men/' : 'women/') . $pictureId;
+            $picture .= ($genre === 'male' ? 'men/' : 'women/') . $pictureId;
 
-            $password = $this->encoder->encodePassword($utilisateur,'password');
+            $password = $this->encoder->encodePassword($utilisateur,'grh');
 
             $rand = rand(100, 1000);
             $code = "CODE$rand";
@@ -49,12 +49,13 @@ class AppFixtures extends Fixture
                 ->setNomPhotoProfil($picture);
 
             $manager->persist($utilisateur);
-            $listUtilisateur[] = $utilisateur;
+            //$listUtilisateur[] = $utilisateur;
+            $manager->flush();
         }
 
 
         //Nous gérons les catégories services
-        for ($i = 1; $i <= 15; $i++) {
+        /*for ($i = 1; $i <= 15; $i++) {
             $cloudCategorieService = new CloudCategorieService();
 
             $cloudCategorieService->setCode("CODECAT$i")
@@ -63,6 +64,6 @@ class AppFixtures extends Fixture
             $manager->persist($cloudCategorieService);
         }
 
-        $manager->flush();
+        $manager->flush();*/
     }
 }

@@ -26,11 +26,13 @@ class CloudCategorieServiceController extends AbstractController
     /*
      * @Route("/compte/categorie", name="categorie")
      * */
-    public function index(CloudCategorieServiceRepository $repo)
+    public function index()
     {
-        $listCloudCategorieService = $repo->findAll();
-        return $this->render('/cloud_compte/params/cloudCategorieService.html.twig', [
-            'listCloudCategorieService' => $listCloudCategorieService,
+        //$listCloudCategorieService = $repo->findAll();
+        $listCloudCategorieService = $this->getListCloudCategorieService();
+        $this->listCloudCategorieService = $listCloudCategorieService;
+        return $this->render('cloud_compte/params/cloudCategorieService.html.twig', [
+            'listCloudCategorieService' => $this->listCloudCategorieService,
         ]);
     }
 
