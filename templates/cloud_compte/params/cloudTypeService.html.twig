@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 
+{% block  breadcrumb %}
+	<li class="breadcrumb-item active"> Type service</li>
+{% endblock %}
 
 {% block body_inside %}
 	{% include 'cloud_compte/params/paramComptePills.html.twig' %}
@@ -9,7 +12,7 @@
 			<div class="col-md-4">
 				<div class="card card-success">
 					<div class="card-header">
-						<h3 class="card-title">Nouveau</h3>
+						Nouveau
 					</div>
 					<div class="card-body">
 						{{ form_start(form) }}
@@ -23,7 +26,7 @@
 			<div class="col-md-8">
 				<div class="card card-secondary">
 					<div class="card-header">
-						<h3 class="card-title">Les différentes types de service</h3>
+						Les différents types de service
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
@@ -44,7 +47,7 @@
 										<td>
 											<i data-toggle="modal" data-target="#typeServiceEditModal" href="#" class="btn-default fa fa-edit"></i>
 											&#160;&#160;
-											<i class="fas fa-trash-alt"></i>
+											<i class="fas fa-list-alt"></i>
 										</td>
 									</tr>
 								{% endfor %}

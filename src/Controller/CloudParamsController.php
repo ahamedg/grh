@@ -14,6 +14,15 @@ class CloudParamsController extends AbstractController
 
     public function index()
     {
+        return $this->render('cloud_params/cloud_params.html.twig');
+    }
+
+    /**
+     * @Route("/cloud/params", name="cloud_params_index")
+     */
+
+    public function index2()
+    {
         $numeroLigne = 0;
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         $listCloudCategorieService = $repo->findAll();
@@ -26,19 +35,21 @@ class CloudParamsController extends AbstractController
     }
 
 
-    /**
-     * @return int
-     */
-    public function getNumeroLigne(): int
-    {
-        return $this->numeroLigne++;
-    }
+/**
+ * @return int
+ */
+public
+function getNumeroLigne(): int
+{
+    return $this->numeroLigne++;
+}
 
-    /**
-     * @param int $numeroLigne
-     */
-    public function setNumeroLigne(int $numeroLigne): void
-    {
-        $this->numeroLigne = $numeroLigne;
-    }
+/**
+ * @param int $numeroLigne
+ */
+public
+function setNumeroLigne(int $numeroLigne): void
+{
+    $this->numeroLigne = $numeroLigne;
+}
 }

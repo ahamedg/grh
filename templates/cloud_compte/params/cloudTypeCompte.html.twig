@@ -1,14 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% block  breadcrumb %}
+    <li class="breadcrumb-item active"> Type compte</li>
+{% endblock %}
 
 {% block body_inside %}
     {% include 'cloud_compte/params/paramComptePills.html.twig' %}
+    <br/>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Nouveau</h3>
+                        Nouveau
                     </div>
                     <div class="card-body">
                         {{ form_start(form) }}
@@ -22,7 +26,7 @@
             <div class="col-md-8">
                 <div class="card card-secondary">
                     <div class="card-header">
-                        <h3 class="card-title">Les différentes types de compte</h3>
+                        Les différents types de compte
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
@@ -41,9 +45,10 @@
                                     <td>{{ tc.libelle }}</td>
                                     <td>{{ tc.description }}</td>
                                     <td>
-                                        <i data-toggle="modal" data-target="#editCloudTypeCompteModal" class="btn-default fa fa-edit"></i>
+                                        <i data-toggle="modal" data-target="#editCloudTypeCompteModal"
+                                           class="btn-default fa fa-edit"></i>
                                         &#160;&#160;
-                                        <i class="fas fa-trash-alt"></i>
+                                        <i class="fas fa-list-alt"></i>
                                     </td>
                                 </tr>
                             {% endfor %}

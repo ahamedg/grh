@@ -76,11 +76,9 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">
-                                    <a href="#">Home</a>
+                                    <a href="/accueil">Home</a>
                                 </li>
-                                {% block  breadcrumb %}
-                                    <li class="breadcrumb-item active">Dashboard v1</li>
-                                {% endblock %}
+                                {% block  breadcrumb %} {% endblock %}
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -89,15 +87,6 @@
                 </div>
                 <!-- /.container-fluid -->
             </div>
-            {% for label, messages in app.flashes  %}
-                <div class="container">
-                    <div class="alert alert-{{label}}">
-                        {% for message in messages  %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %}
             <!-- /.content-header -->
             <!-- Main content -->
             <section class="content">
@@ -185,8 +174,8 @@
     <script src="{{ asset('admin-lte/dist/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('admin-lte/dist/js/demo.js') }}"></script>
     <!-- Intégration jQuery de admin-lte-->
-    <script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    {#<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>#}
 
     <!-- Nos css intégrés -->
     <script src="{{ asset('customs/js/app.js') }}"></script>

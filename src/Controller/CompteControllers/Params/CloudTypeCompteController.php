@@ -22,6 +22,8 @@ class CloudTypeCompteController extends AbstractController
         return $repo->findAll();
     }*/
 
+    private $numeroLigne = 0;
+
     /**
      * @Route( "/compte/type_compte", name = "type_compte" )
      * Permet de créer un nouveau CloudTypeCompte
