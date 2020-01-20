@@ -54,7 +54,9 @@
         <link rel="stylesheet" href="{{ asset('admin-lte/plugins/toastr/toastr.min.js') }}">
 
 
+{#
         <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">
+#}
 
         <!-- Nos css intégrés -->
         <link rel="stylesheet" href="{{ asset('customs/css/style.css') }}">
@@ -174,11 +176,12 @@
     <script src="{{ asset('admin-lte/dist/js/pages/dashboard.js') }}"></script>
     <script src="{{ asset('admin-lte/dist/js/demo.js') }}"></script>
     <!-- Intégration jQuery de admin-lte-->
-    {#<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>#}
+    {#<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>#}
+    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
     <!-- Nos css intégrés -->
     <script src="{{ asset('customs/js/app.js') }}"></script>
+    <script src="{{ asset('customs/js/popper.min.js') }}"></script>
 {% endblock %}
 </body>
 </html>
