@@ -8,12 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class CloudCompteController extends AbstractController
 {
     /**
-     * @Route("/cloud/compte", name="cloud_compte")
+     * @Route("/accueil/cloud_compte", name="cloud_compte_nouveau")
      */
     public function index()
     {
-        return $this->render('cloud_compte/index.html.twig', [
-            'controller_name' => 'CloudCompteController',
-        ]);
+        return $this->render('cloud_compte/compte/nouveauCloudCompte.html.twig');
     }
 }

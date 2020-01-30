@@ -2,19 +2,12 @@
 
 namespace App\Entity;
 
-use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CloudTypeServiceRepository")
- * @UniqueEntity(
- *     fields={"libelle"},
- *     message="Ce type de service existe déjà !"
- * )
+ * @ORM\Entity(repositoryClass="App\Repository\MapPrefectureRepository")
  */
-class CloudTypeService extends BaseEntity
+class MapPrefecture
 {
     /**
      * @ORM\Id()
@@ -29,8 +22,7 @@ class CloudTypeService extends BaseEntity
     private $code;
 
     /**
-     * @ORM\Column(type="string", length=150)
-     * @Assert\Length(max="150", maxMessage="Le libellé ne peut pas dépasser 150 caractères !")
+     * @ORM\Column(type="string", length=255)
      */
     private $libelle;
 
@@ -38,6 +30,12 @@ class CloudTypeService extends BaseEntity
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $states;
 
     public function getId(): ?int
     {
@@ -76,6 +74,18 @@ class CloudTypeService extends BaseEntity
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getStates(): ?MapStates
+    {
+        return $this->states;
+    }
+
+    public function setStates(?MapStates $states): self
+    {
+        $this->states = $states;
 
         return $this;
     }

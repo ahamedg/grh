@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -28,8 +29,8 @@ class CloudCategorieService extends BaseEntity
     private $code;
 
     /**
-     * @ORM\Column(type="string", length=30)
-     * @Assert\Length(max="30", maxMessage="Le libellé ne peut pas dépasser 30 caractères !")
+     * @ORM\Column(type="string", length=150)
+     * @Assert\Length(max="150", maxMessage="Le libellé ne peut pas dépasser 150 caractères !")
      */
     private $libelle;
 

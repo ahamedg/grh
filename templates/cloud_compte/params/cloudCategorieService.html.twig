@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}
+    pro6- GRH / Catégorie service
+{% endblock %}
 {% block  breadcrumb %}
     <li class="breadcrumb-item active"> Catégorie service</li>
 {% endblock %}
@@ -41,7 +43,7 @@
                             <tbody>
                             {% for cs in listCloudCategorieService %}
                                 <tr>
-                                    <td>1</td>
+                                    <td>{{num}}</td>
                                     <td>{{ cs.libelle }}</td>
                                     <td>{{ cs.description }}</td>
                                     <td>

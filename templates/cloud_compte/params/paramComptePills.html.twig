@@ -3,16 +3,7 @@
         <li class="active"><a href="{{ path('categorie_service') }}">Catégorie service</a></li>
         <li class="active"><a href="{{ path('type_service') }}">Type service</a></li>
         <li class="active"><a href="{{ path('type_compte') }}">Type compte</a></li>
-        <li class="active"><a href="{{ path('famille_compte') }}">Famille compte</a></li>
+        <li class="active"><a href="{{ path('compte') }}">Compte</a></li>
 
     </ul>
-    {% for label, messages in app.flashes %}
-        <div class="container">
-            <div class="alert alert-{{ label }}">
-                {% for message in messages %}
-                    <p>{{ message }}</p>
-                {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
 </div>

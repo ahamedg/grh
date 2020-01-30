@@ -2,8 +2,8 @@
 
 namespace App\Entity;
 
+use App\Entity\BaseEntity;
 use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -30,8 +30,8 @@ class CloudTypeCompte extends BaseEntity
     private $code;
 
     /**
-     * @ORM\Column(type="string", length=30)
-     * @Assert\Length(max="30", maxMessage="Le libellé ne peut pas dépasser 30 caractères !")
+     * @ORM\Column(type="string", length=150)
+     * @Assert\Length(max="150", maxMessage="Le libellé ne peut pas dépasser 150 caractères !")
      */
     private $libelle;
 
@@ -39,11 +39,6 @@ class CloudTypeCompte extends BaseEntity
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CloudFamilleCompte", mappedBy="cloudTypeCompte")
-     */
-    private $cloudFamilleComptes;
 
     public function __construct()
     {
@@ -91,34 +86,4 @@ class CloudTypeCompte extends BaseEntity
         return $this;
     }
 
-    /**
-     * @return Collection|CloudFamilleCompte[]
-     */
-    public function getCloudFamilleComptes(): Collection
-    {
-        return $this->cloudFamilleComptes;
-    }
-
-    public function addCloudFamilleCompte(CloudFamilleCompte $cloudFamilleCompte): self
-    {
-        if (!$this->cloudFamilleComptes->contains($cloudFamilleCompte)) {
-            $this->cloudFamilleComptes[] = $cloudFamilleCompte;
-            $cloudFamilleCompte->setCloudTypeCompte($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCloudFamilleCompte(CloudFamilleCompte $cloudFamilleCompte): self
-    {
-        if ($this->cloudFamilleComptes->contains($cloudFamilleCompte)) {
-            $this->cloudFamilleComptes->removeElement($cloudFamilleCompte);
-            // set the owning side to null (unless already changed)
-            if ($cloudFamilleCompte->getCloudTypeCompte() === $this) {
-                $cloudFamilleCompte->setCloudTypeCompte(null);
-            }
-        }
-
-        return $this;
-    }
 }

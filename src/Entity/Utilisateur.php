@@ -6,12 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
  * @ORM\HasLifecycleCallbacks()
  * @UniqueEntity(
- *     fields={"email"},
- *     message="L'email saisi est déjà utilisé"
+ *     fields={"emailCompte"},
+ *     message="Un utilisateur a déjà été créé avec cet email. Veuillez en renseigner un autre !"
  * )
  */
 class Utilisateur extends BaseEntity implements UserInterface
@@ -35,17 +36,17 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     *
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit avoir au moins 8 caractères !")
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $lostPasswordUrl;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $dateLostPassword;
 
@@ -56,7 +57,7 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Email()
+     * @Assert\Email(message="Cet email n'est pas une adresse email valide !")
      */
     private $emailCompte;
 
@@ -64,6 +65,22 @@ class Utilisateur extends BaseEntity implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nomPhotoProfil;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $telephone1Utilisateur;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $telephone2Utilisateur;
+
+    /**
+     *
+     * @Assert\EqualTo(propertyPath="password", message="Echec de la confirmation du mot de passe. Réessayez !")
+     */
+    private $passwordConfirm;
 
     public function getId(): ?int
     {
@@ -178,5 +195,41 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     public function eraseCredentials()
     {
+    }
+
+    public function getTelephone1Utilisateur(): ?string
+    {
+        return $this->telephone1Utilisateur;
+    }
+
+    public function setTelephone1Utilisateur(string $telephone1Utilisateur): self
+    {
+        $this->telephone1Utilisateur = $telephone1Utilisateur;
+
+        return $this;
+    }
+
+    public function getTelephone2Utilisateur(): ?string
+    {
+        return $this->telephone2Utilisateur;
+    }
+
+    public function setTelephone2Utilisateur(?string $telephone2Utilisateur): self
+    {
+        $this->telephone2Utilisateur = $telephone2Utilisateur;
+
+        return $this;
+    }
+
+    public function getPasswordConfirm(): ?string
+    {
+        return $this->passwordConfirm;
+    }
+
+    public function setPasswordConfirm(string $passwordConfirm): self
+    {
+        $this->passwordConfirm = $passwordConfirm;
+
+        return $this;
     }
 }

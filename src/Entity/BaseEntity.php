@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 /** @ORM\MappedSuperclass() */
 class BaseEntity
@@ -25,12 +25,12 @@ class BaseEntity
     protected $supprimer = false;
 
     /**
-     * @Column(type="string", nullable=true)
+     * @Column(type="date", nullable=true)
      */
     protected $dateAjout;
 
     /**
-     * @Column(type="string", nullable=true)
+     * @Column(type="date", nullable=true)
      */
     protected $dateEdit;
 
@@ -47,7 +47,12 @@ class BaseEntity
     /**
      * @Column(type="integer")
      */
-    protected $version = true;
+    protected $version = 1;
+
+    public function __construct()
+    {
+        $this->dateAjout = new \DateTime('now', \DateTimeZone::AFRICA);
+    }
 
     /**
      * @return mixed
@@ -111,6 +116,7 @@ class BaseEntity
     public function setDateAjout($dateAjout): void
     {
         $this->dateAjout = $dateAjout;
+        //$this->dateAjout =new \DateTime('now', 'AFRICA');
     }
 
     /**
@@ -127,6 +133,7 @@ class BaseEntity
     public function setDateEdit($dateEdit): void
     {
         $this->dateEdit = $dateEdit;
+        //$this->dateEdit =new \DateTime('now', \DateTimeZone::AFRICA);
     }
 
     /**

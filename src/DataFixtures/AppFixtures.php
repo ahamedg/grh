@@ -46,6 +46,7 @@ class AppFixtures extends Fixture
                 ->setDateLostPassword($faker->dateTime)
                 ->setEmailCompte($faker->email)
                 ->setLostPasswordUrl($faker->email)
+                ->setTelephone1Utilisateur($faker->phoneNumber)
                 ->setNomPhotoProfil($picture);
 
             $manager->persist($utilisateur);
@@ -55,7 +56,7 @@ class AppFixtures extends Fixture
 
 
         //Nous gérons les catégories services
-        /*for ($i = 1; $i <= 15; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $cloudCategorieService = new CloudCategorieService();
 
             $cloudCategorieService->setCode("CODECAT$i")
@@ -64,6 +65,6 @@ class AppFixtures extends Fixture
             $manager->persist($cloudCategorieService);
         }
 
-        $manager->flush();*/
+        $manager->flush();
     }
 }

@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CloudCompteRepository")
  */
-class CloudCompte
+class CloudCompte extends BaseEntity
 {
     /**
      * @ORM\Id()
@@ -22,7 +24,7 @@ class CloudCompte
     private $codeCloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=150)
      */
     private $designationCloudCompte;
 
@@ -60,6 +62,24 @@ class CloudCompte
      * @ORM\Column(type="string", length=15)
      */
     private $sigleCloudCompte;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapPays")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pays;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $states;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapVille")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $ville;
 
     public function getId(): ?int
     {
@@ -170,6 +190,42 @@ class CloudCompte
     public function setSigleCloudCompte(string $sigleCloudCompte): self
     {
         $this->sigleCloudCompte = $sigleCloudCompte;
+
+        return $this;
+    }
+
+    public function getPays(): ?MapPays
+    {
+        return $this->pays;
+    }
+
+    public function setPays(?MapPays $pays): self
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    public function getStates(): ?MapStates
+    {
+        return $this->states;
+    }
+
+    public function setStates(?MapStates $states): self
+    {
+        $this->states = $states;
+
+        return $this;
+    }
+
+    public function getVille(): ?MapVille
+    {
+        return $this->ville;
+    }
+
+    public function setVille(?MapVille $ville): self
+    {
+        $this->ville = $ville;
 
         return $this;
     }
