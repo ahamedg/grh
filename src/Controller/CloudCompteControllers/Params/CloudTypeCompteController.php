@@ -25,7 +25,7 @@ class CloudTypeCompteController extends AbstractController
     private $numeroLigne = 0;
 
     /**
-     * @Route( "/accueil/params_compte/type_compte", name = "type_compte" )
+     * @Route( "/params_compte/type_compte", name = "type_compte" )
      * Permet de créer un nouveau CloudTypeCompte
      * @return Response
      */

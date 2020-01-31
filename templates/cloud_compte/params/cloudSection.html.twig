@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    pro6- GRH / Section
+{% endblock %}
+{% block  breadcrumb %}
+    <li class="breadcrumb-item active"> Section</li>
+{% endblock %}
+
+{% block body_inside %}
+    {% include 'cloud_compte/params/paramComptePills.html.twig' %}
+    <br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-success">
+                    <div class="card-header">
+                        Nouveau
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form) }}
+
+                        {{ form_widget(form) }}
+                        <button type="submit" class="btn btn-success float-right">Enregistrer</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        Les différentes sections
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="width: 3%">N°</th>
+                                <th style="width: 40%">Libellé</th>
+                                <th style="width: 30%">Description</th>
+                                <th style="width: 7%">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for s in listCloudSection %}
+                                <tr>
+                                    <td>{{num}}</td>
+                                    <td>{{ s.libelle }}</td>
+                                    <td>{{ s.description }}</td>
+                                    <td>
+                                        <i id="btnEdit" data-toggle="modal"
+                                           data-target="#editCloudSectionModal"
+                                           class="btn-default fa fa-edit"></i>
+                                        &#160;&#160;
+                                        <i class="fas fa-list-alt"></i>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="editCloudSectionModal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modification d'une catégorie service</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="get" role="form">
+                        <div class="form-group">
+                            <label for="libelle">Libellé</label>
+                            <input type="text" class="form-control" id="libelle" placeholder="Libellé">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" rows="3" placeholder="Description ..."></textarea>
+                        </div>
+                        <div class="">
+                            <button type="submit" class="btn btn-primary float-right">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

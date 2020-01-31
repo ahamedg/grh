@@ -7,13 +7,13 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CloudTypeCompteRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CloudTypeBudgetRepository")
  * @UniqueEntity(
  *     fields={"libelle"},
- *     message="Ce type de compte existe déjà !"
+ *     message="Ce type de budget existe déjà !"
  * )
  */
-class CloudTypeCompte extends BaseEntity
+class CloudTypeBudget extends BaseEntity
 {
     /**
      * @ORM\Id()
@@ -78,5 +78,4 @@ class CloudTypeCompte extends BaseEntity
 
         return $this;
     }
-
 }

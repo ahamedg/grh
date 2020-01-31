@@ -3,6 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\CloudCategorieService;
+use App\Entity\CloudSection;
+use App\Entity\CloudTypeBudget;
+use App\Entity\CloudTypeCompte;
+use App\Entity\CloudTypeService;
 use App\Entity\Utilisateur;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -63,6 +67,46 @@ class AppFixtures extends Fixture
                 ->setLibelle("Organisation **==$i")
                 ->setDescription("Description ***===$i");
             $manager->persist($cloudCategorieService);
+        }
+
+        //Nous gérons les types compte
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudTypeCompte = new CloudTypeCompte();
+
+            $cloudTypeCompte->setCode("CODETYC$i")
+                ->setLibelle("Type compte **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudTypeCompte);
+        }
+
+        //Nous gérons les types service
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudTypeService = new CloudTypeService();
+
+            $cloudTypeService->setCode("CODETYS$i")
+                ->setLibelle("Type service **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudTypeService);
+        }
+
+        //Nous gérons les types budget
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudTypeBudget = new CloudTypeBudget();
+
+            $cloudTypeBudget->setCode("CODETYB$i")
+                ->setLibelle("Type budget **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudTypeBudget);
+        }
+
+        //Nous gérons les sections
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudSection = new CloudSection();
+
+            $cloudSection->setCode("CODESEC$i")
+                ->setLibelle("Section cloud **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudSection);
         }
 
         $manager->flush();

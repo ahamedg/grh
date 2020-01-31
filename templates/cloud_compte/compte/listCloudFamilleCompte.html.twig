@@ -43,7 +43,12 @@
                     <td>{{ fc.ville.nomVille }} &#160;({{ fc.pays.nomPays }})</td>
                     <td>{{ fc.telephoneCloudFamilleCompte }} <br>({{ fc.emailCloudFamilleCompte }})</td>
                     <td>{{ fc.adresseCloudFamilleCompte }}</td>
-                    <td>Etat</td>
+                    <td>
+                        <i id="btnEdit" data-toggle="modal"
+                           data-target="#editCloudCategorieServiceModal"
+                           class="btn-default fa fa-edit"></i>
+                        <i class="fas fa-list-alt"></i>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

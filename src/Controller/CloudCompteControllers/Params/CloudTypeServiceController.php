@@ -14,7 +14,7 @@ class CloudTypeServiceController extends AbstractController
 
     /**
      * Undocumented function
-     * @Route("/compte/type_service", name="type_service")
+     * @Route("/params_compte/type_service", name="type_service")
      * @return Response
      */
     public function ajouter(Request $request)

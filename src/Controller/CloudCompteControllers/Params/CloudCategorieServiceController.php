@@ -15,7 +15,7 @@ class CloudCategorieServiceController extends AbstractController
     private $num = 1;
 
     /**
-     * @Route("/accueil/params_compte/categorie_service", name="categorie_service")
+     * @Route("/params_compte/categorie_service", name="categorie_service")
      * Permet de créer une catégorie de service
      * @return Response
      */

@@ -61,6 +61,9 @@ class UtilisateurController extends AbstractController
             //$utilisateur = new Utilisateur();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
             //return $utilisateur;
+            return $this->redirectToRoute('utilisateur', [
+                'listUtilisateur' => $listUtilisateur,
+            ]);
         }
         return $this->render('utilisateur/nouveauUtilisateur.html.twig', [
             'form' => $form->createView(),

@@ -15,29 +15,30 @@ class BaseEntity
     protected $idCompte;
 
     /**
-     * @Column(type="boolean")
+     * @Column(type="boolean", nullable=false)
      */
     protected $actif = true;
 
     /**
-     * @Column(type="boolean", nullable=true)
+     * @Column(type="boolean", nullable=false)
      */
     protected $supprimer = false;
 
     /**
-     * @Column(type="date", nullable=true)
+     * @Column(type="datetime", nullable=true)
      */
     protected $dateAjout;
 
     /**
-     * @Column(type="date", nullable=true)
+     * @Column(type="datetime", nullable=true)
      */
     protected $dateEdit;
 
     /**
-     * @Column(type="integer", nullable=true)
+     * @Column(type="integer")
+     * @Assert\NotNull()
      */
-    protected $idUserAuteur;
+    protected $idUserAuteur = 1;
 
     /**
      * @Column(type="integer", nullable=true)
@@ -46,12 +47,17 @@ class BaseEntity
 
     /**
      * @Column(type="integer")
+     * @Assert\NotNull()
      */
     protected $version = 1;
 
     public function __construct()
     {
-        $this->dateAjout = new \DateTime('now', \DateTimeZone::AFRICA);
+        $this->dateAjout = new \DateTime('now');
+        //$tz = new DateTimeZone('Africa/Lome');
+
+        //$date = new DateTime('d-m-Y H:i:s');
+        //$date->setTimezone($tz);
     }
 
     /**

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    pro6- GRH / Comptes
+{% endblock %}
+{% block  breadcrumb %}
+    <li class="breadcrumb-item active"> Comptes</li>
+{% endblock %}
+
+{% block body_inside %}
+    {% include 'cloud_compte/params/paramComptePills.html.twig' %}
+    <br/>
+    <div class="container">
+        <div class="form-group">
+            <a href="{{ path('compte_new') }}" class="">
+                <button type="button" class="btn btn-info" href="{{ path('compte_new') }}">Nouveau compte</button>
+            </a>
+        </div>
+        <table class="table table-bordered">
+            <thead class="bg-gradient-secondary">
+            <tr>
+                <th style="width: 3%"></th>
+                <th style="width: 40%">Libellé</th>
+                <th style="width: 10%">Sigle</th>
+                <th style="width: 25%">Contact</th>
+                <th style="width: 20%">Adresse</th>
+                <th style="width: 10%">Etat</th>
+                {#<th style="width: 10%">Action</th>#}
+            </tr>
+            </thead>
+            <tbody>
+            {% for fc in listCloudCompte %}
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="form-check-input" value="">
+                        </label>
+                    </td>
+                    <td>{{ fc.designationCloudCompte }}</td>
+                    <td>{{ fc.logoCloudCompte }}</td>
+                    <td>{{ fc.sigleCloudCompte }}</td>
+                    <td>{{ fc.ville.nomVille }} &#160;({{ fc.pays.nomPays }}) <br>{{ fc.telephone1CloudCompte }}
+                        / {{ fc.telephone2CloudCompte }} <br>({{ fc.emailCloudFamilleCompte }})
+                    </td>
+                    <td>{{ fc.adresseCloudCompte }}</td>
+                    <td>
+                        <i id="btnEdit" data-toggle="modal"
+                           data-target="#editCloudCategorieServiceModal"
+                           class="btn-default fa fa-edit"></i>
+                        <i class="fas fa-list-alt"></i>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

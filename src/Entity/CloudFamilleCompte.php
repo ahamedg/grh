@@ -25,7 +25,7 @@ class CloudFamilleCompte extends BaseEntity
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Length(max="150",maxMessage="La désignation ne peut pas dépasser 150 caractères !")
+     * @Assert\Length(max="150",maxMessage="Le nom du compte ne peut pas dépasser 150 caractères !")
      */
     private $designationCloudFamilleCompte;
 

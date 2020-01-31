@@ -25,6 +25,7 @@ class CloudCompte extends BaseEntity
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\Length(max="150",maxMessage="Le nom du service/subdivision ne peut pas dépasser 150 caractères !")
      */
     private $designationCloudCompte;
 
@@ -39,17 +40,18 @@ class CloudCompte extends BaseEntity
     private $adresseCloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Email(message="Cet email n'est pas une adresse email valide !")
      */
     private $emailCloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=255)
      */
     private $telephone1CloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $telephone2CloudCompte;
 
@@ -80,6 +82,49 @@ class CloudCompte extends BaseEntity
      * @ORM\JoinColumn(nullable=false)
      */
     private $ville;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapCommune")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $commune;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapPrefecture")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $prefecture;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudTypeBudget")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudTypeBudget;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudSection")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudSection;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudCategorieService")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudCategorieService;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudTypeService")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudTypeService;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudFamilleCompte")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cloudFamilleCompte;
+
 
     public function getId(): ?int
     {
@@ -229,4 +274,89 @@ class CloudCompte extends BaseEntity
 
         return $this;
     }
+
+    public function getCommune(): ?MapCommune
+    {
+        return $this->commune;
+    }
+
+    public function setCommune(?MapCommune $commune): self
+    {
+        $this->commune = $commune;
+
+        return $this;
+    }
+
+    public function getPrefecture(): ?MapPrefecture
+    {
+        return $this->prefecture;
+    }
+
+    public function setPrefecture(?MapPrefecture $prefecture): self
+    {
+        $this->prefecture = $prefecture;
+
+        return $this;
+    }
+
+    public function getCloudTypeBudget(): ?CloudTypeBudget
+    {
+        return $this->cloudTypeBudget;
+    }
+
+    public function setCloudTypeBudget(?CloudTypeBudget $cloudTypeBudget): self
+    {
+        $this->cloudTypeBudget = $cloudTypeBudget;
+
+        return $this;
+    }
+
+    public function getCloudSection(): ?CloudSection
+    {
+        return $this->cloudSection;
+    }
+
+    public function setCloudSection(?CloudSection $cloudSection): self
+    {
+        $this->cloudSection = $cloudSection;
+
+        return $this;
+    }
+
+    public function getCloudCategorieService(): ?CloudCategorieService
+    {
+        return $this->cloudCategorieService;
+    }
+
+    public function setCloudCategorieService(?CloudCategorieService $cloudCategorieService): self
+    {
+        $this->cloudCategorieService = $cloudCategorieService;
+
+        return $this;
+    }
+
+    public function getCloudTypeService(): ?CloudTypeService
+    {
+        return $this->cloudTypeService;
+    }
+
+    public function setCloudTypeService(?CloudTypeService $cloudTypeService): self
+    {
+        $this->cloudTypeService = $cloudTypeService;
+
+        return $this;
+    }
+
+    public function getCloudFamilleCompte(): ?CloudFamilleCompte
+    {
+        return $this->cloudFamilleCompte;
+    }
+
+    public function setCloudFamilleCompte(?CloudFamilleCompte $cloudFamilleCompte): self
+    {
+        $this->cloudFamilleCompte = $cloudFamilleCompte;
+
+        return $this;
+    }
+
 }

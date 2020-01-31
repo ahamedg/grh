@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Controller\CloudCompteControllers\Params;
+namespace App\Controller\CloudCompteControllers\Compte;
 
 use App\Entity\CloudFamilleCompte;
-use App\Form\CloudCompteForms\Params\CloudFamilleCompteFormType;
+use App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,25 +12,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class CloudFamilleCompteController extends AbstractController
 {
     /**
-     * @Route("/accueil/compte", name="compte")
+     * @Route("/compte", name="compte")
      * @return Response
      */
     public function loading()
     {
         $listCloudFamilleCompte = $this->getListCloudFamilleCompte();
 
-        return $this->render('cloud_compte/compte/cloudFamilleCompte.html.twig', [
+        return $this->render('cloud_compte/compte/listCloudFamilleCompte.html.twig', [
             'listCloudFamilleCompte' => $listCloudFamilleCompte,
         ]);
     }
 
     /**
-     * @Route("/accueil/compte/new", name="compte_new")
+     * @Route("/compte/new", name="compte_new")
      * Permet de créer un nouveau compte
-     * @param Request $request
      * @return Response
      */
-    public function ajouter(Request $request): Response
+    public function ajouter(Request $request)
     {
         $listCloudFamilleCompte = $this->getListCloudFamilleCompte();
         $cloudFamilleCompte = new CloudFamilleCompte();
@@ -40,18 +39,15 @@ class CloudFamilleCompteController extends AbstractController
         dump($cloudFamilleCompte);
         if ($form->isSubmitted() && $form->isValid()) {
             $rand = random_int(100, 1000);
-            $code = "CODECPT$rand";
+            $code = "CODECP$rand";
             dump($code);
             //dump($now);
-            $cloudFamilleCompte->setCode($code)
-                ->setActif(true);
+            $cloudFamilleCompte->setCode($code);
             dump($cloudFamilleCompte);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudFamilleCompte);
             $manager->flush();
-            //$listCloudFamilleCompte = $this->getListCloudFamilleCompte();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
-            //return $cloudCategorieService;
 
             return $this->redirectToRoute('compte', [
                 'listCloudFamilleCompte' => $listCloudFamilleCompte,
