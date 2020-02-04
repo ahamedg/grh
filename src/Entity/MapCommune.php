@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MapCommuneRepository")
+ * @UniqueEntity(
+ * fields={"libelle"},
+ * message="Cette commune existe déjà !")
  */
-class MapCommune
+class MapCommune extends BaseEntity
 {
     /**
      * @ORM\Id()
@@ -22,7 +28,8 @@ class MapCommune
     private $code;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=150)
+     * @Assert\Length(max="150", maxMessage="Le libellé ne peut pas dépasser 150 caractères !")
      */
     private $libelle;
 

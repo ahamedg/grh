@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	pro6- GRH / Pays
+	pro6- GRH / Ville
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item active">Pays</li>
+	<li class="breadcrumb-item active">Ville</li>
 {% endblock %}
 {% block body_inside %}
 	{% include 'cloud_compte/pills/localisationPills.html.twig' %}
@@ -14,26 +14,26 @@
 			<div class="col-md-8">
 				<div class="card card-secondary">
 					<div class="card-header">
-						Les différents pays
+						Les différentes villes
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th style="width: 3%">N°</th>
-									<th style="width: 40%">Indicatif</th>
-									<th style="width: 30%">Nom du pays</th>
+									<th style="width: 40%">Nom de la ville</th>
+									<th style="width: 30%">States/Région</th>
 									<th style="width: 7%">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								{% for p in listMapPays %}
+								{% for v in listMapVille %}
 									<tr>
 										<td>1</td>
-										<td>{{ p.indicatifPays }}</td>
-										<td>{{ p.nomPays }}</td>
+										<td>{{ v.nomVille }}</td>
+										<td>{{ v.states.nomStates }}</td>
 										<td>
-											<i id="btnEdit" data-toggle="modal" data-target="#editPaysModal" class="btn-default fa fa-edit"></i>
+											<i id="btnEdit" data-toggle="modal" data-target="#editVilleModal" class="btn-default fa fa-edit"></i>
 											&#160;&#160;
 											<i class="fas fa-list-alt"></i>
 										</td>
@@ -47,7 +47,7 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="editPaysModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="editVilleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
