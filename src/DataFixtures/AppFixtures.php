@@ -39,7 +39,7 @@ class AppFixtures extends Fixture
             $pictureId = $faker->numberBetween(1, 99) . 'jpg';
             $picture .= ($genre === 'male' ? 'men/' : 'women/') . $pictureId;
 
-            $password = $this->encoder->encodePassword($utilisateur,'grh');
+            $password = $this->encoder->encodePassword($utilisateur, 'grh');
 
             $rand = rand(100, 1000);
             $code = "CODE$rand";
@@ -100,6 +100,26 @@ class AppFixtures extends Fixture
         }
 
         //Nous gérons les sections
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudSection = new CloudSection();
+
+            $cloudSection->setCode("CODESEC$i")
+                ->setLibelle("Section cloud **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudSection);
+        }
+
+        //Nous gérons les préfectures
+        for ($i = 1; $i <= 5; $i++) {
+            $cloudSection = new MapPrefecture();
+
+            $cloudSection->setCode("CODESEC$i")
+                ->setLibelle("Section cloud **==$i")
+                ->setDescription("Description ***===$i");
+            $manager->persist($cloudSection);
+        }
+
+        //Nous gérons les communes
         for ($i = 1; $i <= 5; $i++) {
             $cloudSection = new CloudSection();
 

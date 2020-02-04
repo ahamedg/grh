@@ -39,11 +39,13 @@ class CloudCompteController extends AbstractController
         $form->handleRequest($request);
         dump($cloudCompte);
         if ($form->isSubmitted() && $form->isValid()) {
+        dump($cloudCompte);
             $rand = random_int(100, 1000);
             $code = "CODECP$rand";
-            dump($code);
+            //dump($code);
             //dump($now);
-            $cloudCompte->setCodeCloudCompte($code);
+            $cloudCompte->setCodeCloudCompte($code)
+                ->setProfondeurCloudCompte(1);
             dump($cloudCompte);
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCompte);

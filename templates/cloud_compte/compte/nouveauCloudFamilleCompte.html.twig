@@ -10,6 +10,7 @@
     {% include 'cloud_compte/params/paramComptePills.html.twig' %}
     <br/>
     <div class="container">
+        {{ form_start(form) }}
         <div class="row">
             <div class="col-md-6">
                 <div id="typeCompte" class="form-group">
@@ -55,15 +56,15 @@
                     {{ form_label(form.logoCloudFamilleCompte) }}
                     {{ form_widget(form.logoCloudFamilleCompte) }}
                 </div>
-                   <div class="form-group">
-                        {{ form_label(form.pays, 'Pays *') }}
-                        {{ form_widget(form.pays) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.states, 'State/Région *') }}
-                        {{ form_widget(form.states) }}
-                    </div>
-                 <div class="form-group">
+                <div class="form-group">
+                    {{ form_label(form.pays, 'Pays *') }}
+                    {{ form_widget(form.pays) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.states, 'State/Région *') }}
+                    {{ form_widget(form.states) }}
+                </div>
+                <div class="form-group">
                     {{ form_label(form.ville, 'Ville *') }}
                     {{ form_widget(form.ville) }}
                 </div>
@@ -93,6 +94,6 @@
                 </div>
             </div>
         </div>
+        {{ form_end(form) }}
     </div>
-
 {% endblock %}

@@ -8,6 +8,7 @@
 {% block body_inside %}
     <br>
     <div class="container">
+        {{ form_start(form) }}
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -20,13 +21,13 @@
                     {{ form_row(form.sigleCloudCompte) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.pays) }}
+                    {{ form_row(form.emailCloudCompte) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.states) }}
+                    {{ form_row(form.logoCloudCompte) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.ville) }}
+                    {{ form_row(form.adresseCloudCompte) }}
                 </div>
             </div>
             <div class="col-md-6">
@@ -37,12 +38,17 @@
                     {{ form_row(form.telephone2CloudCompte) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.emailCloudCompte) }}
+                    {{ form_row(form.pays) }}
                 </div>
-                <div class="form-group"></div>
-                <div class="form-group"></div>
+                <div class="form-group">
+                    {{ form_row(form.states) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.ville) }}
+                </div>
             </div>
         </div>
+        <br>
         <label>Localisation</label>
         <hr style="margin-top: auto; color: red">
         <div class="row">
@@ -106,5 +112,6 @@
                 <div class="col-md-4"></div>
             </div>
         </div>
+        {{ form_end(form) }}
     </div>
 {% endblock %}
