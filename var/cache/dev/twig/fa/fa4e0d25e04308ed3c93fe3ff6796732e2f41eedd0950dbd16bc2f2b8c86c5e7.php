@@ -67,7 +67,7 @@ class __TwigTemplate_f2679cd39edaff776b40b48f924a309653347499a0e057fa88efdde1683
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         // line 3
-        echo "    pro6- GRH / Comptes
+        echo "\tpro6- GRH / Comptes
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -88,7 +88,8 @@ class __TwigTemplate_f2679cd39edaff776b40b48f924a309653347499a0e057fa88efdde1683
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 6
-        echo "    <li class=\"breadcrumb-item active\"> Comptes</li>
+        echo "\t<li class=\"breadcrumb-item active\">
+\t\tComptes</li>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -98,7 +99,7 @@ class __TwigTemplate_f2679cd39edaff776b40b48f924a309653347499a0e057fa88efdde1683
 
     }
 
-    // line 9
+    // line 10
     public function block_body_inside($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,96 +109,128 @@ class __TwigTemplate_f2679cd39edaff776b40b48f924a309653347499a0e057fa88efdde1683
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_inside"));
 
-        // line 10
-        echo "    ";
-        $this->loadTemplate("cloud_compte/pills/paramComptePills.html.twig", "cloud_compte/compte/listCloudCompte.html.twig", 10)->display($context);
         // line 11
-        echo "    <br/>
-    <div class=\"container\">
-        <div class=\"form-group\">
-            <a href=\"";
-        // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("compte_new");
-        echo "\" class=\"\">
-                <button type=\"button\" class=\"btn btn-info\" href=\"";
-        // line 15
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("compte_new");
-        echo "\">Nouveau compte</button>
-            </a>
-        </div>
-        <table class=\"table table-bordered\">
-            <thead class=\"bg-gradient-secondary\">
-            <tr>
-                <th style=\"width: 3%\"></th>
-                <th style=\"width: 40%\">Libellé</th>
-                <th style=\"width: 10%\">Sigle</th>
-                <th style=\"width: 25%\">Contact</th>
-                <th style=\"width: 20%\">Adresse</th>
-                <th style=\"width: 10%\">Etat</th>
-                ";
-        // line 28
-        echo "            </tr>
-            </thead>
-            <tbody>
-            ";
-        // line 31
+        echo "\t";
+        $this->loadTemplate("cloud_compte/pills/paramComptePills.html.twig", "cloud_compte/compte/listCloudCompte.html.twig", 11)->display($context);
+        // line 12
+        echo "\t<br/>
+\t<div class=\"container\">
+\t\t<table class=\"table table-bordered\">
+\t\t\t<thead class=\"bg-gradient-secondary\">
+\t\t\t\t<tr>
+\t\t\t\t\t<th style=\"width: 3%\"></th>
+\t\t\t\t\t<th style=\"width: 20%\" class=\"text-center\">Nom du sous-compte</th>
+\t\t\t\t\t<th style=\"width: 8%\" class=\"text-center\">Sigle</th>
+\t\t\t\t\t<th style=\"width: 25%\" class=\"text-center\">Ville</th>
+\t\t\t\t\t<th style=\"width: 40%\" class=\"text-center\">Contacts et Adresse</th>
+\t\t\t\t\t<th style=\"width: 5%\" class=\"text-center\">Etat</th>
+\t\t\t\t\t<th style=\"width: 10%\" class=\"text-center\">Action</th>
+\t\t\t\t</tr>
+\t\t\t</thead>
+\t\t\t<tbody>
+\t\t\t\t";
+        // line 27
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["listCloudCompte"]) || array_key_exists("listCloudCompte", $context) ? $context["listCloudCompte"] : (function () { throw new RuntimeError('Variable "listCloudCompte" does not exist.', 31, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["fc"]) {
-            // line 32
-            echo "                <tr>
-                    <td>
-                        <label>
-                            <input type=\"checkbox\" class=\"form-check-input\" value=\"\">
-                        </label>
-                    </td>
-                    <td>";
+        $context['_seq'] = twig_ensure_traversable((isset($context["listCloudCompte"]) || array_key_exists("listCloudCompte", $context) ? $context["listCloudCompte"] : (function () { throw new RuntimeError('Variable "listCloudCompte" does not exist.', 27, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["c"]) {
+            // line 28
+            echo "\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t<label>
+\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" value=\"\">
+\t\t\t\t\t\t\t</label>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t<p><img src=\"";
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-lte/dist/img/globe.jpg"), "html", null, true);
+            echo "\" alt=\"Logo de la société\" width=\"60%\" class=\"center-block\"></p>
+\t\t\t\t\t\t\t<label style=\"text-transform: uppercase;\">";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "designationCloudCompte", [], "any", false, false, false, 36), "html", null, true);
+            echo "</label>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td style=\"text-transform: uppercase;\">";
             // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "designationCloudCompte", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "sigleCloudCompte", [], "any", false, false, false, 38), "html", null, true);
             echo "</td>
-                    <td>";
+\t\t\t\t\t\t<td>";
             // line 39
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "logoCloudCompte", [], "any", false, false, false, 39), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 40
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "sigleCloudCompte", [], "any", false, false, false, 40), "html", null, true);
-            echo "</td>
-                    <td>";
-            // line 41
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["fc"], "ville", [], "any", false, false, false, 41), "nomVille", [], "any", false, false, false, 41), "html", null, true);
-            echo " &#160;(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["fc"], "pays", [], "any", false, false, false, 41), "nomPays", [], "any", false, false, false, 41), "html", null, true);
-            echo ") <br>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "telephone1CloudCompte", [], "any", false, false, false, 41), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["c"], "ville", [], "any", false, false, false, 39), "nomVille", [], "any", false, false, false, 39), "html", null, true);
             echo "
-                        / ";
-            // line 42
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "telephone2CloudCompte", [], "any", false, false, false, 42), "html", null, true);
-            echo " <br>(";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "emailCloudFamilleCompte", [], "any", false, false, false, 42), "html", null, true);
+\t\t\t\t\t\t\t&#160;(";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["c"], "pays", [], "any", false, false, false, 40), "nomPays", [], "any", false, false, false, 40), "html", null, true);
             echo ")
-                    </td>
-                    <td>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["fc"], "adresseCloudCompte", [], "any", false, false, false, 44), "html", null, true);
-            echo "</td>
-                    <td>
-                        <i id=\"btnEdit\" data-toggle=\"modal\"
-                           data-target=\"#editCloudCategorieServiceModal\"
-                           class=\"btn-default fa fa-edit\"></i>
-                        <i class=\"fas fa-list-alt\"></i>
-                    </td>
-                </tr>
-            ";
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t<span style=\"text-decoration: underline;\">
+\t\t\t\t\t\t\t\t\t<strong>Contacts:</strong>
+\t\t\t\t\t\t\t\t</span><br>
+\t\t\t\t\t\t\t\t";
+            // line 47
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "telephone1CloudCompte", [], "any", false, false, false, 47), "html", null, true);
+            echo "/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "telephone2CloudCompte", [], "any", false, false, false, 47), "html", null, true);
+            echo "<br>
+\t\t\t\t\t\t\t\t";
+            // line 48
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "emailCloudCompte", [], "any", false, false, false, 48), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t<span style=\"text-decoration: underline;\">
+\t\t\t\t\t\t\t\t\t<strong>Adresse:</strong><br>
+\t\t\t\t\t\t\t\t\t";
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["c"], "adresseCloudCompte", [], "any", false, false, false, 53), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t";
+            // line 58
+            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["c"], "actif", [], "any", false, false, false, 58), true)) {
+                // line 59
+                echo "\t\t\t\t\t\t\t\t<i id=\"etatActif\" class=\"far fa-check-circle\" style=\"font-size:20px;color:green\" title=\"Compte actif\"></i>
+\t\t\t\t\t\t\t";
+            } else {
+                // line 61
+                echo "\t\t\t\t\t\t\t\t";
+                // line 62
+                echo "\t\t\t\t\t\t\t\t<i id=\"etatInactif\" class=\"far fa-times-circle\" style=\"font-size:20px;color:red\" title=\"Compte inactif\"></i>
+\t\t\t\t\t\t\t";
+            }
+            // line 64
+            echo "\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t<a href=\"";
+            // line 66
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("compte_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["c"], "id", [], "any", false, false, false, 66)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\t\t<i id=\"btnEdit\" title=\"Modifier un compte parent\" class=\"far fa-edit\" style=\"font-size:16px;\"></i>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<a href=\"";
+            // line 69
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sous_compte_new", ["id" => twig_get_attribute($this->env, $this->source, $context["c"], "id", [], "any", false, false, false, 69)]), "html", null, true);
+            echo "\">
+\t\t\t\t\t\t\t\t<i id=\"btnAdd\" title=\"Ajouter un sous-compte\" class=\"far fa-plus-square\" style=\"font-size:17px;color:green\"></i>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t<i class=\"fas fa-list-alt\"></i>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t</tr>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['fc'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['c'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
-        echo "            </tbody>
-        </table>
-    </div>
+        // line 77
+        echo "\t\t\t</tbody>
+\t\t</table>
+\t</div>
 
 ";
         
@@ -220,66 +253,90 @@ class __TwigTemplate_f2679cd39edaff776b40b48f924a309653347499a0e057fa88efdde1683
 
     public function getDebugInfo()
     {
-        return array (  198 => 53,  183 => 44,  176 => 42,  168 => 41,  164 => 40,  160 => 39,  156 => 38,  148 => 32,  144 => 31,  139 => 28,  124 => 15,  120 => 14,  115 => 11,  112 => 10,  102 => 9,  91 => 6,  81 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  231 => 77,  217 => 69,  211 => 66,  207 => 64,  203 => 62,  201 => 61,  197 => 59,  195 => 58,  187 => 53,  179 => 48,  173 => 47,  163 => 40,  159 => 39,  155 => 38,  150 => 36,  146 => 35,  137 => 28,  133 => 27,  116 => 12,  113 => 11,  103 => 10,  91 => 6,  81 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 {% block title %}
-    pro6- GRH / Comptes
+\tpro6- GRH / Comptes
 {% endblock %}
 {% block  breadcrumb %}
-    <li class=\"breadcrumb-item active\"> Comptes</li>
+\t<li class=\"breadcrumb-item active\">
+\t\tComptes</li>
 {% endblock %}
 
 {% block body_inside %}
-    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-    <br/>
-    <div class=\"container\">
-        <div class=\"form-group\">
-            <a href=\"{{ path('compte_new') }}\" class=\"\">
-                <button type=\"button\" class=\"btn btn-info\" href=\"{{ path('compte_new') }}\">Nouveau compte</button>
-            </a>
-        </div>
-        <table class=\"table table-bordered\">
-            <thead class=\"bg-gradient-secondary\">
-            <tr>
-                <th style=\"width: 3%\"></th>
-                <th style=\"width: 40%\">Libellé</th>
-                <th style=\"width: 10%\">Sigle</th>
-                <th style=\"width: 25%\">Contact</th>
-                <th style=\"width: 20%\">Adresse</th>
-                <th style=\"width: 10%\">Etat</th>
-                {#<th style=\"width: 10%\">Action</th>#}
-            </tr>
-            </thead>
-            <tbody>
-            {% for fc in listCloudCompte %}
-                <tr>
-                    <td>
-                        <label>
-                            <input type=\"checkbox\" class=\"form-check-input\" value=\"\">
-                        </label>
-                    </td>
-                    <td>{{ fc.designationCloudCompte }}</td>
-                    <td>{{ fc.logoCloudCompte }}</td>
-                    <td>{{ fc.sigleCloudCompte }}</td>
-                    <td>{{ fc.ville.nomVille }} &#160;({{ fc.pays.nomPays }}) <br>{{ fc.telephone1CloudCompte }}
-                        / {{ fc.telephone2CloudCompte }} <br>({{ fc.emailCloudFamilleCompte }})
-                    </td>
-                    <td>{{ fc.adresseCloudCompte }}</td>
-                    <td>
-                        <i id=\"btnEdit\" data-toggle=\"modal\"
-                           data-target=\"#editCloudCategorieServiceModal\"
-                           class=\"btn-default fa fa-edit\"></i>
-                        <i class=\"fas fa-list-alt\"></i>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+\t{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
+\t<br/>
+\t<div class=\"container\">
+\t\t<table class=\"table table-bordered\">
+\t\t\t<thead class=\"bg-gradient-secondary\">
+\t\t\t\t<tr>
+\t\t\t\t\t<th style=\"width: 3%\"></th>
+\t\t\t\t\t<th style=\"width: 20%\" class=\"text-center\">Nom du sous-compte</th>
+\t\t\t\t\t<th style=\"width: 8%\" class=\"text-center\">Sigle</th>
+\t\t\t\t\t<th style=\"width: 25%\" class=\"text-center\">Ville</th>
+\t\t\t\t\t<th style=\"width: 40%\" class=\"text-center\">Contacts et Adresse</th>
+\t\t\t\t\t<th style=\"width: 5%\" class=\"text-center\">Etat</th>
+\t\t\t\t\t<th style=\"width: 10%\" class=\"text-center\">Action</th>
+\t\t\t\t</tr>
+\t\t\t</thead>
+\t\t\t<tbody>
+\t\t\t\t{% for c in listCloudCompte %}
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t<label>
+\t\t\t\t\t\t\t\t<input type=\"checkbox\" class=\"form-check-input\" value=\"\">
+\t\t\t\t\t\t\t</label>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t<p><img src=\"{{ asset('admin-lte/dist/img/globe.jpg') }}\" alt=\"Logo de la société\" width=\"60%\" class=\"center-block\"></p>
+\t\t\t\t\t\t\t<label style=\"text-transform: uppercase;\">{{ c.designationCloudCompte }}</label>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td style=\"text-transform: uppercase;\">{{ c.sigleCloudCompte }}</td>
+\t\t\t\t\t\t<td>{{ c.ville.nomVille }}
+\t\t\t\t\t\t\t&#160;({{ c.pays.nomPays }})
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t<span style=\"text-decoration: underline;\">
+\t\t\t\t\t\t\t\t\t<strong>Contacts:</strong>
+\t\t\t\t\t\t\t\t</span><br>
+\t\t\t\t\t\t\t\t{{ c.telephone1CloudCompte }}/{{ c.telephone2CloudCompte }}<br>
+\t\t\t\t\t\t\t\t{{ c.emailCloudCompte }}
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t<span style=\"text-decoration: underline;\">
+\t\t\t\t\t\t\t\t\t<strong>Adresse:</strong><br>
+\t\t\t\t\t\t\t\t\t{{ c.adresseCloudCompte }}
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t{% if c.actif==true %}
+\t\t\t\t\t\t\t\t<i id=\"etatActif\" class=\"far fa-check-circle\" style=\"font-size:20px;color:green\" title=\"Compte actif\"></i>
+\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t{# <i id=\"etatInactif\" class=\"btn-success fas fa-check-circle\" style=\"width: 50%\"></i> #}
+\t\t\t\t\t\t\t\t<i id=\"etatInactif\" class=\"far fa-times-circle\" style=\"font-size:20px;color:red\" title=\"Compte inactif\"></i>
+\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t</td>
+\t\t\t\t\t\t<td class=\"text-center\">
+\t\t\t\t\t\t\t<a href=\"{{path('compte_edit', {'id': c.id})}}\">
+\t\t\t\t\t\t\t\t<i id=\"btnEdit\" title=\"Modifier un compte parent\" class=\"far fa-edit\" style=\"font-size:16px;\"></i>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<a href=\"{{path('sous_compte_new', {'id': c.id})}}\">
+\t\t\t\t\t\t\t\t<i id=\"btnAdd\" title=\"Ajouter un sous-compte\" class=\"far fa-plus-square\" style=\"font-size:17px;color:green\"></i>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<br>
+\t\t\t\t\t\t\t<i class=\"fas fa-list-alt\"></i>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t</tr>
+\t\t\t\t{% endfor %}
+\t\t\t</tbody>
+\t\t</table>
+\t</div>
 
 {% endblock %}
 ", "cloud_compte/compte/listCloudCompte.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\cloud_compte\\compte\\listCloudCompte.html.twig");

@@ -13,11 +13,9 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/service' => [[['_route' => 'service', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudCompteController::loading'], null, null, null, false, false, null]],
-        '/service/new' => [[['_route' => 'service_new', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudCompteController::ajouter'], null, null, null, false, false, null]],
-        '/compte' => [[['_route' => 'compte', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::loading'], null, null, null, false, false, null]],
-        '/compte/new' => [[['_route' => 'compte_new', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::ajouter'], null, null, null, false, false, null]],
-        '/compte/edit' => [[['_route' => 'compte_edit', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::modifier'], null, null, null, false, false, null]],
+        '/sous_comptes' => [[['_route' => 'sous_compte', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudCompteController::loading'], null, null, null, false, false, null]],
+        '/comptes' => [[['_route' => 'compte', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::loading'], null, null, null, false, false, null]],
+        '/comptes/new' => [[['_route' => 'compte_new', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::ajouter'], null, null, null, false, false, null]],
         '/commune' => [[['_route' => 'commune', '_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapCommuneController::ajouter'], null, null, null, false, false, null]],
         '/pays' => [[['_route' => 'pays', '_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapPaysController::loading'], null, null, null, false, false, null]],
         '/prefecture' => [[['_route' => 'prefecture', '_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapPrefectureController::ajouter'], null, null, null, false, false, null]],
@@ -57,7 +55,11 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/compte/type_service/(\\d+)(*:195)'
+                .'|/sous_comptes/([^/]++)/new(*:195)'
+                .'|/compte(?'
+                    .'|s/([^/]++)/edit(*:228)'
+                    .'|/type_service/(\\d+)(*:255)'
+                .')'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -68,7 +70,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        195 => [
+        195 => [[['_route' => 'sous_compte_new', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudCompteController::ajouter'], ['id'], null, null, false, false, null]],
+        228 => [[['_route' => 'compte_edit', '_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::modifier'], ['id'], null, null, false, false, null]],
+        255 => [
             [['_route' => 'editcloudtypeservice', '_controller' => 'App\\Controller\\CloudCompteControllers\\Params\\CloudTypeServiceController::moutonEditAction'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -78,7 +78,7 @@ class Utilisateur extends BaseEntity implements UserInterface
 
     /**
      *
-     * @Assert\EqualTo(propertyPath="password", message="Echec de la confirmation du mot de passe. Réessayez !")
+     * @Assert\EqualTo(propertyPath="password", message="Echec lors de la confirmation du mot de passe. Réessayez !")
      */
     private $passwordConfirm;
 

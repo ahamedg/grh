@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CloudFamilleCompteRepository")
@@ -103,6 +103,12 @@ class CloudFamilleCompte extends BaseEntity
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $logoCloudFamilleCompte;
+
+    /**
+     *
+     * @Assert\EqualTo(propertyPath="cleAccesCloudFamilleCompte", message="Echec lors de la confirmation de la clé d'accès. Réessayez !")
+     */
+    private $cleAccesCloudFamilleCompteConfirm;
 
     public function getId(): ?int
     {
@@ -273,6 +279,18 @@ class CloudFamilleCompte extends BaseEntity
     public function setLogoCloudFamilleCompte(?string $logoCloudFamilleCompte): self
     {
         $this->logoCloudFamilleCompte = $logoCloudFamilleCompte;
+
+        return $this;
+    }
+
+    public function getCleAccesCloudFamilleCompteConfirm(): ?string
+    {
+        return $this->cleAccesCloudFamilleCompteConfirm;
+    }
+
+    public function setCleAccesCloudFamilleCompteConfirm(?string $cleAccesCloudFamilleCompteConfirm): self
+    {
+        $this->cleAccesCloudFamilleCompteConfirm = $cleAccesCloudFamilleCompteConfirm;
 
         return $this;
     }

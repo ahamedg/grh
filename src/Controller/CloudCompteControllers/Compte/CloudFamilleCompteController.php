@@ -16,7 +16,7 @@ class CloudFamilleCompteController extends AbstractController
     private $listCloudFamilleCompte = [];
 
     /**
-     * @Route("/compte", name="compte")
+     * @Route("/comptes", name="compte")
      * @return Response
      */
     public function loading()
@@ -29,7 +29,7 @@ class CloudFamilleCompteController extends AbstractController
     }
 
     /**
-     * @Route("/compte/new", name="compte_new")
+     * @Route("/comptes/new", name="compte_new")
      * 
      * Permet de créer un nouveau compte
      * @return Response
@@ -65,7 +65,7 @@ class CloudFamilleCompteController extends AbstractController
     }
 
     /**
-     * @Route("/compte/{id}/edit", name="compte_edit")
+     * @Route("/comptes/{id}/edit", name="compte_edit")
      * 
      * Permet de modifier un compte famille !
      * @return Response

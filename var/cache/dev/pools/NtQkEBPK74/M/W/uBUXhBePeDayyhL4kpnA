@@ -8,10 +8,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/service/new',
+                '/sous_comptes/{id}/new',
             ],
             'name' => [
-                'service_new',
+                'sous_compte_new',
             ],
         ],
     ],

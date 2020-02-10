@@ -65,16 +65,14 @@ class __TwigTemplate_d62a26cd63e181bd68e98814f59e58329f86f1c399b37e5385f72c11b0e
         <li class=\"active\"><a href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("compte");
-        echo "\">Compte</a></li>
+        echo "\">Comptes</a></li>
         <li class=\"active\"><a href=\"";
         // line 9
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("service");
-        echo "\">Service/subdivision</a></li>
-        <li class=\"active\"><a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("service_new");
-        echo "\">Nouveau service/subdivision</a></li>
-    </ul>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sous_compte");
+        echo "\">Sous-comptes</a></li>
+        ";
+        // line 11
+        echo "    </ul>
 </div>
 ";
         
@@ -97,7 +95,7 @@ class __TwigTemplate_d62a26cd63e181bd68e98814f59e58329f86f1c399b37e5385f72c11b0e
 
     public function getDebugInfo()
     {
-        return array (  75 => 10,  71 => 9,  67 => 8,  63 => 7,  59 => 6,  55 => 5,  51 => 4,  47 => 3,  43 => 1,);
+        return array (  75 => 11,  71 => 9,  67 => 8,  63 => 7,  59 => 6,  55 => 5,  51 => 4,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -109,9 +107,9 @@ class __TwigTemplate_d62a26cd63e181bd68e98814f59e58329f86f1c399b37e5385f72c11b0e
         <li class=\"active\"><a href=\"{{ path('type_compte') }}\">Type compte</a></li>
         <li class=\"active\"><a href=\"{{ path('type_budget') }}\">Type budget</a></li>
         <li class=\"active\"><a href=\"{{ path('section') }}\">Section</a></li>
-        <li class=\"active\"><a href=\"{{ path('compte') }}\">Compte</a></li>
-        <li class=\"active\"><a href=\"{{ path('service') }}\">Service/subdivision</a></li>
-        <li class=\"active\"><a href=\"{{ path('service_new') }}\">Nouveau service/subdivision</a></li>
+        <li class=\"active\"><a href=\"{{ path('compte') }}\">Comptes</a></li>
+        <li class=\"active\"><a href=\"{{ path('sous_compte') }}\">Sous-comptes</a></li>
+        {# <li class=\"active\"><a href=\"{{ path('service_new') }}\">Nouveau service/subdivision</a></li> #}
     </ul>
 </div>
 ", "cloud_compte/pills/paramComptePills.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\cloud_compte\\pills\\paramComptePills.html.twig");
