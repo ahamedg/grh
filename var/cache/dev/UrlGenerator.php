@@ -19,6 +19,7 @@ return [
     'service_new' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudCompteController::ajouter'], [], [['text', '/service/new']], [], []],
     'compte' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::loading'], [], [['text', '/compte']], [], []],
     'compte_new' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::ajouter'], [], [['text', '/compte/new']], [], []],
+    'compte_edit' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Compte\\CloudFamilleCompteController::modifier'], [], [['text', '/compte/edit']], [], []],
     'commune' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapCommuneController::ajouter'], [], [['text', '/commune']], [], []],
     'pays' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapPaysController::loading'], [], [['text', '/pays']], [], []],
     'prefecture' => [[], ['_controller' => 'App\\Controller\\CloudCompteControllers\\Localisation\\MapPrefectureController::ajouter'], [], [['text', '/prefecture']], [], []],

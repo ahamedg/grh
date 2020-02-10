@@ -447,6 +447,9 @@
     <service id="App\Form\CloudCompteForms\Compte\CloudCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudCompteFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -948,6 +951,7 @@
       <argument type="collection">
         <argument>App\Form\ApplicationType</argument>
         <argument>App\Form\CloudCompteForms\Compte\CloudCompteFormType</argument>
+        <argument>App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType</argument>
         <argument>App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType</argument>
         <argument>App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType</argument>
         <argument>App\Form\CloudCompteForms\Params\CloudSectionFormType</argument>
@@ -1286,7 +1290,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.6D_r6Fl"/>
+      <argument type="service" id=".service_locator.BRkNgIK"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5002,6 +5006,8 @@
     <service id=".abstract.instanceof.App\Form\ApplicationType" class="App\Form\ApplicationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloudCompteForms\Compte\CloudCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudCompteFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CloudCompteForms\Compte\CloudCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudCompteFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" class="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType" class="App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType" autowire="true" abstract="true"/>
@@ -5317,11 +5323,12 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6D_r6Fl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.BRkNgIK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ApplicationType" type="service" id="App\Form\ApplicationType"/>
         <argument key="App\Form\CloudCompteForms\Compte\CloudCompteFormType" type="service" id="App\Form\CloudCompteForms\Compte\CloudCompteFormType"/>
+        <argument key="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType" type="service" id="App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType"/>
         <argument key="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType" type="service" id="App\Form\CloudCompteForms\Compte\CloudFamilleCompteFormType"/>
         <argument key="App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType" type="service" id="App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType"/>
         <argument key="App\Form\CloudCompteForms\Params\CloudSectionFormType" type="service" id="App\Form\CloudCompteForms\Params\CloudSectionFormType"/>

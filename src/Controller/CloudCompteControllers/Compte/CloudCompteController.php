@@ -39,7 +39,7 @@ class CloudCompteController extends AbstractController
         $form->handleRequest($request);
         dump($cloudCompte);
         if ($form->isSubmitted() && $form->isValid()) {
-        dump($cloudCompte);
+            dump($cloudCompte);
             $rand = random_int(100, 1000);
             $code = "CODECP$rand";
             //dump($code);
