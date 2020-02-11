@@ -124,6 +124,43 @@ class CloudCompteController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/sous_comptes/{id}/edit", name="sous_compte_edit")
+     * Permet de modifier un sous-compte
+     * @return Response
+     */
+    public function modifier(Request $request, $id)
+    {
+        //Il faut récupérer l'id du sous-compte à modifier
+        $repo = $this->getDoctrine()->getRepository(CloudCompte::class);
+        $cloudCompte = $repo->find($id);
+
+        $cloudFamilleCompte = $cloudCompte->getCloudFamilleCompte();
+        dump($cloudCompte);
+        dump($cloudFamilleCompte);
+
+        $form = $this->createForm(CloudCompteFormType::class, $cloudCompte);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            //dump($cloudFamilleCompte);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cloudCompte);
+            $manager->flush();
+            $this->addFlash('success', 'Modification effectuée avec succès !');
+
+            return $this->redirectToRoute('sous_compte', [
+                'listCloudCompte' => $this->listCloudCompte,
+            ]);
+        }
+        return $this->render('cloud_compte/compte/editCloudCompte.html.twig', [
+            'form' => $form->createView(),
+            'cloudCompte' => $cloudCompte,
+            'cloudFamilleCompte' => $cloudFamilleCompte,
+            'listCloudCompte' => $this->listCloudCompte,
+        ]);
+    }
+
     /*
    * Permet d'avoir la liste des comptes issus de la base !
    * @return array
