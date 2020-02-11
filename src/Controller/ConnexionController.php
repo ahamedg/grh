@@ -12,7 +12,7 @@ class ConnexionController extends AbstractController
     /**
      * Permet de se connecter
      * @Route("/", name="login")
-     * @return Response
+     * @return Response 
      */
     public function login(AuthenticationUtils $utils)
     {
@@ -22,7 +22,7 @@ class ConnexionController extends AbstractController
 
         return $this->render('connexion/login.html.twig', [
             'hasError' => $error !== null,
-            'username'=>$username
+            'username' => $username
         ]);
     }
 
@@ -34,6 +34,6 @@ class ConnexionController extends AbstractController
      * */
     public function logout()
     {
-//rien
+        //rien
     }
 }
