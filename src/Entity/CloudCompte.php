@@ -61,7 +61,7 @@ class CloudCompte extends BaseEntity
     private $profondeurCloudCompte;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $sigleCloudCompte;
 
@@ -125,6 +125,11 @@ class CloudCompte extends BaseEntity
      */
     private $cloudFamilleCompte;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\CloudCompte")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $cloudCompte;
 
     public function getId(): ?int
     {
@@ -359,4 +364,15 @@ class CloudCompte extends BaseEntity
         return $this;
     }
 
+    public function getCloudCompte(): ?self
+    {
+        return $this->cloudCompte;
+    }
+
+    public function setCloudCompte(?self $cloudCompte): self
+    {
+        $this->cloudCompte = $cloudCompte;
+
+        return $this;
+    }
 }

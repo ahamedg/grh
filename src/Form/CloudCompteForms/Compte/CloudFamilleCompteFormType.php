@@ -31,9 +31,9 @@ class CloudFamilleCompteFormType extends ApplicationType
             ->add('sigleCloudFamilleCompte', TextType::class, $this->getConfiguration('Sigle', 'Saisir sigle du compte...', ['required' => false]))
             ->add('emailCloudFamilleCompte', TextType::class, $this->getConfiguration('Email *', 'Adresse email...'))
             ->add('telephoneCloudFamilleCompte', TextType::class, $this->getConfiguration('N° Téléphone *', 'N° Téléphone...'))
-            ->add('pays', EntityType::class, ['class' => MapPays::class, 'choice_label' => 'nomPays', 'placeholder' => 'Sélectionner un pays...'])
-            ->add('states', EntityType::class, ['class' => MapStates::class, 'choice_label' => 'nomStates', 'placeholder' => 'Sélectionner un State/Région...'])
-            ->add('ville', EntityType::class, ['class' => MapVille::class, 'choice_label' => 'nomVille', 'placeholder' => 'Sélectionner une ville...'])
+            ->add('pays', EntityType::class, ['class' => MapPays::class, 'choice_label' => 'nomPays', 'label' => 'Pays *', 'placeholder' => 'Sélectionner un pays...'])
+            ->add('states', EntityType::class, ['class' => MapStates::class, 'choice_label' => 'nomStates', 'label' => 'State/Région *', 'placeholder' => 'Sélectionner un State/Région...'])
+            ->add('ville', EntityType::class, ['class' => MapVille::class, 'choice_label' => 'nomVille', 'label' => 'Ville *', 'placeholder' => 'Sélectionner une ville...'])
             ->add('logoCloudFamilleCompte', FileType::class, $this->getConfiguration('Logo', 'Chercher un logo...', ['required' => false]))
             ->add('adresseCloudFamilleCompte', TextareaType::class, $this->getConfiguration('Adresse', 'Mettre une adresse...', ['required' => false]))
             ->add('descriptionCloudFamilleCompte', TextareaType::class, $this->getConfiguration('Description', 'Mettre une description...', ['required' => false]));

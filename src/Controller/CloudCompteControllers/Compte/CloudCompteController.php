@@ -28,13 +28,14 @@ class CloudCompteController extends AbstractController
     }
 
     /**
-     * @Route("/sous_comptes/{id}/new", name="sous_compte_new")
+     * @Route("/sous_comptes/{id}/new", name="sous_compte_new_by_compte")
      * Permet de créer un nouveau sous-compte
      * 
      * @return Response
      */
-    public function ajouter(Request $request, $id)
+    public function ajouterFromCompte(Request $request, $id)
     {
+        //Il faut récupérer l'id du compte parent
         $repo = $this->getDoctrine()->getRepository(CloudFamilleCompte::class);
         $cloudFamilleCompte = $repo->find($id);
 
@@ -65,15 +66,66 @@ class CloudCompteController extends AbstractController
             ]);
         }
 
-        return $this->render('cloud_compte/compte/nouveauCloudCompte.html.twig', [
+        return $this->render('cloud_compte/compte/nouveauCloudCompteFromFamilleCompte.html.twig', [
             'form' => $form->createView(),
-            'cloudFamilleCompte'=> $cloudFamilleCompte,
+            'cloudFamilleCompte' => $cloudFamilleCompte,
+            'listCloudCompte' => $this->listCloudCompte,
+        ]);
+    }
+
+    /**
+     * @Route("/sous_comptes/{id}/new2", name="sous_compte_new_by_sous_compte")
+     * Permet de créer un nouveau sous-compte
+     * 
+     * @return Response
+     */
+    public function ajouterFromSousCompte(Request $request, $id)
+    {
+        //Il faut récupérer l'id du sous-compte parent
+        $repo = $this->getDoctrine()->getRepository(CloudCompte::class);
+        $cloudCompte = $repo->find($id);
+
+        $cloudFamilleCompte = $cloudCompte->getCloudFamilleCompte();
+
+        dump($cloudCompte);
+        dump($cloudFamilleCompte);
+
+
+        $cloudCompteFils = new CloudCompte();
+
+        $form = $this->createForm(CloudCompteFormType::class, $cloudCompteFils);
+        $form->handleRequest($request);
+        //dump($cloudCompte);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($cloudCompte);
+            $rand = random_int(100, 1000);
+            $code = "CODECP$rand";
+            //dump($code);
+            //dump($now);
+            $cloudCompteFils->setCodeCloudCompte($code)
+                ->setProfondeurCloudCompte($cloudCompte->getProfondeurCloudCompte() + 1)
+                ->setCloudCompte($cloudCompte)
+                ->setCloudFamilleCompte($cloudFamilleCompte);
+            //dump($cloudCompte);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cloudCompteFils);
+            $manager->flush();
+            $this->addFlash('success', 'Enregistrement effectué avec succès !');
+
+            return $this->redirectToRoute('sous_compte', [
+                'listCloudCompte' => $this->listCloudCompte,
+            ]);
+        }
+
+        return $this->render('cloud_compte/compte/nouveauCloudCompteFromCompte.html.twig', [
+            'form' => $form->createView(),
+            'cloudCompte' => $cloudCompte,
             'listCloudCompte' => $this->listCloudCompte,
         ]);
     }
 
     /*
-   * Permet d'avoir la liste des familles de compte issus de la base !
+   * Permet d'avoir la liste des comptes issus de la base !
    * @return array
    * */
     private function getListCloudCompte()

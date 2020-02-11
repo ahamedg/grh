@@ -56,18 +56,18 @@
 						</td>
 						<td class="text-center">
 							{% if c.actif==true %}
-								<i id="etatActif" class="far fa-check-circle" style="font-size:20px;color:green" title="Compte actif"></i>
+								<i id="etatActif" class="far fa-check-circle" style="font-size:20px;color:green" title="Sous-compte actif"></i>
 							{% else %}
 								{# <i id="etatInactif" class="btn-success fas fa-check-circle" style="width: 50%"></i> #}
-								<i id="etatInactif" class="far fa-times-circle" style="font-size:20px;color:red" title="Compte inactif"></i>
+								<i id="etatInactif" class="far fa-times-circle" style="font-size:20px;color:red" title="Sous-compte inactif"></i>
 							{% endif %}
 						</td>
 						<td class="text-center">
 							<a href="{{path('compte_edit', {'id': c.id})}}">
-								<i id="btnEdit" title="Modifier un compte parent" class="far fa-edit" style="font-size:16px;"></i>
+								<i id="btnEdit" title="Modifier un sous-compte parent" class="far fa-edit" style="font-size:16px;"></i>
 							</a>
-							<a href="{{path('sous_compte_new', {'id': c.id})}}">
-								<i id="btnAdd" title="Ajouter un sous-compte" class="far fa-plus-square" style="font-size:17px;color:green"></i>
+							<a href="{{path('sous_compte_new_by_sous_compte', {'id': c.id})}}">
+								<i id="btnAdd" title="Ajouter un sous-compte à partir d'un sous-compte parent" class="far fa-plus-square" style="font-size:17px;color:green"></i>
 							</a>
 							<br>
 							<i class="fas fa-list-alt"></i>

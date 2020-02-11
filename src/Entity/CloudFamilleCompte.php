@@ -46,7 +46,7 @@ class CloudFamilleCompte extends BaseEntity
     private $cleAccesCloudFamilleCompte;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $sigleCloudFamilleCompte;
 
