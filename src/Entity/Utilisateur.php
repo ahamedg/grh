@@ -82,6 +82,11 @@ class Utilisateur extends BaseEntity implements UserInterface
      */
     private $passwordConfirm;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adresseUtilisateur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -229,6 +234,18 @@ class Utilisateur extends BaseEntity implements UserInterface
     public function setPasswordConfirm(string $passwordConfirm): self
     {
         $this->passwordConfirm = $passwordConfirm;
+
+        return $this;
+    }
+
+    public function getAdresseUtilisateur(): ?string
+    {
+        return $this->adresseUtilisateur;
+    }
+
+    public function setAdresseUtilisateur(?string $adresseUtilisateur): self
+    {
+        $this->adresseUtilisateur = $adresseUtilisateur;
 
         return $this;
     }

@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block  breadcrumb %}
     <li class="breadcrumb-item"><a href="{{ path('utilisateur') }}"> Liste des utilisateurs</a></li>
-    <li class="breadcrumb-item active"> Nouvel utilisateur</li>
+    <li class="breadcrumb-item active"> Modification d'un utilisateur</li>
 {% endblock %}
 {% block body_inside %}
     <div class="container">
         <div class="card card-success">
             <div class="card-header">
-                Création d'un nouvel utilisateur
+                Modification d'un nouvel utilisateur
             </div>
             <div class="card-body">
                 {{ form_start(form) }}
@@ -15,15 +15,16 @@
                     <div class="col-md-6">
                         <div class="form-group">{{ form_row(form.username) }}</div>
                         <div class="form-group">{{ form_row(form.emailCompte) }}</div>
-                        <div class="form-group">{{ form_row(form.password) }}</div>
-                        <div class="form-group">{{ form_row(form.passwordConfirm) }}</div>
+                        {# <div class="form-group">{{ form_row(form.password) }}</div>
+                        <div class="form-group">{{ form_row(form.passwordConfirm) }}</div> #}
                         <div class="form-group"></div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">{{ form_row(form.telephone1Utilisateur) }}</div>
                         <div class="form-group">{{ form_row(form.telephone2Utilisateur) }}</div>
-                        <div class="form-group">{{ form_row(form.nomPhotoProfil) }}</div>
+                        {# <div class="form-group">{{ form_row(form.nomPhotoProfil) }}</div> #}
                         <div class="form-group">{{ form_row(form.adresseUtilisateur) }}</div>
+                        <div class="form-group"></div>
                         <br>
                         <div class="form-group">
                             <div class="row">

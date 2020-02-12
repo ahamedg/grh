@@ -4,32 +4,34 @@ namespace App\Controller;
 
 use App\Entity\Utilisateur;
 use App\Form\UtilisateurFormType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Form\UtilisateurEditFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UtilisateurController extends AbstractController
 {
 
+    private $listUtilisateur = [];
     /**
-     * @Route("/accueil/utilisateur", name="utilisateur")
+     * @Route("/utilisateurs", name="utilisateur")
      * Permet de créer un nouvel utilisateur
      * @return Response
      */
     public function loading()
     {
-        $listUtilisateur = $this->getListUtilisateur();
+        $this->listUtilisateur = $this->getListUtilisateur();
 
         return $this->render('utilisateur/listUtilisateur.html.twig', [
-            'listUtilisateur' => $listUtilisateur,
+            'listUtilisateur' => $this->listUtilisateur,
         ]);
     }
 
 
     /**
-     * @Route("/accueil/utilisateur/new", name="utilisateur_new")
+     * @Route("/utilisateurs/new", name="utilisateur_new")
      * Permet de créer un nouvel utilisateur
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
@@ -37,7 +39,6 @@ class UtilisateurController extends AbstractController
      */
     public function ajouter(Request $request, UserPasswordEncoderInterface $encoder)
     {
-        $listUtilisateur = $this->getListUtilisateur();
         $utilisateur = new Utilisateur();
 
         $form = $this->createForm(UtilisateurFormType::class, $utilisateur);
@@ -62,14 +63,45 @@ class UtilisateurController extends AbstractController
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
             //return $utilisateur;
             return $this->redirectToRoute('utilisateur', [
-                'listUtilisateur' => $listUtilisateur,
+                'listUtilisateur' => $this->listUtilisateur,
             ]);
         }
         return $this->render('utilisateur/nouveauUtilisateur.html.twig', [
             'form' => $form->createView(),
-            'listUtilisateur' => $listUtilisateur,
         ]);
     }
+
+    /**
+     * @Route("/utilisateurs/{id}/edit", name="utilisateur_edit")
+     * Permet de modifier un utilisateur
+     * @param Request $request
+     * @return Response
+     */
+    public function modifier(Request $request, $id)
+    {
+        //Il faut récupérer l'id de l'utilisateur à modifier
+        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $utilisateur = $repo->find($id);
+
+        $form = $this->createForm(UtilisateurEditFormType::class, $utilisateur);
+        $form->handleRequest($request);
+        dump($utilisateur);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($utilisateur);
+            $manager->flush();
+            $this->addFlash('success', 'Modification effectuée avec succès !');
+
+            return $this->redirectToRoute('utilisateur', [
+                'listUtilisateur' => $this->listUtilisateur,
+            ]);
+        }
+        return $this->render('utilisateur/editUtilisateur.html.twig', [
+            'form' => $form->createView(),
+            //'listUtilisateur' => $this->listUtilisateur,
+        ]);
+    }
+
 
     /*
   * Permet d'avoir la liste des catégories de service issues de la base !
