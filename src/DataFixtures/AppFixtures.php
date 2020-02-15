@@ -62,7 +62,7 @@ class AppFixtures extends Fixture
 
 
         //Nous gérons les catégories services
-        for ($i = 1; $i <= 5; $i++) {
+        /*for ($i = 1; $i <= 5; $i++) {
             $cloudCategorieService = new CloudCategorieService();
 
             $cloudCategorieService->setCode("CODECAT$i")
@@ -109,7 +109,7 @@ class AppFixtures extends Fixture
                 ->setLibelle("Section cloud **==$i")
                 ->setDescription("Description ***===$i");
             $manager->persist($cloudSection);
-        }
+        }*/
 
         // //Nous gérons les préfectures
         // for ($i = 1; $i <= 5; $i++) {
