@@ -6,8 +6,10 @@
 	<li class="breadcrumb-item active">Modification sous-compte</li>
 {% endblock %}
 {% block body_inside %}
+{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
 	<br>
 	<div class="container">
+	<h3></h3>
 		{{ form_start(form) }}
 		<div class="row">
 			<div class="col-md-6">

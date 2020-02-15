@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="form-group">
 			<a href="{{ path('compte_new') }}" class="">
-				<button type="button" class="btn btn-info" href="{{ path('compte_new') }}">Nouveau compte</button>
+				<button type="button" class="btn btn-info float-right" href="{{ path('compte_new') }}">Nouveau compte</button>
 			</a>
 		</div>
 		<table class="table table-bordered">
@@ -71,10 +71,10 @@
 						</td>
 						<td class="text-center">
 							<a href="{{path('compte_edit', {'id': fc.id})}}">
-								<i id="btnEdit" title="Modifier un compte parent" class="far fa-edit" style="font-size:16px;"></i>
+								<i id="btnEdit" title="Modifier" class="far fa-edit" style="font-size:16px;"></i>
 							</a>
 							<a href="{{path('sous_compte_new_by_compte', {'id': fc.id})}}">
-								<i id="btnAdd" title="Ajouter un sous-compte à partir d'un compte parent" class="far fa-plus-square" style="font-size:17px;color:green"></i>
+								<i id="btnAdd" title="Ajouter un sous-compte" class="far fa-plus-square" style="font-size:17px;color:green"></i>
 							</a>
 							<br>
 							<i class="fas fa-list-alt"></i>

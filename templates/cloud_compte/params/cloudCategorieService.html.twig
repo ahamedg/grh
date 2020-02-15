@@ -64,58 +64,33 @@
 		</div>
 
 
-		<div class="modal fade" id="modal-secondary">
-			<div class="modal-dialog">
-				<div class="modal-content bg-secondary">
-					<div class="modal-header">
-						<h4 class="modal-title">Secondary Modal</h4>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<p>One fine body&hellip;</p>
-					</div>
-					<div class="modal-footer justify-content-between">
-						<button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-outline-light">Save changes</button>
-					</div>
+	</div>
+
+	<div class="modal fade" id="editCloudCategorieServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Modification d'une catégorie service</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
 				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
-
-
-		<div class="modal fade" id="editCloudCategorieServiceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle">Modification d'une catégorie service</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form action="" method="get" role="form">
-							<div class="form-group">
-								<label for="libelle">Libellé</label>
-								<input type="text" class="form-control" id="libelle" placeholder="Libellé">
-							</div>
-							<div class="form-group">
-								<label>Description</label>
-								<textarea class="form-control" rows="3" placeholder="Description ..."></textarea>
-							</div>
-							<div class="">
-								<button type="submit" class="btn btn-primary float-right">Enregistrer</button>
-							</div>
-						</form>
-					</div>
+				<div class="modal-body">
+					<form action="" method="get" role="form">
+						<div class="form-group">
+							<label for="libelle">Libellé</label>
+							<input type="text" class="form-control" id="libelle" placeholder="Libellé">
+						</div>
+						<div class="form-group">
+							<label>Description</label>
+							<textarea class="form-control" rows="3" placeholder="Description ..."></textarea>
+						</div>
+						<div class="">
+							<button type="submit" class="btn btn-primary float-right">Enregistrer</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 {% endblock %}

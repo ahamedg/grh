@@ -3,8 +3,10 @@
 	pro6- GRH / Création d'un compte
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item active">
-		Nouveau compte</li>
+	<li class="breadcrumb-item">
+		<a href="{{path('compte')}}">Comptes</a>
+	</li>
+	<li class="breadcrumb-item active">Nouveau compte</li>
 {% endblock %}
 
 {% block body_inside %}
