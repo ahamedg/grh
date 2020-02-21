@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Utilisateur;
+use App\Entity\AccountUtilisateur;
 use App\Form\UtilisateurFormType;
 use App\Form\UtilisateurEditFormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,10 +36,11 @@ class UtilisateurController extends AbstractController
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request, UserPasswordEncoderInterface $encoder)
     {
-        $utilisateur = new Utilisateur();
+        $utilisateur = new AccountUtilisateur();
 
         $form = $this->createForm(UtilisateurFormType::class, $utilisateur);
         $form->handleRequest($request);
@@ -59,7 +60,7 @@ class UtilisateurController extends AbstractController
             $manager->persist($utilisateur);
             $manager->flush();
             $listUtilisateur = $this->getListUtilisateur();
-            //$utilisateur = new Utilisateur();
+            //$utilisateur = new AccountUtilisateur();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
             //return $utilisateur;
             return $this->redirectToRoute('utilisateur', [
@@ -80,7 +81,7 @@ class UtilisateurController extends AbstractController
     public function modifier(Request $request, $id)
     {
         //Il faut récupérer l'id de l'utilisateur à modifier
-        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $repo = $this->getDoctrine()->getRepository(AccountUtilisateur::class);
         $utilisateur = $repo->find($id);
 
         $form = $this->createForm(UtilisateurEditFormType::class, $utilisateur);
@@ -109,7 +110,7 @@ class UtilisateurController extends AbstractController
   * */
     private function getListUtilisateur()
     {
-        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $repo = $this->getDoctrine()->getRepository(AccountUtilisateur::class);
         return $repo->findAll();
     }
 }

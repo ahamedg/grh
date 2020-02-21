@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\CloudCategorieService;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method CloudCategorieService|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,24 +18,17 @@ class CloudCategorieServiceRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, CloudCategorieService::class);
+        
     }
 
-    // /**
-    //  * @return CloudCategorieService[] Returns an array of CloudCategorieService objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findAllByIdCompte()
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $qb = new QueryBuilder();
+        $qb->select('*')
+            ->from('CloudCategorieService', 'cat')
+            ->orderBy('cat.libelle', 'ASC');
+        return $qb;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?CloudCategorieService

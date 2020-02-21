@@ -1,188 +1,380 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
-			{% block title %}
-				pro6- GRH
-			{% endblock %}
-		</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}
+            pro6- GRH
+        {% endblock %}
+    </title>
 
 
-		{% block stylesheets %}
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/fontawesome-free/css/all.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/jqvmap/jqvmap.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/dist/css/adminlte.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/ion-rangeslider/css/ion.rangeSlider.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/jqvmap/jqvmap.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/select2/css/select2.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/summernote/summernote.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/summernote/summernote-bs4.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/sweetalert2/sweetalert2.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/chart.js/Chart.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables-scroller/css/scroller.bootstrap4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables-select/css/select.bootstrap4.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/ekko-lightbox/ekko-lightbox.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/flag-icon-css/css/flag-icon.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar/main.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-bootstrap/main.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-daygrid/main.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-timegrid/main.min.css') }}">
-			<link rel="stylesheet" href="{{ asset('admin-lte/plugins/toastr/toastr.min.js') }}">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/jqvmap/jqvmap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/dist/css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/ion-rangeslider/css/ion.rangeSlider.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/jqvmap/jqvmap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/select2/css/select2.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/summernote/summernote.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/summernote/summernote-bs4.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/sweetalert2/sweetalert2.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap-slider/css/bootstrap-slider.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/chart.js/Chart.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+        <link rel="stylesheet"
+              href="{{ asset('admin-lte/plugins/datatables-scroller/css/scroller.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables-select/css/select.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/ekko-lightbox/ekko-lightbox.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/flag-icon-css/css/flag-icon.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar/main.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-bootstrap/main.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-daygrid/main.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/fullcalendar-timegrid/main.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/toastr/toastr.min.js') }}">
 
-			<link
-			rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">
+        {# <link rel="stylesheet" href="{{ asset('../node_modules/bootstrap/dist/css/bootstrap.min.css')}}"> #}
+        <!-- Nos css intégrés -->
+        <link rel="stylesheet"
+              href="{{ asset('customs/css/style.css') }}"> {# <link rel="stylesheet" href="{{ asset('customs/css/ionicons.min.css') }}"> #}
+        {# <link rel="stylesheet" href="{{ asset('customs/css/font-awesome.min.css') }}"> #}
+    {% endblock %}
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+{% block body %}
+    <div class="wrapper">
+        {% include 'partials/header.html.twig' %}
+        {% include 'partials/sidebar.html.twig' %}
+        <!-- Content Wrapper. Contains page content -->
+        <div
+                class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6"></div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item">
+                                    <a href="/accueil">Home</a>
+                                </li>
+                                {% block  breadcrumb %}{% endblock %}
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+          {#      <div class="card card-success card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-edit"></i>
+                            SweetAlert2 Examples
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <button type="button" class="btn btn-success swalDefaultSuccess">
+                            Launch Success Toast
+                        </button>
+                        <button type="button" class="btn btn-info swalDefaultInfo">
+                            Launch Info Toast
+                        </button>
+                        <button type="button" class="btn btn-danger swalDefaultError">
+                            Launch Error Toast
+                        </button>
+                        <button type="button" class="btn btn-warning swalDefaultWarning">
+                            Launch Warning Toast
+                        </button>
+                        <button type="button" class="btn btn-default swalDefaultQuestion">
+                            Launch Question Toast
+                        </button>
+                        <div class="text-muted mt-3">
+                            For more examples look at <a href="https://sweetalert2.github.io/">https://sweetalert2.github.io/</a>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>#}
+                {% for label, messages in app.flashes %}
+                    <div class="container">
+                        <div class="alert alert-{{ label }}">
+                            {% for message in messages %}
 
-			<!-- Nos css intégrés -->
-			<link rel="stylesheet" href="{{ asset('customs/css/style.css') }}">
-			<link rel="stylesheet" href="{{ asset('customs/css/ionicons.min.css') }}">
-		{% endblock %}
-	</head>
-	<body class="hold-transition sidebar-mini layout-fixed">
-		{% block body %}
-			<div class="wrapper">
-				{% include 'partials/header.html.twig' %}
-				{% include 'partials/sidebar.html.twig' %}
-				<!-- Content Wrapper. Contains page content -->
-				<div
-					class="content-wrapper">
-					<!-- Content Header (Page header) -->
-					<div class="content-header">
-						<div class="container-fluid">
-							<div class="row mb-2">
-								<div class="col-sm-6"></div>
-								<!-- /.col -->
-								<div class="col-sm-6">
-									<ol class="breadcrumb float-sm-right">
-										<li class="breadcrumb-item">
-											<a href="/accueil">Home</a>
-										</li>
-										{% block  breadcrumb %}{% endblock %}
-									</ol>
-								</div>
-								<!-- /.col -->
-							</div>
-							<!-- /.row -->
-						</div>
-						<!-- /.container-fluid -->
-					</div>
-					<!-- /.content-header -->
-					<!-- Main content -->
-					<section class="content">
-						{% for label, messages in app.flashes %}
-							<div class="container">
-								<div class="alert alert-{{ label }}">
-									{% for message in messages %}
-										<p>{{ message }}</p>
-									{% endfor %}
-								</div>
-							</div>
-						{% endfor %}
-						<div class="container-fluid" style="background-color: white">
-							{% block body_inside %}{% endblock %}
-						</div>
-					</section>
-					<!-- /.content -->
-				</div>
-				<!-- /.content-wrapper -->
-				{% include 'partials/footer.html.twig' %}
-				<!-- Control Sidebar -->
-				<aside
-					class="control-sidebar control-sidebar-dark"><!-- Control sidebar content goes here -->
-				</aside>
-				<!-- /.control-sidebar -->
-			</div>
-			<!-- ./wrapper -->
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="container-fluid" style="background-color: white">
+                    {% block body_inside %}{% endblock %}
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        {% include 'partials/footer.html.twig' %}
+        <!-- Control Sidebar -->
+        <aside
+                class="control-sidebar control-sidebar-dark"><!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
 
 
-		{% endblock %}
-		{% block javascripts %}
-			<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/popper/popper.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/chart.js/Chart.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/sparklines/sparkline.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/moment/moment.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/summernote/summernote-bs4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/AdminLTE.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/CardRefresh.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/CardWidget.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/ControlSidebar.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/DirectChat.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/Dropdown.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/Layout.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/PushMenu.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/SiteSearch.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/Toasts.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/TodoList.js') }}"></script>
-			<script src="{{ asset('admin-lte/build/js/Treeview.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/chart.js/Chart.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/datatables-scroller/js/scroller.bootstrap4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/datatables-select/js/select.bootstrap4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fastclick/fastclick.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/filterizr/filterizr.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/filterizr/jquery.filterizr.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/flot/jquery.flot.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar/main.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar/locales-all.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar-bootstrap/main.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar-daygrid/main.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar-interaction/main.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/fullcalendar-timegrid/main.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/inputmask/inputmask/jquery.inputmask.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/jszip/jszip.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/pace-progress/pace.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/pdfmake/pdfmake.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/raphael/raphael.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/select2/js/select2.full.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/sparklines/sparkline.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/summernote/summernote.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/toastr/toastr.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-			<script src="{{ asset('admin-lte/dist/js/adminlte.js') }}"></script>
-			<script src="{{ asset('admin-lte/dist/js/pages/dashboard.js') }}"></script>
-			<script src="{{ asset('admin-lte/dist/js/demo.js') }}"></script>
-			<!-- Intégration jQuery de admin-lte-->
-			{#<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>#}
-			<script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/sparklines/sparkline.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/AdminLTE.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/CardRefresh.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/CardWidget.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/ControlSidebar.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/DirectChat.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/Dropdown.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/Layout.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/PushMenu.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/SiteSearch.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/Toasts.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/TodoList.js') }}"></script>
+    <script src="{{ asset('admin-lte/build/js/Treeview.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/bootstrap-slider/bootstrap-slider.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/datatables-scroller/js/scroller.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/datatables-select/js/select.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fastclick/fastclick.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/filterizr/filterizr.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/filterizr/jquery.filterizr.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar/main.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar/locales-all.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar-bootstrap/main.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar-daygrid/main.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar-interaction/main.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/fullcalendar-timegrid/main.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/inputmask/inputmask/jquery.inputmask.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/ion-rangeslider/js/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/overlayScrollbars/js/OverlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/pace-progress/pace.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/sparklines/sparkline.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/summernote/summernote.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="{{ asset('admin-lte/dist/js/adminlte.js') }}"></script>
+    <script src="{{ asset('admin-lte/dist/js/pages/dashboard.js') }}"></script>
+    <script src="{{ asset('admin-lte/dist/js/demo.js') }}"></script>
+    <!-- Intégration jQuery de admin-lte-->
+    {#<script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>#}
+    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    {# <link rel="stylesheet" href="{{ asset('../node_modules/bootstrap/dist/js/bootstrap.min.css')}}"> <!-- Nos css intégrés --> #}
+    <script src="{{ asset('customs/js/app.js') }}"></script>
+    {# // <script src="{{ asset('customs/js/popper.min.js') }}"></script> #}
+  {#  <script type="text/javascript">
+        $(function () {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'bottom-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
 
-			<!-- Nos css intégrés -->
-			<script src="{{ asset('customs/js/app.js') }}"></script>
-			{# // <script src="{{ asset('customs/js/popper.min.js') }}"></script> #}
-		{% endblock %}
-	</body>
+            $('.swalDefaultSuccess').click(function () {
+                Toast.fire({
+                    type: 'success',
+                    title: 'Du texte...'
+                })
+            });
+            $('.swalDefaultInfo').click(function () {
+                Toast.fire({
+                    type: 'info',
+                    title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.swalDefaultError').click(function () {
+                Toast.fire({
+                    type: 'error',
+                    title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.swalDefaultWarning').click(function () {
+                Toast.fire({
+                    type: 'warning',
+                    title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.swalDefaultQuestion').click(function () {
+                Toast.fire({
+                    type: 'question',
+                    title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+
+            $('.toastrDefaultSuccess').click(function () {
+                toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+            });
+            $('.toastrDefaultInfo').click(function () {
+                toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+            });
+            $('.toastrDefaultError').click(function () {
+                toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+            });
+            $('.toastrDefaultWarning').click(function () {
+                toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+            });
+
+            $('.toastsDefaultDefault').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultTopLeft').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    position: 'topLeft',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultBottomRight').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    position: 'bottomRight',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultBottomLeft').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    position: 'bottomLeft',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultAutohide').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    autohide: true,
+                    delay: 750,
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultNotFixed').click(function () {
+                $(document).Toasts('create', {
+                    title: 'Toast Title',
+                    fixed: false,
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultFull').click(function () {
+                $(document).Toasts('create', {
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    icon: 'fas fa-envelope fa-lg',
+                })
+            });
+            $('.toastsDefaultFullImage').click(function () {
+                $(document).Toasts('create', {
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    image: '../../dist/img/user3-128x128.jpg',
+                    imageAlt: 'User Picture',
+                })
+            });
+            $('.toastsDefaultSuccess').click(function () {
+                $(document).Toasts('create', {
+                    class: 'bg-success',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultInfo').click(function () {
+                $(document).Toasts('create', {
+                    class: 'bg-info',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultWarning').click(function () {
+                $(document).Toasts('create', {
+                    class: 'bg-warning',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultDanger').click(function () {
+                $(document).Toasts('create', {
+                    class: 'bg-danger',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+            $('.toastsDefaultMaroon').click(function () {
+                $(document).Toasts('create', {
+                    class: 'bg-maroon',
+                    title: 'Toast Title',
+                    subtitle: 'Subtitle',
+                    body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+                })
+            });
+        });
+
+    </script>#}
+{% endblock %}
+</body>
 </html>
