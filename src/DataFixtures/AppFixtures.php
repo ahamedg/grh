@@ -4,7 +4,7 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\MapCommune;
-use App\Entity\Utilisateur;
+use App\Entity\AccountUtilisateur;
 use App\Entity\CloudSection;
 use Faker\Provider\DateTime;
 use App\Entity\MapPrefecture;
@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
         $genres = ['male', 'female'];
 
         for ($i = 1; $i <= 3; $i++) {
-            $utilisateur = new Utilisateur();
+            $utilisateur = new AccountUtilisateur();
 
             $genre = $faker->randomElement($genres);
             $picture = 'https://randomuser.me/api/portraits/';
