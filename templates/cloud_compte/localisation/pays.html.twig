@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html.twig' %}
 {% block title %}
 	pro6- GRH / Pays
@@ -53,74 +52,3 @@
 
 {% endblock %}
 
-=======
-{% extends 'base.html.twig' %}
-{% block title %}
-	pro6- GRH / Pays
-{% endblock %}
-{% block  breadcrumb %}
-	<li class="breadcrumb-item active">Pays</li>
-{% endblock %}
-{% block body_inside %}
-	{% include 'cloud_compte/pills/localisationPills.html.twig' %}
-	<br/>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="card card-secondary">
-					<div class="card-header">
-						Les différents pays
-					</div>
-					<div class="card-body">
-						<table id="datableList" class="table table-bordered table-hover">
-							<thead>
-								<tr>
-									<th style="width: 3%">N°</th>
-									<th style="width: 40%">Indicatif</th>
-									<th style="width: 30%">Nom du pays</th>
-									<th style="width: 7%">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								{% for p in listMapPays %}
-									<tr>
-										<td>1</td>
-										<td>{{ p.indicatifPays }}</td>
-										<td>{{ p.nomPays }}</td>
-										<td>
-											<i id="btnEdit" data-toggle="modal" data-target="#editPaysModal" class="btn-default fa fa-edit"></i>
-											&#160;&#160;
-											<i class="fas fa-list-alt"></i>
-										</td>
-									</tr>
-								{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4"></div>
-	</div>
-
-{% endblock %}
-{# {% block javascripts %}
-	<script src="{{ asset('/admin-lte/plugins/datatables/jquery.dataTables.js') }}"></script>
-	<script src="{{ asset('/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
-	<script src="{{ asset('/admin-lte/dist/js/adminlte.min.js') }}"></script>
-	<script src="{{ asset('/admin-lte/dist/js/demo.js') }}"></script>
-	<script>
-		$(function () {
-$("#example1").DataTable();
-$('#datableList').DataTable({
-"paging": true,
-"lengthChange": false,
-"searching": false,
-"ordering": true,
-"info": true,
-"autoWidth": false
-});
-});
-	</script>
-{% endblock %} #}
->>>>>>> f97922464670ae7567a0ee9f1333e626d10212c4
