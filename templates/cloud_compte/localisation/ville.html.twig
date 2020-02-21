@@ -26,7 +26,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{% for v in listMapVille %}
+								{% for v in mapVille %}
 									<tr>
 										<td>1</td>
 										<td>{{ v.nomVille }}</td>
@@ -40,6 +40,9 @@
 								{% endfor %}
 							</tbody>
 						</table>
+						<div class="navigation">
+           						 {{ knp_pagination_render(mapVille) }}
+        				</div>
 					</div>
 				</div>
 			</div>

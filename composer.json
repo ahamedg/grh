@@ -8,6 +8,7 @@
     "cocur/slugify": "^4.0",
     "doctrine/annotations": "^1.8",
     "fzaninotto/faker": "^1.9",
+    "knplabs/knp-paginator-bundle": "^5.1",
     "sensio/framework-extra-bundle": "^5.5",
     "symfony/asset": "4.4.*",
     "symfony/browser-kit": "4.4.*",

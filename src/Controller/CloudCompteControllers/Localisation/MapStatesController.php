@@ -3,21 +3,31 @@
 namespace App\Controller\CloudCompteControllers\Localisation;
 
 use App\Entity\MapStates;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class MapStatesController extends AbstractController
+class MapStatesController extends Controller
 {
     /**
      * @Route( "/states", name = "states" )
      * Permet d'avoir la liste des states/régions
      */
-    public function loading()
+    public function loading(Request $request)
     {
         $listMapStates = $this->getListMapStates();
 
+        $mapStates = $this-> get ('knp_paginator')->paginate(
+            // Doctrine Query, not results
+            $listMapStates,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            15
+        );
+
         return $this->render('cloud_compte/localisation/states.html.twig', [
-            'listMapStates' => $listMapStates,
+            'mapStates' => $mapStates,
         ]);
     }
 

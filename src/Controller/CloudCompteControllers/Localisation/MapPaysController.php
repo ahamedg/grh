@@ -3,22 +3,32 @@
 namespace App\Controller\CloudCompteControllers\Localisation;
 
 use App\Entity\MapPays;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class MapPaysController extends AbstractController
+class MapPaysController extends Controller
 {
 
     /**
      * @Route( "/pays", name = "pays" )
      * Permet d'avoir la liste des pays
      */
-    public function loading()
+    public function loading(Request $request)
     {
         $listMapPays = $this->getListMapPays();
 
+        $mapPays = $this-> get ('knp_paginator')->paginate(
+            // Doctrine Query, not results
+            $listMapPays,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            15
+        );
+
         return $this->render('cloud_compte/localisation/pays.html.twig', [
-            'listMapPays' => $listMapPays,
+            'mapPays' => $mapPays,
         ]);
     }
 

@@ -3,21 +3,31 @@
 namespace App\Controller\CloudCompteControllers\Localisation;
 
 use App\Entity\MapVille;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class MapVilleController extends AbstractController
+class MapVilleController extends Controller
 {
     /**
      * @Route( "/ville", name = "ville" )
      * Permet d'avoir la liste des villes
      */
-    public function loading()
+    public function loading(Request $request)
     {
         $listMapVille = $this->getListMapVille();
 
+        $mapVille = $this-> get ('knp_paginator')->paginate(
+            // Doctrine Query, not results
+            $listMapVille,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            15
+        );
+
         return $this->render('cloud_compte/localisation/ville.html.twig', [
-            'listMapVille' => $listMapVille,
+            'mapVille' => $mapVille,
         ]);
     }
 

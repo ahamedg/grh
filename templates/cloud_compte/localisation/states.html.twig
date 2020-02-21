@@ -26,7 +26,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{% for s in listMapStates %}
+								{% for s in mapStates %}
 									<tr>
 										<td>1</td>
 										<td>{{ s.nomStates }}</td>
@@ -39,6 +39,9 @@
 								{% endfor %}
 							</tbody>
 						</table>
+						<div class="navigation">
+           						 {{ knp_pagination_render(mapStates) }}
+        				</div>
 					</div>
 				</div>
 			</div>
