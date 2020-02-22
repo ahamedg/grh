@@ -120,32 +120,44 @@ class __TwigTemplate_8a2c57112355b7377473c6484d771c33cf65accd3c0825ac9a10e1beebc
 \t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\tLes différents pays
 \t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"card-body\">
+\t\t\t\t\t ";
+        // line 18
+        $context["myVal"] = 0;
+        // line 19
+        echo "\t\t\t\t\t<div class=\"card-body\">
 \t\t\t\t\t\t<table id=\"datableList\" class=\"table table-bordered table-hover\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t<th style=\"width: 3%\">N°</th>
-\t\t\t\t\t\t\t\t\t<th style=\"width: 40%\">Indicatif</th>
-\t\t\t\t\t\t\t\t\t<th style=\"width: 30%\">Nom du pays</th>
+\t\t\t\t\t\t\t\t\t<th style=\"width: 10%\">Indicatif</th>
+\t\t\t\t\t\t\t\t\t<th style=\"width: 50%\">Nom du pays</th>
 \t\t\t\t\t\t\t\t\t<th style=\"width: 7%\">Action</th>
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t<tbody>
+
 \t\t\t\t\t\t\t\t";
-        // line 29
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["mapPays"]) || array_key_exists("mapPays", $context) ? $context["mapPays"] : (function () { throw new RuntimeError('Variable "mapPays" does not exist.', 29, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["mapPays"]) || array_key_exists("mapPays", $context) ? $context["mapPays"] : (function () { throw new RuntimeError('Variable "mapPays" does not exist.', 32, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
-            // line 30
+            // line 33
+            echo "\t\t\t\t\t\t\t\t\t";
+            $context["myVal"] = ((isset($context["myVal"]) || array_key_exists("myVal", $context) ? $context["myVal"] : (function () { throw new RuntimeError('Variable "myVal" does not exist.', 33, $this->source); })()) + 1);
+            // line 34
             echo "\t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td>1</td>
 \t\t\t\t\t\t\t\t\t\t<td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "indicatifPays", [], "any", false, false, false, 32), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, (isset($context["myVal"]) || array_key_exists("myVal", $context) ? $context["myVal"] : (function () { throw new RuntimeError('Variable "myVal" does not exist.', 35, $this->source); })()), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t<td>";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "nomPays", [], "any", false, false, false, 33), "html", null, true);
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "indicatifPays", [], "any", false, false, false, 36), "html", null, true);
+            echo "</td>
+\t\t\t\t\t\t\t\t\t\t<td>";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["p"], "nomPays", [], "any", false, false, false, 37), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t\t\t\t<i id=\"btnEdit\" data-toggle=\"modal\" data-target=\"#editPaysModal\" class=\"btn-default fa fa-edit\"></i>
@@ -158,13 +170,13 @@ class __TwigTemplate_8a2c57112355b7377473c6484d771c33cf65accd3c0825ac9a10e1beebc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
+        // line 45
         echo "\t\t\t\t\t\t\t</tbody>
 \t\t\t\t\t\t</table>
 \t\t\t\t\t\t<div class=\"navigation\">
            \t\t\t\t\t\t ";
-        // line 44
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["mapPays"]) || array_key_exists("mapPays", $context) ? $context["mapPays"] : (function () { throw new RuntimeError('Variable "mapPays" does not exist.', 44, $this->source); })()));
+        // line 48
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["mapPays"]) || array_key_exists("mapPays", $context) ? $context["mapPays"] : (function () { throw new RuntimeError('Variable "mapPays" does not exist.', 48, $this->source); })()));
         echo "
         \t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -195,7 +207,7 @@ class __TwigTemplate_8a2c57112355b7377473c6484d771c33cf65accd3c0825ac9a10e1beebc
 
     public function getDebugInfo()
     {
-        return array (  167 => 44,  162 => 41,  148 => 33,  144 => 32,  140 => 30,  136 => 29,  115 => 10,  112 => 9,  102 => 8,  91 => 6,  81 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  179 => 48,  174 => 45,  160 => 37,  156 => 36,  152 => 35,  149 => 34,  146 => 33,  142 => 32,  127 => 19,  125 => 18,  115 => 10,  112 => 9,  102 => 8,  91 => 6,  81 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -217,20 +229,24 @@ class __TwigTemplate_8a2c57112355b7377473c6484d771c33cf65accd3c0825ac9a10e1beebc
 \t\t\t\t\t<div class=\"card-header\">
 \t\t\t\t\t\tLes différents pays
 \t\t\t\t\t</div>
+\t\t\t\t\t {% set myVal = 0 %}
 \t\t\t\t\t<div class=\"card-body\">
 \t\t\t\t\t\t<table id=\"datableList\" class=\"table table-bordered table-hover\">
 \t\t\t\t\t\t\t<thead>
 \t\t\t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t\t\t<th style=\"width: 3%\">N°</th>
-\t\t\t\t\t\t\t\t\t<th style=\"width: 40%\">Indicatif</th>
-\t\t\t\t\t\t\t\t\t<th style=\"width: 30%\">Nom du pays</th>
+\t\t\t\t\t\t\t\t\t<th style=\"width: 10%\">Indicatif</th>
+\t\t\t\t\t\t\t\t\t<th style=\"width: 50%\">Nom du pays</th>
 \t\t\t\t\t\t\t\t\t<th style=\"width: 7%\">Action</th>
 \t\t\t\t\t\t\t\t</tr>
 \t\t\t\t\t\t\t</thead>
+\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t<tbody>
+
 \t\t\t\t\t\t\t\t{% for p in mapPays %}
+\t\t\t\t\t\t\t\t\t{% set myVal = myVal + 1 %}
 \t\t\t\t\t\t\t\t\t<tr>
-\t\t\t\t\t\t\t\t\t\t<td>1</td>
+\t\t\t\t\t\t\t\t\t\t<td>{{myVal}}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ p.indicatifPays }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>{{ p.nomPays }}</td>
 \t\t\t\t\t\t\t\t\t\t<td>
@@ -253,7 +269,6 @@ class __TwigTemplate_8a2c57112355b7377473c6484d771c33cf65accd3c0825ac9a10e1beebc
 \t</div>
 
 {% endblock %}
-
 ", "cloud_compte/localisation/pays.html.twig", "G:\\TPS\\grh\\templates\\cloud_compte\\localisation\\pays.html.twig");
     }
 }

@@ -108,12 +108,6 @@
     "egulias/email-validator": {
         "version": "2.1.11"
     },
-    "eloquent/composer-npm-bridge": {
-        "version": "4.1.0"
-    },
-    "fxp/composer-asset-plugin": {
-        "version": "v1.4.6"
-    },
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },

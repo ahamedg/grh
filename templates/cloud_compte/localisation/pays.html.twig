@@ -15,6 +15,7 @@
 					<div class="card-header">
 						Les différents pays
 					</div>
+					 {% set myVal = 0 %}
 					<div class="card-body">
 						<table id="datableList" class="table table-bordered table-hover">
 							<thead>
@@ -25,10 +26,13 @@
 									<th style="width: 7%">Action</th>
 								</tr>
 							</thead>
+							
 							<tbody>
+
 								{% for p in mapPays %}
+									{% set myVal = myVal + 1 %}
 									<tr>
-										<td>1</td>
+										<td>{{myVal}}</td>
 										<td>{{ p.indicatifPays }}</td>
 										<td>{{ p.nomPays }}</td>
 										<td>

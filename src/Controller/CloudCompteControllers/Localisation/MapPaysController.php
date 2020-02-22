@@ -27,8 +27,10 @@ class MapPaysController extends Controller
             15
         );
 
+
         return $this->render('cloud_compte/localisation/pays.html.twig', [
             'mapPays' => $mapPays,
+            'listMapPays' => $listMapPays,
         ]);
     }
 
