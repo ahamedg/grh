@@ -30,8 +30,9 @@ class CloudCompteController extends AbstractController
     /**
      * @Route("/sous_comptes/{id}/new", name="sous_compte_new_by_compte")
      * Permet de créer un nouveau sous-compte
-     * 
+     *
      * @return Response
+     * @throws \Exception
      */
     public function ajouterFromCompte(Request $request, $id)
     {
@@ -76,8 +77,9 @@ class CloudCompteController extends AbstractController
     /**
      * @Route("/sous_comptes/{id}/new2", name="sous_compte_new_by_sous_compte")
      * Permet de créer un nouveau sous-compte
-     * 
+     *
      * @return Response
+     * @throws \Exception
      */
     public function ajouterFromSousCompte(Request $request, $id)
     {
@@ -134,10 +136,12 @@ class CloudCompteController extends AbstractController
         //Il faut récupérer l'id du sous-compte à modifier
         $repo = $this->getDoctrine()->getRepository(CloudCompte::class);
         $cloudCompte = $repo->find($id);
+        //$cloudCompteParent = new CloudCompte();
 
         $cloudFamilleCompte = $cloudCompte->getCloudFamilleCompte();
         dump($cloudCompte);
         dump($cloudFamilleCompte);
+        $cloudCompteParent = $cloudCompte->getCloudCompte();
 
         $form = $this->createForm(CloudCompteFormType::class, $cloudCompte);
         $form->handleRequest($request);
@@ -156,6 +160,7 @@ class CloudCompteController extends AbstractController
         return $this->render('cloud_compte/compte/editCloudCompte.html.twig', [
             'form' => $form->createView(),
             'cloudCompte' => $cloudCompte,
+            'cloudCompteParent' => $cloudCompteParent,
             'cloudFamilleCompte' => $cloudFamilleCompte,
             'listCloudCompte' => $this->listCloudCompte,
         ]);
