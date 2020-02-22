@@ -15,6 +15,7 @@ class MapPrefectureController extends AbstractController
      * @Route( "/prefecture", name = "prefecture" )
      * Permet d'avoir la liste des préfecture
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request)
     {

@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="AccountUtilisateurRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\AccountUtilisateurRepository")
  * @ORM\HasLifecycleCallbacks()
  * @UniqueEntity(
  *     fields={"emailCompte"},

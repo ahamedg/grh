@@ -1,6 +1,6 @@
 security:
   encoders:
-    App\Entity\Utilisateur:
+    App\Entity\AccountUtilisateur:
       algorithm: bcrypt
 
   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -8,7 +8,7 @@ security:
     in_memory: { memory: ~ }
     in_database:
       entity:
-        class: App\Entity\Utilisateur
+        class: App\Entity\AccountUtilisateur
         property: emailCompte
   firewalls:
     dev:

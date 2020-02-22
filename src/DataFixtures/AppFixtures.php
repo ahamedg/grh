@@ -2,9 +2,9 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\AccountUtilisateur;
 use Faker\Factory;
 use App\Entity\MapCommune;
-use App\Entity\AccountUtilisateur;
 use App\Entity\CloudSection;
 use Faker\Provider\DateTime;
 use App\Entity\MapPrefecture;
@@ -57,12 +57,12 @@ class AppFixtures extends Fixture
 
             $manager->persist($utilisateur);
             //$listUtilisateur[] = $utilisateur;
-            $manager->flush();
+           // $manager->flush();
         }
 
 
         //Nous gérons les catégories services
-        /*for ($i = 1; $i <= 5; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             $cloudCategorieService = new CloudCategorieService();
 
             $cloudCategorieService->setCode("CODECAT$i")
@@ -109,28 +109,28 @@ class AppFixtures extends Fixture
                 ->setLibelle("Section cloud **==$i")
                 ->setDescription("Description ***===$i");
             $manager->persist($cloudSection);
-        }*/
+        }
 
         // //Nous gérons les préfectures
-        // for ($i = 1; $i <= 5; $i++) {
-        //     $mapPrefecture = new MapPrefecture();
+         /*for ($i = 1; $i <= 5; $i++) {
+             $mapPrefecture = new MapPrefecture();
 
-        //     $mapPrefecture->setCode("CODESEC$i")
-        //         ->setLibelle("Préfecture **==$i")
-        //         ->setDescription("Description ***===$i")
-        //         ->setStates("1");
-        //     $manager->persist($mapPrefecture);
-        // }
+             $mapPrefecture->setCode("CODESEC$i")
+                 ->setLibelle("Préfecture **==$i")
+                 ->setDescription("Description ***===$i")
+                 ->setStates("1");
+             $manager->persist($mapPrefecture);
+         }
 
-        // //Nous gérons les communes
-        // for ($i = 1; $i <= 5; $i++) {
-        //     $mapCommune = new MapCommune();
+         //Nous gérons les communes
+         for ($i = 1; $i <= 5; $i++) {
+             $mapCommune = new MapCommune();
 
-        //     $mapCommune->setCode("CODESEC$i")
-        //         ->setLibelle("Commune **==$i")
-        //         ->setDescription("Description ***===$i");
-        //     $manager->persist($mapCommune);
-        // }
+             $mapCommune->setCode("CODESEC$i")
+                 ->setLibelle("Commune **==$i")
+                 ->setDescription("Description ***===$i");
+             $manager->persist($mapCommune);
+         }*/
 
         $manager->flush();
     }
