@@ -10,7 +10,6 @@
 {% endblock %}
 {% block body_inside %}
 	{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-	<br>
 	<div class="container">
 		<h3>Modification du sous-compte «<strong>{{cloudCompte.designationCloudCompte}}</strong>»</h3>
 		<hr style="margin-top: auto; color: black">
@@ -18,12 +17,12 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					{% if cloudCompte.cloudCompte==null %}
+					{% if cloudCompteParent==null %}
 						<label>Compte parent *</label>
 						<textarea class="form-control" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudFamilleCompte.designationCloudFamilleCompte}}</textarea>
 					{% else %}
 						<label>Compte parent *</label>
-						<textarea class="form-control" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudCompte.designationCloudCompte}}</textarea>
+						<textarea class="form-control" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudCompteParent.designationCloudCompte}}</textarea>
 
 					{% endif %}
 

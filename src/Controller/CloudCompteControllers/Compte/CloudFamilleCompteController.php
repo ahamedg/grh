@@ -30,9 +30,10 @@ class CloudFamilleCompteController extends AbstractController
 
     /**
      * @Route("/comptes/new", name="compte_new")
-     * 
+     *
      * Permet de créer un nouveau compte
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request)
     {
@@ -91,6 +92,7 @@ class CloudFamilleCompteController extends AbstractController
         }
         return $this->render('cloud_compte/compte/editCloudFamilleCompte.html.twig', [
             'form' => $form->createView(),
+            'cloudFamilleCompte'=>$cloudFamilleCompte
             //'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
         ]);
     }

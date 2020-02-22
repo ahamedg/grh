@@ -9,8 +9,10 @@
     <li class="breadcrumb-item active">Nouveau sous-compte</li>
 {% endblock %}
 {% block body_inside %}
-    <br>
+    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
     <div class="container">
+        <h3>Nouveau sous-compte à partir d'un autre sous-compte</h3>
+        <hr style="margin-top: auto; color: black">
         {{ form_start(form) }}
         <div class="row">
             <div class="col-md-6">
