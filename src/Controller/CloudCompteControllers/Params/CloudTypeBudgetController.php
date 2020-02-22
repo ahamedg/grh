@@ -14,9 +14,10 @@ class CloudTypeBudgetController extends AbstractController
     private $num;
 
     /**
-     * @Route("/params_compte/budget", name="type_budget")
+     * @Route("/type_budget", name="type_budget")
      * Permet de créer un type de budget
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request)
     {

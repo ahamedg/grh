@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\AccountControllers;
 
 use App\Entity\AccountUtilisateur;
-use App\Form\AccountUtilisateurFormType;
-use App\Form\AccountUtilisateurEditFormType;
+use App\Form\AccountForms\AccountUtilisateurFormType;
+use App\Form\AccountForms\AccountUtilisateurEditFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +24,7 @@ class AccountUtilisateurController extends AbstractController
     {
         $this->listUtilisateur = $this->getListUtilisateur();
 
-        return $this->render('utilisateur/listUtilisateur.html.twig', [
+        return $this->render('account/utilisateur/listUtilisateur.html.twig', [
             'listUtilisateur' => $this->listUtilisateur,
         ]);
     }
@@ -67,7 +67,7 @@ class AccountUtilisateurController extends AbstractController
                 'listUtilisateur' => $this->listUtilisateur,
             ]);
         }
-        return $this->render('utilisateur/nouveauUtilisateur.html.twig', [
+        return $this->render('account/utilisateur/nouveauUtilisateur.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -81,7 +81,7 @@ class AccountUtilisateurController extends AbstractController
     public function modifier(Request $request, $id)
     {
         //Il faut récupérer l'id de l'utilisateur à modifier
-        $repo = $this->getDoctrine()->getRepository(Utilisateur::class);
+        $repo = $this->getDoctrine()->getRepository(AccountUtilisateur::class);
         $utilisateur = $repo->find($id);
 
         $form = $this->createForm(AccountUtilisateurEditFormType::class, $utilisateur);
@@ -97,7 +97,7 @@ class AccountUtilisateurController extends AbstractController
                 'listUtilisateur' => $this->listUtilisateur,
             ]);
         }
-        return $this->render('utilisateur/editUtilisateur.html.twig', [
+        return $this->render('account/utilisateur/editUtilisateur.html.twig', [
             'form' => $form->createView(),
             //'listUtilisateur' => $this->listUtilisateur,
         ]);

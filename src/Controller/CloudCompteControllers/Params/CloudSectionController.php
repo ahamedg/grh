@@ -12,9 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class CloudSectionController extends AbstractController
 {
     /**
-     * @Route("/params_compte/section", name="section")
+     * @Route("/section", name="section")
      * Permet de créer une section
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request)
     {

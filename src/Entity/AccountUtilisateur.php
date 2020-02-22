@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\HasLifecycleCallbacks()
  * @UniqueEntity(
  *     fields={"emailCompte"},
- *     message="Un utilisateur a déjà été créé avec cet email. Veuillez en renseigner un autre !"
+ *     message="Un utilisateur a déjà été créé avec cet email. Veuillez réessayer !"
  * )
  */
 class AccountUtilisateur extends BaseEntity implements UserInterface
@@ -25,7 +25,7 @@ class AccountUtilisateur extends BaseEntity implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=100)
      */
     private $code;
 

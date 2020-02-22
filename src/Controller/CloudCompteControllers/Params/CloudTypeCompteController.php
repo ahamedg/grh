@@ -12,22 +12,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CloudTypeCompteController extends AbstractController
 {
-
-    /*
-     * @
-     * */
-    /*public function __construct()
-    {
-        $repo = $this->getDoctrine()->getRepository(CloudTypeCompte::class);
-        return $repo->findAll();
-    }*/
-
     private $numeroLigne = 0;
 
     /**
-     * @Route( "/params_compte/type_compte", name = "type_compte" )
+     * @Route( "/type_compte", name = "type_compte" )
      * Permet de créer un nouveau CloudTypeCompte
      * @return Response
+     * @throws \Exception
      */
     public function ajouter(Request $request)
     {

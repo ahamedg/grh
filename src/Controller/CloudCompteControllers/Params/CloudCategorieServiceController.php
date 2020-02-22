@@ -16,7 +16,7 @@ class CloudCategorieServiceController extends AbstractController
     private $num = 1;
 
     /**
-     * @Route( "/params_compte/categorie_service", name = "categorie_service" )
+     * @Route( "/categorie_service", name = "categorie_service" )
      * Permet de créer une catégorie de service
      * @return Response
      * @throws Exception
@@ -51,7 +51,7 @@ class CloudCategorieServiceController extends AbstractController
             //return $cloudCategorieService;
         }
 
-        return $this->render('cloud_compte/params/cloudCategorieService.html.twig', [
+        return $this->render('cloud_compte/params/accountAction.html.twig', [
             'num' => $this->num++,
             'form' => $form->createView(),
             'listCloudCategorieService' => $listCloudCategorieService,
