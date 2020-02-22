@@ -4,10 +4,15 @@ namespace App\Entity;
 
 use App\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CloudCompteRepository")
+ * @UniqueEntity(
+ *     fields={"designationCloudCompte"},
+ *     message="Ce sous-compte existe déjà !"
+ * )
  */
 class CloudCompte extends BaseEntity
 {
@@ -25,7 +30,7 @@ class CloudCompte extends BaseEntity
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Length(max="150",maxMessage="Le nom du service/subdivision ne peut pas dépasser 150 caractères !")
+     * @Assert\Length(max="150",maxMessage="Le nom du sous-compte ne peut pas dépasser 150 caractères !")
      */
     private $designationCloudCompte;
 

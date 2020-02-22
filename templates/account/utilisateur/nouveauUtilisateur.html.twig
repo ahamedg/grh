@@ -4,46 +4,43 @@
     <li class="breadcrumb-item active"> Nouvel utilisateur</li>
 {% endblock %}
 {% block body_inside %}
+    {% include 'account/accountUserPills.html.twig' %}
     <div class="container">
-        <div class="card card-success">
-            <div class="card-header">
-                Création d'un nouvel utilisateur
+        <h3>Enregistrement d'un nouvel utilisateur</h3>
+        <hr style="margin-top: auto; color: black">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">{{ form_row(form.username) }}</div>
+                <div class="form-group">{{ form_row(form.emailCompte) }}</div>
+                <div class="form-group">{{ form_row(form.password) }}</div>
+                <div class="form-group">{{ form_row(form.passwordConfirm) }}</div>
+                <div class="form-group"></div>
             </div>
-            <div class="card-body">
-                {{ form_start(form) }}
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">{{ form_row(form.username) }}</div>
-                        <div class="form-group">{{ form_row(form.emailCompte) }}</div>
-                        <div class="form-group">{{ form_row(form.password) }}</div>
-                        <div class="form-group">{{ form_row(form.passwordConfirm) }}</div>
-                        <div class="form-group"></div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">{{ form_row(form.telephone1Utilisateur) }}</div>
-                        <div class="form-group">{{ form_row(form.telephone2Utilisateur) }}</div>
-                        <div class="form-group">{{ form_row(form.nomPhotoProfil) }}</div>
-                        <div class="form-group">{{ form_row(form.adresseUtilisateur) }}</div>
-                        <br>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success">Enregistrer</button>
-                                        <a href="{{ path('utilisateur') }}" class="">
-                                            <button type="reset" href="{{ path('utilisateur') }}"
-                                                    class="btn btn-secondary float-right">Annuler
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <div class="form-group">{{ form_row(form.telephone1Utilisateur) }}</div>
+                <div class="form-group">{{ form_row(form.telephone2Utilisateur) }}</div>
+                <div class="form-group">{{ form_row(form.nomPhotoProfil) }}</div>
+                <div class="form-group">{{ form_row(form.adresseUtilisateur) }}</div>
+                <br>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <a href="{{ path('utilisateur') }}" class="">
+                                    <button type="reset" href="{{ path('utilisateur') }}"
+                                            class="btn btn-secondary float-right">Annuler
+                                    </button>
+                                </a>
                             </div>
                         </div>
+                        <div class="col-md-6"></div>
                     </div>
                 </div>
-                {{ form_end(form) }}
             </div>
         </div>
+        {{ form_end(form) }}
+    </div>
     </div>
 {% endblock %}
