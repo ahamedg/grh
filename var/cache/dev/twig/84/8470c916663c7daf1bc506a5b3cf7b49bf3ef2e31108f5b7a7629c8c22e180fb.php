@@ -99,6 +99,6 @@ class __TwigTemplate_8b43cd06c505cd261e8aaaf9b6aa4702837557f51aa2ad3d2db40d8239d
             </trace>
 {% endfor %}
         </traces>
-", "@Twig/Exception/traces.xml.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\traces.xml.twig");
+", "@Twig/Exception/traces.xml.twig", "G:\\TPS\\grh\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\traces.xml.twig");
     }
 }

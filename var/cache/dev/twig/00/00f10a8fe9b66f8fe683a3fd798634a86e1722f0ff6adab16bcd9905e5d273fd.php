@@ -83,6 +83,6 @@ class __TwigTemplate_c6c413288fa2d866a4b0419ce6e48154820eb47cec839bfae011476338d
 {{ status_code }} {{ status_text }}
 
 */
-", "@Twig/Exception/error.js.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.js.twig");
+", "@Twig/Exception/error.js.twig", "G:\\TPS\\grh\\vendor\\symfony\\twig-bundle\\Resources\\views\\Exception\\error.js.twig");
     }
 }

@@ -67,7 +67,7 @@ class __TwigTemplate_20c7079192e68e5c1e5926c74a46485a38d9e2e737b88584bf9d007b6fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         // line 3
-        echo "\tpro6- GRH / Création d'un sous-compte
+        echo "    pro6- GRH / Création d'un sous-compte
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -88,13 +88,13 @@ class __TwigTemplate_20c7079192e68e5c1e5926c74a46485a38d9e2e737b88584bf9d007b6fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 6
-        echo "\t<li class=\"breadcrumb-item\">
-\t\t<a href=\"";
+        echo "    <li class=\"breadcrumb-item\">
+        <a href=\"";
         // line 7
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sous_compte");
         echo "\">Sous-comptes</a>
-\t</li>
-\t<li class=\"breadcrumb-item active\">Nouveau sous-compte</li>
+    </li>
+    <li class=\"breadcrumb-item active\">Nouveau sous-compte</li>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -115,169 +115,169 @@ class __TwigTemplate_20c7079192e68e5c1e5926c74a46485a38d9e2e737b88584bf9d007b6fb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body_inside"));
 
         // line 12
-        echo "\t<br>
-\t<div class=\"container\">
-\t\t";
+        echo "    <br>
+    <div class=\"container\">
+        ";
         // line 14
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), 'form_start');
         echo "
-\t\t<div class=\"row\">
-\t\t\t<div class=\"col-md-6\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t<label>Compte parent *</label>
-\t\t\t\t\t<textarea class=\"form-control\" rows=\"2\" id=\"compteParent\" style=\"text-transform: uppercase;\" disabled>";
+        <div class=\"row\">
+            <div class=\"col-md-6\">
+                <div class=\"form-group\">
+                    <label>Compte parent *</label>
+                    <textarea class=\"form-control\" rows=\"2\" id=\"compteParent\" style=\"text-transform: uppercase;\" disabled>";
         // line 19
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["cloudCompte"]) || array_key_exists("cloudCompte", $context) ? $context["cloudCompte"] : (function () { throw new RuntimeError('Variable "cloudCompte" does not exist.', 19, $this->source); })()), "designationCloudCompte", [], "any", false, false, false, 19), "html", null, true);
         echo "</textarea>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 22
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "designationCloudCompte", [], "any", false, false, false, 22), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 25
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), "sigleCloudCompte", [], "any", false, false, false, 25), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 28
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), "emailCloudCompte", [], "any", false, false, false, 28), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 31
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 31, $this->source); })()), "logoCloudCompte", [], "any", false, false, false, 31), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 34
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), "adresseCloudCompte", [], "any", false, false, false, 34), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-6\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+            </div>
+            <div class=\"col-md-6\">
+                <div class=\"form-group\">
+                    ";
         // line 39
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 39, $this->source); })()), "telephone1CloudCompte", [], "any", false, false, false, 39), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 42
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 42, $this->source); })()), "telephone2CloudCompte", [], "any", false, false, false, 42), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 45
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 45, $this->source); })()), "pays", [], "any", false, false, false, 45), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 48
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 48, $this->source); })()), "states", [], "any", false, false, false, 48), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 51
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "ville", [], "any", false, false, false, 51), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t\t<br>
-\t\t<label>Localisation</label>
-\t\t<hr style=\"margin-top: auto; color: red\">
-\t\t<div class=\"row\">
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+            </div>
+        </div>
+        <br>
+        <label>Localisation</label>
+        <hr style=\"margin-top: auto; color: red\">
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <div class=\"form-group\">
+                    ";
         // line 61
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "cloudCategorieService", [], "any", false, false, false, 61), 'row');
         echo "
-\t\t\t\t\t";
+                    ";
         // line 72
-        echo "\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+        echo "                </div>
+                <div class=\"form-group\">
+                    ";
         // line 74
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 74, $this->source); })()), "cloudTypeService", [], "any", false, false, false, 74), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 77
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 77, $this->source); })()), "prefecture", [], "any", false, false, false, 77), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 80
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 80, $this->source); })()), "commune", [], "any", false, false, false, 80), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\"></div>
+            </div>
+            <div class=\"col-md-4\">
+                <div class=\"form-group\">
+                    ";
         // line 86
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 86, $this->source); })()), "cloudTypeBudget", [], "any", false, false, false, 86), 'row');
         echo "
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 89
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 89, $this->source); })()), "cloudSection", [], "any", false, false, false, 89), 'row');
         echo "
-\t\t\t\t</div>
+                </div>
 
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class=\"form-group\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t\t<div class=\"col-md-4\">
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-success\">Enregistrer</button>&#160;&#160;&#160;&#160;
-\t\t\t\t\t\t<a href=\"";
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+            </div>
+            <div class=\"col-md-4\">
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <div class=\"row\">
+                <div class=\"col-md-4\"></div>
+                <div class=\"col-md-4\">
+                    <div class=\"form-group\">
+                        <button type=\"submit\" class=\"btn btn-success\">Enregistrer</button>&#160;&#160;&#160;&#160;
+                        <a href=\"";
         // line 108
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sous_compte");
         echo "\" class=\"\">
-\t\t\t\t\t\t\t<button type=\"reset\" href=\"";
+                            <button type=\"reset\" href=\"";
         // line 109
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sous_compte");
         echo "\" class=\"btn btn-secondary\">Annuler
-\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t</div>
-\t\t</div>
-\t\t";
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class=\"col-md-4\"></div>
+                <div class=\"col-md-4\"></div>
+            </div>
+        </div>
+        ";
         // line 118
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 118, $this->source); })()), 'form_end');
         echo "
-\t</div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -306,124 +306,124 @@ class __TwigTemplate_20c7079192e68e5c1e5926c74a46485a38d9e2e737b88584bf9d007b6fb
     {
         return new Source("{% extends 'base.html.twig' %}
 {% block title %}
-\tpro6- GRH / Création d'un sous-compte
+    pro6- GRH / Création d'un sous-compte
 {% endblock %}
 {% block  breadcrumb %}
-\t<li class=\"breadcrumb-item\">
-\t\t<a href=\"{{path('sous_compte')}}\">Sous-comptes</a>
-\t</li>
-\t<li class=\"breadcrumb-item active\">Nouveau sous-compte</li>
+    <li class=\"breadcrumb-item\">
+        <a href=\"{{path('sous_compte')}}\">Sous-comptes</a>
+    </li>
+    <li class=\"breadcrumb-item active\">Nouveau sous-compte</li>
 {% endblock %}
 {% block body_inside %}
-\t<br>
-\t<div class=\"container\">
-\t\t{{ form_start(form) }}
-\t\t<div class=\"row\">
-\t\t\t<div class=\"col-md-6\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t<label>Compte parent *</label>
-\t\t\t\t\t<textarea class=\"form-control\" rows=\"2\" id=\"compteParent\" style=\"text-transform: uppercase;\" disabled>{{cloudCompte.designationCloudCompte}}</textarea>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.designationCloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.sigleCloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.emailCloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.logoCloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.adresseCloudCompte) }}
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-6\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.telephone1CloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.telephone2CloudCompte) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.pays) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.states) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.ville) }}
-\t\t\t\t</div>
-\t\t\t</div>
-\t\t</div>
-\t\t<br>
-\t\t<label>Localisation</label>
-\t\t<hr style=\"margin-top: auto; color: red\">
-\t\t<div class=\"row\">
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.cloudCategorieService) }}
-\t\t\t\t\t{#<div class=\"row\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        <div class=\"col-md-8\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        </div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        <div class=\"col-md-4\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                <button class=\"btn btn-success\" title=\"Ajouter une catégorie de service\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                        style=\"width: 40px\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    <i class=\"fa fa-plus\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                </button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                        </div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                    </div>#}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.cloudTypeService) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.prefecture) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.commune) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.cloudTypeBudget) }}
-\t\t\t\t</div>
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t{{ form_row(form.cloudSection) }}
-\t\t\t\t</div>
+    <br>
+    <div class=\"container\">
+        {{ form_start(form) }}
+        <div class=\"row\">
+            <div class=\"col-md-6\">
+                <div class=\"form-group\">
+                    <label>Compte parent *</label>
+                    <textarea class=\"form-control\" rows=\"2\" id=\"compteParent\" style=\"text-transform: uppercase;\" disabled>{{cloudCompte.designationCloudCompte}}</textarea>
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.designationCloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.sigleCloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.emailCloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.logoCloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.adresseCloudCompte) }}
+                </div>
+            </div>
+            <div class=\"col-md-6\">
+                <div class=\"form-group\">
+                    {{ form_row(form.telephone1CloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.telephone2CloudCompte) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.pays) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.states) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.ville) }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <label>Localisation</label>
+        <hr style=\"margin-top: auto; color: red\">
+        <div class=\"row\">
+            <div class=\"col-md-4\">
+                <div class=\"form-group\">
+                    {{ form_row(form.cloudCategorieService) }}
+                    {#<div class=\"row\">
+                                                                                                                                                                    <div class=\"col-md-8\">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class=\"col-md-4\">
+                                                                                                                                                                            <button class=\"btn btn-success\" title=\"Ajouter une catégorie de service\"
+                                                                                                                                                                                    style=\"width: 40px\">
+                                                                                                                                                                                <i class=\"fa fa-plus\"></i>
+                                                                                                                                                                            </button>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>#}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.cloudTypeService) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.prefecture) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.commune) }}
+                </div>
+                <div class=\"form-group\"></div>
+            </div>
+            <div class=\"col-md-4\">
+                <div class=\"form-group\">
+                    {{ form_row(form.cloudTypeBudget) }}
+                </div>
+                <div class=\"form-group\">
+                    {{ form_row(form.cloudSection) }}
+                </div>
 
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t\t<div class=\"col-md-4\">
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t\t<div class=\"form-group\"></div>
-\t\t\t</div>
-\t\t</div>
-\t\t<div class=\"form-group\">
-\t\t\t<div class=\"row\">
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t\t<div class=\"col-md-4\">
-\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-success\">Enregistrer</button>&#160;&#160;&#160;&#160;
-\t\t\t\t\t\t<a href=\"{{ path('sous_compte') }}\" class=\"\">
-\t\t\t\t\t\t\t<button type=\"reset\" href=\"{{ path('sous_compte') }}\" class=\"btn btn-secondary\">Annuler
-\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t</a>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t\t<div class=\"col-md-4\"></div>
-\t\t\t</div>
-\t\t</div>
-\t\t{{ form_end(form) }}
-\t</div>
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+            </div>
+            <div class=\"col-md-4\">
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+                <div class=\"form-group\"></div>
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <div class=\"row\">
+                <div class=\"col-md-4\"></div>
+                <div class=\"col-md-4\">
+                    <div class=\"form-group\">
+                        <button type=\"submit\" class=\"btn btn-success\">Enregistrer</button>&#160;&#160;&#160;&#160;
+                        <a href=\"{{ path('sous_compte') }}\" class=\"\">
+                            <button type=\"reset\" href=\"{{ path('sous_compte') }}\" class=\"btn btn-secondary\">Annuler
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class=\"col-md-4\"></div>
+                <div class=\"col-md-4\"></div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
-", "cloud_compte/compte/nouveauCloudCompteFromCompte.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\cloud_compte\\compte\\nouveauCloudCompteFromCompte.html.twig");
+", "cloud_compte/compte/nouveauCloudCompteFromCompte.html.twig", "G:\\TPS\\grh\\templates\\cloud_compte\\compte\\nouveauCloudCompteFromCompte.html.twig");
     }
 }

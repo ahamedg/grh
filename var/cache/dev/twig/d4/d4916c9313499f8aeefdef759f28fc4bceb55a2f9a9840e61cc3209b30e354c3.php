@@ -100,6 +100,6 @@ class __TwigTemplate_6a159f10d0d7f78aa8f018da88a3ab37291633be6ec98b8bcdaaa657f54
 {% block body_inside %}
     {% include 'personnel/params/paramPersonnelPills.html.twig' %}
     <br/>
-{% endblock %}", "personnel/params/diplome.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\personnel\\params\\diplome.html.twig");
+{% endblock %}", "personnel/params/diplome.html.twig", "G:\\TPS\\grh\\templates\\personnel\\params\\diplome.html.twig");
     }
 }

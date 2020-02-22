@@ -77,6 +77,6 @@ class __TwigTemplate_7348adb24b09e4ee16c6f3de86889cf864e17a62bb705a333a889579972
         1.0
     </div>
 </footer>
-", "partials/footer.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\partials\\footer.html.twig");
+", "partials/footer.html.twig", "G:\\TPS\\grh\\templates\\partials\\footer.html.twig");
     }
 }

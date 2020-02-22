@@ -100,6 +100,6 @@ class __TwigTemplate_3a9c273307212c8b4169a1e1ad9d28e7b756113fc6d6f4cbefa3478508c
 {% block body_inside %}
     {% include 'personnel/params/paramPersonnelPills.html.twig' %}
     <br/>
-{% endblock %}", "personnel/params/groupePersonnel.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\personnel\\params\\groupePersonnel.html.twig");
+{% endblock %}", "personnel/params/groupePersonnel.html.twig", "G:\\TPS\\grh\\templates\\personnel\\params\\groupePersonnel.html.twig");
     }
 }

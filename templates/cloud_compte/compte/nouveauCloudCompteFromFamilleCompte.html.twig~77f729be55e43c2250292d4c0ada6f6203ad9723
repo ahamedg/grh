@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    pro6- GRH / Création d'un sous-compte
+{% endblock %}
+{% block  breadcrumb %}
+    <li class="breadcrumb-item">
+        <a href="{{path('compte')}}">Comptes</a>
+    </li>
+    <li class="breadcrumb-item active">Nouveau sous-compte</li>
+{% endblock %}
+{% block body_inside %}
+    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
+    <div class="container">
+        <h3>Nouveau sous-compte à partir d'un compte parent</h3>
+        <hr style="margin-top: auto; color: black">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Compte parent *</label>
+                    <textarea class="form-control" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudFamilleCompte.designationCloudFamilleCompte}}</textarea>
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.designationCloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.sigleCloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.emailCloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.logoCloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.adresseCloudCompte) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form_row(form.telephone1CloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.telephone2CloudCompte) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.pays) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.states) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.ville) }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <label>Localisation</label>
+        <hr style="margin-top: auto; color: red">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(form.cloudCategorieService) }}
+                    {#<div class="row">
+                                                                                                                                                                    <div class="col-md-8">
+                                                                                                                                                                    </div>
+                                                                                                                                                                    <div class="col-md-4">
+                                                                                                                                                                            <button class="btn btn-success" title="Ajouter une catégorie de service"
+                                                                                                                                                                                    style="width: 40px">
+                                                                                                                                                                                <i class="fa fa-plus"></i>
+                                                                                                                                                                            </button>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>#}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.cloudTypeService) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.prefecture) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.commune) }}
+                </div>
+                <div class="form-group"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_row(form.cloudTypeBudget) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.cloudSection) }}
+                </div>
+
+                <div class="form-group"></div>
+                <div class="form-group"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group"></div>
+                <div class="form-group"></div>
+                <div class="form-group"></div>
+                <div class="form-group"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Enregistrer</button>&#160;&#160;&#160;&#160;
+                        <a href="{{ path('sous_compte') }}" class="">
+                            <button type="reset" href="{{ path('sous_compte') }}" class="btn btn-secondary">Annuler
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

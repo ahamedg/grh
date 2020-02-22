@@ -1387,6 +1387,6 @@ class __TwigTemplate_2a6b5953251c2d7cd8ce19a4bf91f43275a98d4835bdaaad8d00cf9dfaa
 \t<!-- /.row (main row) -->
 
 {% endblock %}
-", "home/home.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\home\\home.html.twig");
+", "home/home.html.twig", "G:\\TPS\\grh\\templates\\home\\home.html.twig");
     }
 }

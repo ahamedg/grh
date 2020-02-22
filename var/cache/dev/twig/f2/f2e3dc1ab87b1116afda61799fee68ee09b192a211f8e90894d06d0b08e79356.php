@@ -481,6 +481,6 @@ class __TwigTemplate_a1f1fd6d33d0f74c210eeb94a141c4037a147714aea7272103c4fcf733b
     </div>
     <!-- /.sidebar -->
 </aside>
-", "partials/sidebar.html.twig", "D:\\GOLDMAN\\PROJECTS\\Symfony\\GRH\\templates\\partials\\sidebar.html.twig");
+", "partials/sidebar.html.twig", "G:\\TPS\\grh\\templates\\partials\\sidebar.html.twig");
     }
 }
