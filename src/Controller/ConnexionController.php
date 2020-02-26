@@ -24,7 +24,7 @@ class ConnexionController extends AbstractController
         //dump($error);
         $username = $utils->getLastUsername();
 
-        $repoPays = $this->getDoctrine()->getRepository(MapPays::class);
+        /*$repoPays = $this->getDoctrine()->getRepository(MapPays::class);
         $mapPays = $repoPays->find(218);
         $repoStates = $this->getDoctrine()->getRepository(MapPays::class);
         $mapStates = $repoStates->find(218);
@@ -48,7 +48,7 @@ class ConnexionController extends AbstractController
             ->setPays($mapPays)
             ->setStates($mapStates)
             ->setVille($mapVille)
-            ->setCloudTypeCompte(null);
+            ->setCloudTypeCompte(null);*/
 
         return $this->render('connexion/login.html.twig', [
             'hasError' => $error !== null,
