@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass="App\Repository\CloudFamilleCompteRepository")
  * @UniqueEntity(
  *     fields={"designationCloudFamilleCompte"},
- *     message="Ce compte existe déjà !"
+ *     message="Ce compte parent existe déjà !"
  * )
  */
 class CloudFamilleCompte extends BaseEntity
@@ -25,7 +25,7 @@ class CloudFamilleCompte extends BaseEntity
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Length(max="150",maxMessage="Le nom du compte ne peut pas dépasser 150 caractères !")
+     * @Assert\Length(min="30",maxMessage="Le nom du compte doit dépasser 30 caractères !")
      */
     private $designationCloudFamilleCompte;
 

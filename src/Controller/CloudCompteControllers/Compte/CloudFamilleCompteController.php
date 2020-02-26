@@ -30,7 +30,6 @@ class CloudFamilleCompteController extends AbstractController
 
     /**
      * @Route("/comptes/new", name="compte_new")
-     *
      * Permet de créer un nouveau compte
      * @return Response
      * @throws \Exception
@@ -67,7 +66,6 @@ class CloudFamilleCompteController extends AbstractController
 
     /**
      * @Route("/comptes/{id}/edit", name="compte_edit")
-     * 
      * Permet de modifier un compte famille !
      * @return Response
      */
@@ -92,7 +90,7 @@ class CloudFamilleCompteController extends AbstractController
         }
         return $this->render('cloud_compte/compte/editCloudFamilleCompte.html.twig', [
             'form' => $form->createView(),
-            'cloudFamilleCompte'=>$cloudFamilleCompte
+            'cloudFamilleCompte' => $cloudFamilleCompte
             //'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
         ]);
     }
