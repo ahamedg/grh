@@ -1,4 +1,4 @@
-<?php //%255BApp%255CController%255CCloudCompteControllers%255CParams%255CCloudSectionController%2523ajouter%255D%255B1%255D
+<?php //%255BApp%255CController%255CAccountControllers%255CAccountUtilisateurController%2523modifier%255D%255B1%255D
 
 return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
     $o = [
@@ -8,10 +8,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/section',
+                '/utilisateurs/{id}/edit',
             ],
             'name' => [
-                'section',
+                'utilisateur_edit',
             ],
         ],
     ],

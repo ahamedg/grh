@@ -8,7 +8,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/params_compte/categorie_service',
+                '/categorie_service',
             ],
             'name' => [
                 'categorie_service',
