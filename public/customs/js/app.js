@@ -1,34 +1,15 @@
 //Ajouter par Désiré
-let modal = null
+// Revealing Module Pattern
+var myRoomNumber;
 
-const openModal = function (e) {
-    e.preventDefault()
-    const target = document.querySelector(e.target.getAttribute('href'))
-    target.style.display = null
-    target.removeAttribute('aria-hidden')
-    target.setAttribute('aria-modal', 'true')
-    modal = target
-    modal.addEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').addEventListener('click', closeModal)
-}
+$('#rooms li a').click(function() {
+    myRoomNumber = $(this).attr('data-id');
+});
 
-const closeModal = function (e) {
-    if (modal===null)return
-    e.preventDefault()
-    const target = document.querySelector(e.target.getAttribute('href'))
-    target.style.display = "none"
-    target.setAttribute('aria-hidden')
-    target.removeAttribute('aria-modal', 'true')
-    modal = target
-    modal.removeEventListener('click', closeModal)
-    modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
-    modal = null
-}
+$('#myModal').on('show.bs.modal', function (e) {
+    $(this).find('.roomNumber').text(myRoomNumber);
+});
 
-document.querySelectorAll('.js-modal').forEach(a => {
-    a.addEventListener('click', openModal)
-
-})
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

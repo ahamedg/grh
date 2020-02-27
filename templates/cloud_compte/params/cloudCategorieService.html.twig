@@ -11,6 +11,17 @@
 {% block body_inside %}
     {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
     <br/>
+    <button href="{{ path('rares_modal_open_message', {'message': 'info.message'}) }}" class="modal-open" type="button" class="btn btn-secondary">Open Test Modal</button>
+    <br/>
+    <br/>
+    <br/>
+    <a href="/modal" class="modal-open-confirm">Open Confirm Modal</a>
+    <br/>
+    <br/>
+    <br/>
+    <a class="modal-open" data-modal-id="contact-modal" href="{{ path('contact_show_modal') }}">show modal</a>
+    <br/>
+    <br/>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -52,9 +63,10 @@
                                         <td>{{ cs.description }}</td>
                                         <td>
                                             {# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
-                                            <a href="#fenModal" class="js-modal">
+                                            <a href="/modal" data-sideclick-modal-trigger>
                                                 <i id="btnEditModal" class="btn-default fa fa-edit"></i>
                                             </a>
+                                            {#                                            <i id="btnEditModal2" class="btn-default fa fa-edit"></i>#}
 
                                             {# </a> #}
                                             &#160;&#160;
@@ -69,7 +81,12 @@
                 </div>
             </div>
         </div>
+        {#<div class="modal fade" id="emptyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-async data-target="#emptyModal">
+            <div class="modal-dialog">
+            </div>
+        </div>#}
     </div>
+
 {% endblock %}
 {#{% block javascripts %}#}
 {#    <script src="{{ asset('customs/js/app.js') }}"></script>#}

@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <img src="{{asset('admin-lte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{ asset('admin-lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">pro6- GRH</span>
     </a>
 
@@ -44,19 +44,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{path('compte_new')}}" class="nav-link">
+                            <a href="{{ path('compte_new') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Nouveau compte</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{path('compte')}}" class="nav-link">
+                            <a href="{{ path('compte') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Liste des comptes</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{path('sous_compte')}}" class="nav-link">
+                            <a href="{{ path('sous_compte') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Liste des sous-comptes</p>
                             </a>
@@ -99,6 +99,12 @@
                             <a href="{{ path('categorie_service') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Paramètres compte</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('modal') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Modals</p>
                             </a>
                         </li>
                         <li class="nav-item">
