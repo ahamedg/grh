@@ -4,7 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "b5135b67a5c1aa66ac974a01caf5ad7e",
+=======
+<<<<<<< HEAD
+    "content-hash": "524aea72231a20b848daf6a763fec967",
+=======
+    "content-hash": "7ed181b5b0a5e711fc2c0e8304acfec1",
+>>>>>>> acc2d833b5cc1d5791c854247f623c08d8eb7537
+>>>>>>> 6ee141d019fb0558a8ce9ba16aff0209a95324d6
     "packages": [
         {
             "name": "cocur/slugify",
@@ -1359,7 +1367,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-02-13T22:36:52+00:00"
+            "time": "2020-01-20T21:40:59+00:00"
         },
         {
             "name": "fzaninotto/faker",
