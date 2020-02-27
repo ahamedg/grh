@@ -7,22 +7,9 @@
         Catégorie service
     </li>
 {% endblock %}
-
 {% block body_inside %}
-    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-    <br/>
-    <button href="{{ path('rares_modal_open_message', {'message': 'info.message'}) }}" class="modal-open" type="button" class="btn btn-secondary">Open Test Modal</button>
-    <br/>
-    <br/>
-    <br/>
-    <a href="/modal" class="modal-open-confirm">Open Confirm Modal</a>
-    <br/>
-    <br/>
-    <br/>
-    <a class="modal-open" data-modal-id="contact-modal" href="{{ path('contact_show_modal') }}">show modal</a>
-    <br/>
-    <br/>
     <div class="container">
+    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}<br/>
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-success">
@@ -63,10 +50,10 @@
                                         <td>{{ cs.description }}</td>
                                         <td>
                                             {# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
-                                            <a href="/modal" data-sideclick-modal-trigger>
-                                                <i id="btnEditModal" class="btn-default fa fa-edit"></i>
-                                            </a>
-                                            {#                                            <i id="btnEditModal2" class="btn-default fa fa-edit"></i>#}
+{#                                            <a href="/modal" data-sideclick-modal-trigger>#}
+{#                                                <i id="btnEditModal" class="btn-default fa fa-edit"></i>#}
+{#                                            </a>#}
+                                            <i id="btnEditModal2" class="btn-default fa fa-edit" data-toggle="modal" data-target="#myModal"></i>
 
                                             {# </a> #}
                                             &#160;&#160;
@@ -87,6 +74,36 @@
         </div>#}
     </div>
 
+
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open modal
+    </button>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 {% endblock %}
 {#{% block javascripts %}#}
 {#    <script src="{{ asset('customs/js/app.js') }}"></script>#}

@@ -1,23 +1,36 @@
 {% extends 'base.html.twig' %}
+
+{#{% block javascripts %}#}
+{#    <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">#}
+{#    <script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>#}
+{#    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>#}
+{#{% endblock %}#}
 {% block body_inside %}
-    <div id="{% block modalId %}base-modal{% endblock %}" class="modal {% block modalEffects %}fade{% endblock %}" role="dialog" tabindex="-1">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open modal
+    </button>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                {% block modalContent %}
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        {% block modalHeader %}{% endblock %}
-                    </div>
-                    <div class="modal-body">
-                        {% block modalBody %}{% endblock %}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'modal.button.close'|trans }}</button>
-                        {% block modalFooter %}{% endblock %}
-                    </div>
-                {% endblock %}
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
             </div>
         </div>
     </div>
