@@ -1,16 +1,9 @@
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a class="nav-link active" href="{{ path('categorie_service') }}">Catégorie service</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('type_service') }}">Type service</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('type_compte') }}">Type compte</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('type_budget') }}">Type budget</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('section') }}">Section</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('compte') }}">Comptes</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ path('sous_compte') }}">Sous-comptes</a></li>
-        {# <li class="active"><a href="{{ path('service_new') }}">Nouveau service/subdivision</a></li> #}
-{#                    <li class="nav-item">#}
-{#                            <a class="nav-link active" href="#driver-details-tab">Driver Details</a>#}
-{#                    </li>#}
-{#                    <li class="nav-item">#}
-{#                            <a class="nav-link" href="#erer">Register Driver</a>#}
-{#                    </li>#}
-    </ul>
+    <div class="pill-nav">
+        <a class="nav-link active" href="{{ path('categorie_service') }}">Catégorie service</a>
+        <a class="nav-link active" href="{{ path('type_service') }}">Type service</a>
+        <a class="nav-link active" href="{{ path('type_compte') }}">Type compte</a>
+        <a class="nav-link active" href="{{ path('type_budget') }}">Type budget</a>
+        <a class="nav-link active" href="{{ path('section') }}">Section</a>
+        <a class="nav-link active" href="{{ path('compte') }}">Comptes</a>
+        <a class="nav-link active" href="{{ path('sous_compte') }}">Sous-comptes</a>
+    </div>

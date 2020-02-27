@@ -4,6 +4,7 @@ namespace App\Controller\CloudCompteControllers\Params;
 
 use App\Entity\CloudCategorieService;
 
+use App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType;
@@ -41,20 +42,42 @@ class CloudCategorieServiceController extends AbstractController
             $manager->persist($cloudCategorieService);
             $manager->flush();
             $listCloudCategorieService = $this->getListCloudCategorieService();
-            //$cloudCategorieService = new CloudCategorieService();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
-
-            //$toastService = $this->container->get('CoderSpotting.ToastMessage');
-
-            //$toastService->addToast("This is a toast message");
-
-            //return $cloudCategorieService;
         }
 
         return $this->render('cloud_compte/params/cloudCategorieService.html.twig', [
             'num' => $this->num++,
             'form' => $form->createView(),
             'listCloudCategorieService' => $listCloudCategorieService,
+        ]);
+    }
+
+    /*
+     * @Route("", name="")
+     * */
+    public function modifier(Request $request, $id)
+    {
+        $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
+        $cloudCategorieService = $repo->find($id);
+
+        $form = $this->createForm(CloudFamilleCompteEditFormType::class, $cloudCategorieService);
+        $form->handleRequest($request);
+        dump($cloudFamilleCompte);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($cloudFamilleCompte);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cloudFamilleCompte);
+            $manager->flush();
+            $this->addFlash('success', 'Modification effectuée avec succès !');
+
+            return $this->redirectToRoute('compte', [
+                'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
+            ]);
+        }
+        return $this->render('cloud_compte/compte/editCloudFamilleCompte.html.twig', [
+            'form' => $form->createView(),
+            'cloudFamilleCompte' => $cloudFamilleCompte
+            //'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
         ]);
     }
 

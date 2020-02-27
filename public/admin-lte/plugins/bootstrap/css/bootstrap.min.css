@@ -4264,6 +4264,27 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     background-color: #007bff
 }
 
+/*Ajouté par Désiré*/
+.pill-nav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.pill-nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.pill-nav a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
 .nav-fill .nav-item {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -4941,7 +4962,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     margin-bottom: 1rem;
     list-style: none;
     background-color: whitesmoke;
-    font-weight: 900;
     border-radius: .25rem
 }
 
