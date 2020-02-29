@@ -3,12 +3,12 @@
     pro6- GRH / Préfecture
 {% endblock %}
 {% block  breadcrumb %}
-    <li class="breadcrumb-item active">Préfecture</li>
+    <li class="breadcrumb-item active"> Préfecture</li>
 {% endblock %}
 {% block body_inside %}
-    {% include 'cloud_compte/pills/localisationPills.html.twig' %}
-    <br/>
     <div class="container">
+        {% include 'cloud_compte/pills/localisationPills.html.twig' %}
+        <br/>
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-success">
@@ -33,8 +33,8 @@
                             <thead>
                             <tr>
                                 <th style="width: 3%">N°</th>
-                                <th style="width: 40%">Libellé</th>
-                                <th style="width: 30%">Description</th>
+                                <th style="width: 30%">Libellé</th>
+                                <th style="width: 40%">States / Région</th>
                                 <th style="width: 7%">Action</th>
                             </tr>
                             </thead>
@@ -43,7 +43,7 @@
                                 <tr>
                                     <td>1</td>
                                     <td>{{ p.libelle }}</td>
-                                    <td>{{ p.description }}</td>
+                                    <td>{{ p.states.nomStates }}</td>
                                     <td>
                                         <i id="btnEdit" data-toggle="modal" data-target="#editPrefectureModal"
                                            class="btn-default fa fa-edit"></i>

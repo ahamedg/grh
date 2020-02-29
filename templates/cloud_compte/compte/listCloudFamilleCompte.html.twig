@@ -8,9 +8,9 @@
 {% endblock %}
 
 {% block body_inside %}
+	<div class="container">
 	{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
 	<br/>
-	<div class="container">
 		<div class="form-group">
 			<a href="{{ path('compte_new') }}" class="">
 				<button type="button" class="btn btn-info float-right" href="{{ path('compte_new') }}">Nouveau compte</button>

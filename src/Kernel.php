@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Sideclick\BootstrapModalBundle\SideclickBootstrapModalBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
@@ -23,6 +24,13 @@ class Kernel extends BaseKernel
                 yield new $class();
             }
         }
+
+//        Ajouté par Désiré
+//        /** @var TYPE_NAME $bundles */
+//        $bundles = array(
+//            // ...
+//            new SideclickBootstrapModalBundle,
+//        );
     }
 
     public function getProjectDir(): string

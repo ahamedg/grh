@@ -7,11 +7,9 @@
         Catégorie service
     </li>
 {% endblock %}
-
 {% block body_inside %}
-    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-    <br/>
     <div class="container">
+        {% include 'cloud_compte/pills/paramComptePills.html.twig' %}<br/>
         <div class="row">
             <div class="col-md-4">
                 <div class="card card-success">
@@ -22,7 +20,7 @@
                         {{ form_start(form) }}
 
                         {{ form_widget(form) }}
-                        <button type="submit" class="btn btn-success swalDefaultSuccess float-right">Enregistrer
+                        <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
                         </button>
                         {{ form_end(form) }}
                     </div>
@@ -52,10 +50,10 @@
                                         <td>{{ cs.description }}</td>
                                         <td>
                                             {# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
-                                            <a href="#fenModal" class="js-modal">
-                                                <i id="btnEditModal" class="btn-default fa fa-edit"></i>
-                                            </a>
-
+                                            {#                                            <a href="/modal" data-sideclick-modal-trigger>#}
+                                            {#                                                <i id="btnEditModal" class="btn-default fa fa-edit"></i>#}
+                                            {#                                            </a>#}
+                                            <i id="btnEditModal2" class="btn-default fa fa-edit" data-toggle="modal" data-target="#myModal"></i>
                                             {# </a> #}
                                             &#160;&#160;
                                             <i class="fas fa-list-alt"></i>
@@ -69,62 +67,60 @@
                 </div>
             </div>
         </div>
+        {#<div class="modal fade" id="emptyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-async data-target="#emptyModal">
+            <div class="modal-dialog">
+            </div>
+        </div>#}
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="height: 50px">
+                    <h4 class="modal-title" style="font-size: 16px;">Modification d'une catégorie service</h4>
+                    <button type="button" class="close btn-sm" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
+                    </button>
+                    {{ form_end(form) }}
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Annuler</button>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <aside id="fenModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="title">
-        <div class="modal-wrapper">
-            <h5 class="modal-title" id="title">Modification d'une catégorie service</h5>
-            <button class="js-modal-close">Fermer</button>
-
-            Cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco. Facere possimus, omnis voluptas assumenda est,
-            omnis dolor repellendus. Facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-
-            Itaque earum rerum hic tenetur a sapiente delectus. Et iusto odio dignissimos ducimus qui blanditiis
-            praesentium voluptatum deleniti atque. Esse cillum dolore eu fugiat nulla pariatur. Nemo enim ipsam
-            voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-
-            Corrupti quos dolores et quas molestias excepturi sint occaecati.
-            Eaque ipsa quae ab illo inventore veritatis et quasi. Temporibus autem quibusdam et aut officiis debitis aut
-            rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-
-            Nihil molestiae consequatur, vel illum qui dolorem eum.
-            Eaque ipsa quae ab illo inventore veritatis et quasi.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
-            Laboris nisi ut aliquip ex ea commodo consequat. Totam rem aperiam. Nam libero tempore, cum soluta nobis est
-            eligendi optio cumque nihil impedit quo minus id quod maxime placeat. Facere possimus, omnis voluptas
-            assumenda est, omnis dolor repellendus.
-
-        </div>
-    </aside>
-
-
-    <div class="modal fade" id="editCloudCategorieServiceModal" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div id="{% block modalId %}base-modal{% endblock %}" class="modal {% block modalEffects %}fade{% endblock %}" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modification d'une catégorie service</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="get" role="form">
-                        <div class="form-group">
-                            <label for="libelle">Libellé</label>
-                            <input type="text" class="form-control" id="libelle" placeholder="Libellé">
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" rows="3" placeholder="Description ..."></textarea>
-                        </div>
-                        <div class="">
-                            <button type="submit" class="btn btn-primary float-right">Enregistrer</button>
-                        </div>
-                    </form>
-                </div>
+                {% block modalContent %}
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {% block modalHeader %}{% endblock %}
+                    </div>
+                    <div class="modal-body">
+                        {% block modalBody %}{% endblock %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'modal.button.close'|trans }}</button>
+                        {% block modalFooter %}{% endblock %}
+                    </div>
+                {% endblock %}
             </div>
         </div>
     </div>

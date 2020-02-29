@@ -3,12 +3,12 @@
 	pro6- GRH / Commune
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item active">Commune</li>
+	<li class="breadcrumb-item active"> Commune</li>
 {% endblock %}
 {% block body_inside %}
-	{% include 'cloud_compte/pills/localisationPills.html.twig' %}
-	<br/>
 	<div class="container">
+		{% include 'cloud_compte/pills/localisationPills.html.twig' %}
+		<br/>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="card card-success">
@@ -34,8 +34,8 @@
 							<thead>
 								<tr>
 									<th style="width: 3%">N°</th>
-									<th style="width: 40%">Libellé</th>
-									<th style="width: 30%">Description</th>
+									<th style="width: 30%">Libellé</th>
+									<th style="width: 40%">Préfecture</th>
 									<th style="width: 7%">Action</th>
 								</tr>
 							</thead>
@@ -44,7 +44,7 @@
 									<tr>
 										<td>1</td>
 										<td>{{ c.libelle }}</td>
-										<td>{{ c.description }}</td>
+										<td>{{ c.prefecture.libelle }}</td>
 										<td>
 											<i id="btnEdit" data-toggle="modal" data-target="#editCommuneModal" class="btn-default fa fa-edit"></i>
 											&#160;&#160;

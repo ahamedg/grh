@@ -5,14 +5,11 @@
     </li>
 {% endblock %}
 {% block body_inside %}
-    {% include 'account/accountUserPills.html.twig' %}
     <div class="container">
+    {% include 'account/accountUserPills.html.twig' %}<br>
         <div class="form-group">
             <a href="{{ path('utilisateur_new') }}" class="">
-                <button type="button" class="btn btn-info float-right" href="{{ path('utilisateur_new') }}">
-                    Créer
-                    un utilisateur
-                </button>
+                <button type="button" class="btn btn-info float-right" href="{{ path('utilisateur_new') }}"> Créer un utilisateur</button>
             </a>
         </div>
         <h3>Liste des utilisateurs</h3>
@@ -32,9 +29,7 @@
             {% for u in listUtilisateur %}
                 <tr>
                     <td>
-                        <label>
                             <input type="checkbox" class="form-check-input" value="">
-                        </label>
                     </td>
                     <td>
                         <img src="{{ asset('admin-lte/dist/img/manager.png') }}" alt="Photo de profil"
@@ -42,7 +37,7 @@
                     </td>
                     <td>{{ u.username }}</td>
                     <td>Adresse :
-                        <br>
+                        <br><br>
                         Tel :
                         {{ u.telephone1Utilisateur }}
                         /

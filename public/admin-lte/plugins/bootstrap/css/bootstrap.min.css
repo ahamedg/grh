@@ -4966,7 +4966,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .breadcrumb-item + .breadcrumb-item {
-    padding-left: .5rem;
+    padding-left: .3rem;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {

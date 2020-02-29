@@ -1,3 +1,6 @@
 framework:
     router:
         utf8: true
+#sideclick_bootstrap_modal:
+#    resource: "@RaresModalBundle/Controller/"
+#    type:     annotation

@@ -1,0 +1,33 @@
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block test %}#}
+<div class="modal fade" id="editCloudCategorieServiceModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="height: 50px">
+                <h4 class="modal-title" style="font-size: 16px;">Modification d'une catégorie service</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+                {{ form_start(form, {'action': path('categorie_service_edit_modal', {'id': cloudCategorieService.id}), 'method': 'GET'}) }}
+
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
+                </button>
+                {{ form_end(form) }}
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fermer</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+{#{% endblock %}#}
