@@ -6,7 +6,7 @@
 {% endblock %}
 {% block body_inside %}
     <div class="container">
-    {% include 'account/accountUserPills.html.twig' %}<br>
+        {% include 'account/accountUserPills.html.twig' %}<br>
         <div class="form-group">
             <a href="{{ path('utilisateur_new') }}" class="">
                 <button type="button" class="btn btn-info float-right" href="{{ path('utilisateur_new') }}"> Créer un utilisateur</button>
@@ -17,35 +17,48 @@
         <table class="table table-bordered table-hover">
             <thead class="bg-gradient-secondary">
             <tr>
-                <th style="width: 3%"></th>
-                <th style="width: 10%" class="text-center">Profil</th>
-                <th style="width: 15%" class="text-center">Nom d'utilisateur</th>
-                <th style="width: 40%" class="text-center">Contacts</th>
-                <th style="width: 5%" class="text-center">Etat</th>
+{#                <th style="width: 3%"></th>#}
+                <th style="width: 15%" class="text-center">Photo de profil</th>
+                <th style="width: 20%" class="text-center">Nom d'utilisateur</th>
+                <th style="width: 40%" class="text-center">Contacts et Adresse</th>
+                <th style="width: 4%" class="text-center">Etat</th>
                 <th style="width: 20%" class="text-center">Action</th>
             </tr>
             </thead>
             <tbody>
             {% for u in listUtilisateur %}
                 <tr>
-                    <td>
-                            <input type="checkbox" class="form-check-input" value="">
-                    </td>
+{#                    <td>#}
+{#                        <input type="checkbox" class="form-check-input" value="">#}
+{#                    </td>#}
                     <td>
                         <img src="{{ asset('admin-lte/dist/img/manager.png') }}" alt="Photo de profil"
                              width="100%" class="center-block">
                     </td>
                     <td>{{ u.username }}</td>
-                    <td>Adresse :
-                        <br><br>
-                        Tel :
-                        {{ u.telephone1Utilisateur }}
-                        /
-                        {{ u.telephone2Utilisateur }}
-                        <br>
-                        email :
-                        {{ u.emailCompte }}</td>
-                    <td>Etat</td>
+                    <td>
+                        <p>
+								<span style="text-decoration: underline;line-height: 150%;">
+									<strong>Contacts:</strong>
+								</span><br>
+                            {{ u.telephone1Utilisateur }} / {{ u.emailCompte }}
+                        <p>
+                        </p>
+                        <p>
+								<span style="text-decoration: underline;">
+									<strong>Adresse:</strong><br>
+									{{ u.adresseUtilisateur }}
+								</span>
+                        </p>
+                    </td>
+                    <td class="text-center">
+                        {% if u.actif==true %}
+                            <i id="etatActif" class="far fa-check-circle" style="font-size:20px;color:green" title="Utilisateur actif"></i>
+                        {% else %}
+                            {# <i id="etatInactif" class="btn-success fas fa-check-circle" style="width: 50%"></i> #}
+                            <i id="etatInactif" class="far fa-times-circle" style="font-size:20px;color:red" title="Utilisateur inactif"></i>
+                        {% endif %}
+                    </td>
                     <td>
                         <a href="{{ path('utilisateur_edit', {'id': u.id}) }}">
                             <i id="btnEdit" title="Modifier un utilisateur" class="far fa-edit"
