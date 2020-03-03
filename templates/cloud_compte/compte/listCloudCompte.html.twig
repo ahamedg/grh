@@ -7,8 +7,8 @@
 {% endblock %}
 
 {% block body_inside %}
-    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
     <div class="container">
+        {% include 'cloud_compte/pills/paramComptePills.html.twig' %}<br>
         <h3>Liste des sous-comptes</h3>
         <hr style="margin-top: auto; color: black">
         <table class="table table-bordered">
@@ -34,7 +34,7 @@
                     <td class="text-center">
                         <p><img src="{{ asset('admin-lte/dist/img/globe.jpg') }}" alt="Logo de la société" width="60%"
                                 class="center-block"></p>
-                        <label style="text-transform: uppercase;">{{ c.designationCloudCompte }}</label>
+                        <label style="text-transform: uppercase;line-height: 150%;">{{ c.designationCloudCompte }}</label>
                     </td>
                     <td style="text-transform: uppercase;">{{ c.sigleCloudCompte }}</td>
                     <td>{{ c.ville.nomVille }}
@@ -42,10 +42,14 @@
                     </td>
                     <td>
                         <p>
-								<span style="text-decoration: underline;line-height: 150%;">
-									<strong>Contacts:</strong>
-								</span><br>
-                            {{ c.telephone1CloudCompte }}/{{ c.telephone2CloudCompte }}<br>
+                            <span style="text-decoration: underline;line-height: 50%;"><strong>Contacts:</strong></span>
+                        </p>
+                        <p style="line-height: 3%;">
+                            <span style="text-decoration: underline;margin: 15px;">Tel :</span>
+                            {{ c.telephone1CloudCompte }} / {{ c.telephone2CloudCompte }}<br>
+                        </p>
+                        <p>
+                            <span style="text-decoration: underline;margin: 15px;">Email :</span>
                             {{ c.emailCloudCompte }}
                         </p>
                         <p>

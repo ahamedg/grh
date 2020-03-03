@@ -1,67 +1,70 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	pro6- GRH / Profil
+    pro6- GRH / Profil
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item active">Profil</li>
+    <li class="breadcrumb-item active"> Profil</li>
 {% endblock %}
 
 {% block body_inside %}
-	{% include 'account/accountUserPills.html.twig' %}
-	<br/>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<div class="card card-success">
-					<div class="card-header">
-						Nouveau
-					</div>
-					<div class="card-body">
-						{{ form_start(form) }}
-						{{ form_widget(form) }}
-						<button type="submit" class="btn btn-success float-right">Enregistrer</button>
-						{{ form_end(form) }}
-					</div>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<div class="card card-secondary">
-					<div class="card-header">
-						Les différentes actions
-					</div>
-					<div class="card-body">
-						<table class="table table-bordered">
-							<thead>
-							<tr>
-								<th style="width: 3%">N°</th>
-								<th style="width: 40%">Libellé</th>
-								<th style="width: 40%">Action</th>
-								<th style="width: 30%">Description</th>
-								<th style="width: 7%">Action</th>
-							</tr>
-							</thead>
-							<tbody>
-							{% for p in listAccountProfil %}
-								<tr>
-									<td>{{num}}</td>
-									<td>{{ p.libelle }}</td>
-									<td>{{ p.accountAction }}</td>
-									<td>{{ p.description }}</td>
-									<td>
-										{# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
-										<i id="btnEdit" class="btn-default fa fa-edit"></i>
-										{# </a> #}
-										&#160;&#160;
-										<i class="fas fa-list-alt"></i>
-									</td>
-								</tr>
-							{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+            {% include 'account/accountUserPills.html.twig' %}
+            <br/>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-success">
+                    <div class="card-header">
+                        Nouveau
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form) }}
+                        {{ form_row(form.accountAction, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        {{ form_row(form.libelle, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        {{ form_row(form.description, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
+                        </button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        Les différentes profils
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="width: 3%">N°</th>
+                                <th style="width: 40%">Libellé</th>
+                                <th style="width: 40%">Action</th>
+                                <th style="width: 30%">Description</th>
+                                <th style="width: 7%">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for p in listAccountProfil %}
+                                <tr>
+                                    <td>{{ num }}</td>
+                                    <td>{{ p.libelle }}</td>
+                                    <td>{{ p.accountAction }}</td>
+                                    <td>{{ p.description }}</td>
+                                    <td>
+                                        {# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
+                                        <i id="btnEdit" class="btn-default fa fa-edit"></i>
+                                        {# </a> #}
+                                        &#160;&#160;
+                                        <i class="fas fa-list-alt"></i>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

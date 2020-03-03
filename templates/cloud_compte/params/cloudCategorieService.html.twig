@@ -1,4 +1,11 @@
 {% extends 'base.html.twig' %}
+
+{#{% block stylesheets %}#}
+{#    <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">#}
+{#    <link rel="stylesheet" href="{{ asset('customs/css/style.css') }}">#}
+{#    <link rel="stylesheet" href="{{ asset('customs/css/jquery-ui.css') }}">#}
+{#{% endblock %}#}
+
 {% block title %}
     pro6- GRH / Catégorie service
 {% endblock %}
@@ -16,8 +23,8 @@
                     </div>
                     <div class="card-body">
                         {{ form_start(form) }}
-
-                        {{ form_widget(form) }}
+                        {{ form_row(form.libelle, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        {{ form_row(form.description, {'attr': {'class': 'form-control form-control-sm'}}) }}
                         <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
                         </button>
                         {{ form_end(form) }}
@@ -47,8 +54,8 @@
                                         <td>{{ cs.libelle }}</td>
                                         <td>{{ cs.description }}</td>
                                         <td>
-                                            <a href="{{ path('categorie_service', {'id': cs.id}) }}" data-sideclick-modal-trigger>
-                                                <i id="btnEditModal" class="btn-default fa fa-edit"></i>
+                                            <a href="#editCloudCategorieServiceModal" data-target="{{ path('categorie_service_edit_modal', {'id': cs.id}) }}" class="tooltipped modal-trigger">
+                                                <i id="btnEditModal" class="btn-default fa fa-edit" data-toggle="modal" data-target="#editCloudCategorieServiceModal"></i>
                                             </a>
                                             &#160;&#160;
                                             <i id="btnEditModal" class="btn-default fa fa-edit" data-toggle="modal" data-target="#editCloudCategorieServiceModal"></i>
@@ -64,37 +71,11 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br>
+{#        <a class="btn btn-outline-primary" href="#" data-toggle="modal" data-target="#editCloudCategorieServiceModal">Inscription</a>#}
+        {% include 'cloud_compte/params/modals/modalEditCloudCategorieService.html.twig' %}
     </div>
     <!-- The Modal -->
-        <div class="modal fade" id="editCloudCategorieServiceModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header" style="height: 50px">
-                        <h4 class="modal-title" style="font-size: 16px;">Modification d'une catégorie service</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        Modal body..
-                        {{ form_start(form) }}
-
-                        {{ form_widget(form) }}
-                        <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
-                        </button>
-                        {{ form_end(form) }}
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fermer</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 {% endblock %}
 {#{% block javascripts %}#}
 {#    <script>#}
@@ -114,5 +95,6 @@
 {#                });#}
 {#            })#}
 {#        });#}
+
 {#    </script>#}
 {#{% endblock %}#}

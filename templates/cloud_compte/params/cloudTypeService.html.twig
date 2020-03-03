@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block body_inside %}
-	{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-	<br/>
 	<div class="container">
+		{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
+		<br/>
 		<div class="row">
 			<div class="col-md-4">
 				<div class="card card-success">
@@ -18,9 +18,10 @@
 					</div>
 					<div class="card-body">
 						{{ form_start(form) }}
-
-						{{ form_widget(form) }}
-						<button type="submit" class="btn btn-success float-right">Enregistrer</button>
+						{{ form_row(form.libelle, {'attr': {'class': 'form-control form-control-sm'}}) }}
+						{{ form_row(form.description, {'attr': {'class': 'form-control form-control-sm'}}) }}
+						<button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
+						</button>
 						{{ form_end(form) }}
 					</div>
 				</div>

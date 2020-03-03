@@ -14,7 +14,7 @@
         <br/>
         <div class="form-group">
             <a href="{{ path('compte_new') }}" class="">
-                <button type="button" class="btn btn-info float-right" href="{{ path('compte_new') }}">Nouveau compte</button>
+                <button type="button" class="btn btn-info btn-sm float-right" href="{{ path('compte_new') }}">Nouveau compte</button>
             </a>
         </div>
         <h3>Liste des comptes parents</h3>
@@ -51,10 +51,15 @@
                     </td>
                     <td>
                         <p>
-								<span style="text-decoration: underline;line-height: 150%;">
-									<strong>Contacts:</strong>
-								</span><br>
-                            {{ fc.telephoneCloudFamilleCompte }} / {{ fc.emailCloudFamilleCompte }}
+                            <span style="text-decoration: underline;line-height: 50%;"><strong>Contacts:</strong></span>
+                        </p>
+                        <p style="line-height: 3%;">
+                            <span style="text-decoration: underline;margin: 15px;">Tel :</span>
+                            {{ fc.telephoneCloudFamilleCompte }}
+                        </p>
+                        <p>
+                            <span style="text-decoration: underline;margin: 15px;">Email :</span>
+                            {{ fc.emailCloudFamilleCompte }}
                         </p>
                         <p>
 								<span style="text-decoration: underline;">

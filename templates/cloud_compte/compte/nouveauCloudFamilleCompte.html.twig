@@ -1,97 +1,97 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	pro6- GRH / Création d'un compte
+    pro6- GRH / Création d'un compte
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item">
-		<a href="{{path('compte')}}">Comptes</a>
-	</li>
-	<li class="breadcrumb-item active">Nouveau compte</li>
+    <li class="breadcrumb-item">
+        <a href="{{ path('compte') }}"> Comptes</a>
+    </li>
+    <li class="breadcrumb-item active">Nouveau compte</li>
 {% endblock %}
 
 {% block body_inside %}
-	{% include 'cloud_compte/pills/paramComptePills.html.twig' %}
-	<div class="container">
-		<h3>Nouveau compte parent</h3>
-		<hr style="margin-top: auto; color: black">
-		{{ form_start(form) }}
-		<div class="row">
-			<div class="col-md-6">
-				<div id="typeCompte" class="form-group">
-					<div class="row">
-						<div class="col-md-10">
-							<div class="form-group">
-								{{ form_row(form.cloudTypeCompte) }}
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="form-group">
-								<br/>
-								<button class="btn btn-success float-left" style="width: 40px">
-									<i class="fa fa-plus"></i>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					{{ form_row(form.designationCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.codeAccesCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.cleAccesCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.cleAccesCloudFamilleCompteConfirm) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.sigleCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.emailCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.telephoneCloudFamilleCompte) }}
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="form-group">
-					{{ form_row(form.logoCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.pays) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.states) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.ville) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.adresseCloudFamilleCompte) }}
-				</div>
-				<div class="form-group">
-					{{ form_row(form.descriptionCloudFamilleCompte) }}
-				</div>
-				<br/>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<button type="submit" class="btn btn-success">Enregistrer</button>
-								<a href="{{ path('compte') }}" class="">
-									<button type="reset" href="{{ path('compte') }}" class="btn btn-secondary float-right">Annuler
-									</button>
-								</a>
-							</div>
-						</div>
-						<div class="col-md-6"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{{ form_end(form) }}
-	</div>
+    <div class="container">
+        {% include 'cloud_compte/pills/paramComptePills.html.twig' %}<br>
+        <h3>Nouveau compte parent</h3>
+        <hr style="margin-top: auto; color: black">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div id="typeCompte" class="form-group">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                {{ form_row(form.cloudTypeCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <br/>
+                                <button class="btn btn-success btn-sm float-left" style="width: 40px">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.designationCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.codeAccesCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.cleAccesCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.cleAccesCloudFamilleCompteConfirm, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.sigleCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.emailCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.telephoneCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form_row(form.logoCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.pays, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.states, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.ville, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.adresseCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_row(form.descriptionCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                </div>
+                <br/>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-sm">Enregistrer</button>
+                                <a href="{{ path('compte') }}" class="">
+                                    <button type="reset" href="{{ path('compte') }}" class="btn btn-secondary btn-sm float-right">Annuler
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

@@ -8,6 +8,6 @@ logout:
 #  path: /categorie_service
 #  controller: App\Controller\CloudCategorieServiceController::ajouter
 
-categorie_service_edit_modal:
-  path: /categorie_service/{id}/edit
-  controller: App\Controller\CloudCompteControllers\Params\CloudCategorieServiceController::modifier
+#categorie_service_edit_modal:
+#  path: /categorie_service/{id}/edit
+#  controller: App\Controller\CloudCompteControllers\Params\CloudCategorieServiceController::modifier

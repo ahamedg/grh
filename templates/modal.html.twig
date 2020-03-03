@@ -1,15 +1,3 @@
-{% extends 'base.html.twig' %}
-
-{#{% block javascripts %}#}
-{#    <link rel="stylesheet" href="{{ asset('admin-lte/plugins/bootstrap/css/bootstrap.min.css') }}">#}
-{#    <script src="{{ asset('admin-lte/plugins/jquery/jquery.min.js') }}"></script>#}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>#}
-{#    <script src="{{ asset('/admin-lte/plugins/bootstrap/js/bootstrap.min.js') }}"></script>#}
-{#{% endblock %}#}
-{% block body_inside %}
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-        Open modal
-    </button>
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
@@ -23,7 +11,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Modal body..
+                    Modal body...
                 </div>
 
                 <!-- Modal footer -->
@@ -34,4 +22,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
+

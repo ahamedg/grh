@@ -3,16 +3,17 @@
     pro6- GRH / Modification d'un compte
 {% endblock %}
 {% block  breadcrumb %}
-	<li class="breadcrumb-item">
-		<a href="{{path('compte')}}">Comptes</a>
-	</li>
-    <li class="breadcrumb-item active">Modification compte</li>
+    <li class="breadcrumb-item">
+        <a href="{{ path('compte') }}"> Comptes</a>
+    </li>
+    <li class="breadcrumb-item active"> Modification compte</li>
 {% endblock %}
 
 {% block body_inside %}
-    {% include 'cloud_compte/pills/paramComptePills.html.twig' %}
     <div class="container">
-        <h3>Modification du compte « <strong>{{ cloudFamilleCompte.designationCloudFamilleCompte }}</strong> »</h3>
+        {% include 'cloud_compte/pills/paramComptePills.html.twig' %}<br><br>
+        <h4>Modification d'un compte</h4>
+{#        <h4>Modification du compte « <strong>{{ cloudFamilleCompte.designationCloudFamilleCompte }}</strong> »</h4>#}
         <hr style="margin-top: auto; color: black">
         {{ form_start(form) }}
         <div class="row">
@@ -21,13 +22,13 @@
                     <div class="row">
                         <div class="col-md-10">
                             <div class="form-group">
-                                {{ form_row(form.cloudTypeCompte) }}
+                                {{ form_row(form.cloudTypeCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
                                 <br/>
-                                <button class="btn btn-success float-left" style="width: 40px">
+                                <button class="btn btn-success btn-sm float-left" style="width: 40px">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
@@ -35,52 +36,52 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.designationCloudFamilleCompte) }}
+                    {{ form_row(form.designationCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.codeAccesCloudFamilleCompte) }}
+                    {{ form_row(form.codeAccesCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 {# <div class="form-group">
                     {{ form_row(form.cleAccesCloudFamilleCompte) }}
                 </div> #}
                 <div class="form-group">
-                    {{ form_row(form.sigleCloudFamilleCompte) }}
+                    {{ form_row(form.sigleCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.emailCloudFamilleCompte) }}
+                    {{ form_row(form.emailCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.telephoneCloudFamilleCompte) }}
+                    {{ form_row(form.telephoneCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    {{ form_row(form.logoCloudFamilleCompte) }}
+                    {{ form_row(form.logoCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.pays) }}
+                    {{ form_row(form.pays, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.states) }}
+                    {{ form_row(form.states, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.ville) }}
+                    {{ form_row(form.ville, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.adresseCloudFamilleCompte) }}
+                    {{ form_row(form.adresseCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.descriptionCloudFamilleCompte) }}
+                    {{ form_row(form.descriptionCloudFamilleCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <br/>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="submit" class="btn btn-success btn-sm">Enregistrer</button>
                                 <a href="{{ path('compte') }}" class="">
                                     <button type="reset" href="{{ path('compte') }}"
-                                            class="btn btn-secondary float-right">Annuler
+                                            class="btn btn-secondary btn-sm float-right">Annuler
                                     </button>
                                 </a>
                             </div>

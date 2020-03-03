@@ -9,7 +9,7 @@
         {% include 'account/accountUserPills.html.twig' %}<br>
         <div class="form-group">
             <a href="{{ path('utilisateur_new') }}" class="">
-                <button type="button" class="btn btn-info float-right" href="{{ path('utilisateur_new') }}"> Créer un utilisateur</button>
+                <button type="button" class="btn btn-info btn-sm float-right" href="{{ path('utilisateur_new') }}"> Créer un utilisateur</button>
             </a>
         </div>
         <h3>Liste des utilisateurs</h3>
@@ -17,7 +17,7 @@
         <table class="table table-bordered table-hover">
             <thead class="bg-gradient-secondary">
             <tr>
-{#                <th style="width: 3%"></th>#}
+                {#                <th style="width: 3%"></th>#}
                 <th style="width: 15%" class="text-center">Photo de profil</th>
                 <th style="width: 20%" class="text-center">Nom d'utilisateur</th>
                 <th style="width: 40%" class="text-center">Contacts et Adresse</th>
@@ -28,21 +28,25 @@
             <tbody>
             {% for u in listUtilisateur %}
                 <tr>
-{#                    <td>#}
-{#                        <input type="checkbox" class="form-check-input" value="">#}
-{#                    </td>#}
+                    {#                    <td>#}
+                    {#                        <input type="checkbox" class="form-check-input" value="">#}
+                    {#                    </td>#}
                     <td>
                         <img src="{{ asset('admin-lte/dist/img/manager.png') }}" alt="Photo de profil"
                              width="100%" class="center-block">
                     </td>
                     <td>{{ u.username }}</td>
-                    <td>
+                    <td style="line-height: 100%;">
                         <p>
-								<span style="text-decoration: underline;line-height: 150%;">
-									<strong>Contacts:</strong>
-								</span><br>
-                            {{ u.telephone1Utilisateur }} / {{ u.emailCompte }}
+                            <span style="text-decoration: underline;line-height: 50%;"><strong>Contacts:</strong></span>
+                        </p>
+                        <p style="line-height: 3%;">
+                            <span style="text-decoration: underline;margin: 15px;">Tel :</span>
+                            {{ u.telephone1Utilisateur }} / {{ u.telephone2Utilisateur }}<br>
+                        </p>
                         <p>
+                            <span style="text-decoration: underline;margin: 15px;">Email :</span>
+                            {{ u.emailCompte }}
                         </p>
                         <p>
 								<span style="text-decoration: underline;">

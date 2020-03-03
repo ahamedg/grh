@@ -1,24 +1,21 @@
-{#{% extends 'base.html.twig' %}#}
-
-{#{% block test %}#}
-<div class="modal fade" id="editCloudCategorieServiceModal">
-    <div class="modal-dialog">
+<div class="modal fade" id="editCloudCategorieServiceModal" tabindex="-1" role="dialog" aria-labelledby="editCloudCategorieServiceModalLabel">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
 
             <!-- Modal Header -->
             <div class="modal-header" style="height: 50px">
-                <h4 class="modal-title" style="font-size: 16px;">Modification d'une catégorie service</h4>
+                <h4 class="modal-title" style="font-size: 16px;">Modification d'une catégorie service edit</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
+            {#            {{ render(controller(' App\\Controller\\CloudCompteControllers\\Params\\CloudCategorieServiceController::modifier',{ 'id': cloudCategorieService.id })) }}#}
             <!-- Modal body -->
             <div class="modal-body">
                 Modal body..
                 {{ form_start(form, {'action': path('categorie_service_edit_modal', {'id': cloudCategorieService.id}), 'method': 'GET'}) }}
+                {#                {{ form_start(form) }}#}
 
                 {{ form_widget(form) }}
-                <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
-                </button>
+                <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer</button>
                 {{ form_end(form) }}
             </div>
 
@@ -30,4 +27,22 @@
         </div>
     </div>
 </div>
-{#{% endblock %}#}
+
+<script>
+    $(document).ready(function () {
+//On écoute le "click" sur le bouton ayant la classe "modal-trigger"
+        $('.modal-trigger').click(function () {
+//On initialise les modales materialize
+            $('.modal').modal();
+            //On récupère l'url depuis la propriété "Data-target" de la balise html a
+            url = $(this).attr('data-target');
+            //on fait un appel ajax vers l'action symfony qui nous renvoie la vue
+            $.get(url, function (data) {
+                //on injecte le html dans la modale
+                $('.modal-content').html(data);
+                //on ouvre la modale
+                $('#modal1').modal('open');
+            });
+        })
+    });
+</script>

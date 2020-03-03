@@ -4,51 +4,52 @@
 {% endblock %}
 {% block  breadcrumb %}
     <li class="breadcrumb-item">
-        <a href="{{path('sous_compte')}}">Sous-comptes</a>
+        <a href="{{path('sous_compte')}}"> Sous-comptes</a>
     </li>
-    <li class="breadcrumb-item active">Nouveau sous-compte</li>
+    <li class="breadcrumb-item active"> Nouveau sous-compte</li>
 {% endblock %}
 {% block body_inside %}
-    <br>
     <div class="container">
+        <h3>Nouveau sous-compte à partir d'un autre sous-compte</h3>
+        <hr style="margin-top: auto; color: black">
         {{ form_start(form) }}
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Compte parent *</label>
-                    <textarea class="form-control" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudCompte.designationCloudCompte}}</textarea>
+                    <label>Sous-compte parent *</label>
+                    <textarea class="form-control form-control-sm" rows="2" id="compteParent" style="text-transform: uppercase;" disabled>{{cloudCompte.designationCloudCompte}}</textarea>
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.designationCloudCompte) }}
+                    {{ form_row(form.designationCloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.sigleCloudCompte) }}
+                    {{ form_row(form.sigleCloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.emailCloudCompte) }}
+                    {{ form_row(form.emailCloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.logoCloudCompte) }}
+                    {{ form_row(form.logoCloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.adresseCloudCompte) }}
+                    {{ form_row(form.adresseCloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    {{ form_row(form.telephone1CloudCompte) }}
+                    {{ form_row(form.telephone1CloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.telephone2CloudCompte) }}
+                    {{ form_row(form.telephone2CloudCompte, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.pays) }}
+                    {{ form_row(form.pays, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.states) }}
+                    {{ form_row(form.states, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.ville) }}
+                    {{ form_row(form.ville, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
             </div>
         </div>
@@ -58,7 +59,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    {{ form_row(form.cloudCategorieService) }}
+                    {{ form_row(form.cloudCategorieService, {'attr': {'class': 'form-control form-control-sm'}}) }}
                     {#<div class="row">
                                                                                                                                                                     <div class="col-md-8">
                                                                                                                                                                     </div>
@@ -71,22 +72,22 @@
                                                                                                                                                                 </div>#}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.cloudTypeService) }}
+                    {{ form_row(form.cloudTypeService, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.prefecture) }}
+                    {{ form_row(form.prefecture, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.commune) }}
+                    {{ form_row(form.commune, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group"></div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    {{ form_row(form.cloudTypeBudget) }}
+                    {{ form_row(form.cloudTypeBudget, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
                 <div class="form-group">
-                    {{ form_row(form.cloudSection) }}
+                    {{ form_row(form.cloudSection, {'attr': {'class': 'form-control form-control-sm'}}) }}
                 </div>
 
                 <div class="form-group"></div>
@@ -104,9 +105,9 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success">Enregistrer</button>&#160;&#160;&#160;&#160;
+                        <button type="submit" class="btn btn-success btn-sm">Enregistrer</button>&#160;&#160;&#160;&#160;
                         <a href="{{ path('sous_compte') }}" class="">
-                            <button type="reset" href="{{ path('sous_compte') }}" class="btn btn-secondary">Annuler
+                            <button type="reset" href="{{ path('sous_compte') }}" class="btn btn-secondary btn-sm">Annuler
                             </button>
                         </a>
                     </div>

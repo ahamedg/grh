@@ -2,24 +2,25 @@
 
 namespace App\Controller\CloudCompteControllers\Params;
 
+use App\Controller\GlobalController;
 use App\Entity\CloudCategorieService;
 
-use App\Form\CloudCompteForms\Compte\CloudFamilleCompteEditFormType;
 use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CloudCategorieServiceController extends AbstractController
+class CloudCategorieServiceController extends GlobalController
 {
     private $num = 1;
+    private CloudCategorieService $cloudCategorieServiceEdit;
 
     /**
      * @Route( "/categorie_service", name = "categorie_service" )
      * Permet de créer une catégorie de service
+     * @param Request $request
      * @return Response
      * @throws Exception
      */
@@ -54,69 +55,37 @@ class CloudCategorieServiceController extends AbstractController
     }
 
     /**
-     * @Method({"GET", "POST"})
      * @Route("/categorie_service/{id}/edit", name="categorie_service_edit_modal")
      * @param CloudCategorieService $cloudCategorieService
      * @param Request $request
+     * @param $id
      * @return Response
      */
-    public function modifier(CloudCategorieService $cloudCategorieService, Request $request)
+    public function modifier(CloudCategorieService $cloudCategorieService, Request $request, $id): Response
     {
-        //$cloudCategorieService = new CloudCategorieService();
-        $form = $this->createForm(CloudCategorieServiceFormType::class, $cloudCategorieService);
-//        $form = $this->createForm(CloudCategorieServiceTypeForm::class, $cloudCategorieService, [
-//            // Make sure to explicitly set the action.
-//            'action' => $this->generateUrl('categorie_service_edit_modal', ['id' => $cloudCategorieService->getId()])
-//        ]);
+        $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
+        $cloudCategorieServiceEdit = $repo->find($id);
+
+        $form = $this->createForm(CloudCategorieServiceEditFormType::class, $cloudCategorieServiceEdit, [
+            'action' => $this->generateUrl('categorie_service_edit_modal'),
+            'method' => 'GET',
+        ]);
         $form->handleRequest($request);
+//        dump($cloudCategorieService);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-//            $$cloudCategorieService->setDateInscription(new \DateTime());
-//            $$cloudCategorieService->setCloudCategorieService($cloudCategorieService);
+//            dump($cloudCategorieService);
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($cloudCategorieServiceEdit);
+            $manager->flush();
+            $this->addFlash('success', 'Modification effectuée avec succès !');
 
-            $em->persist($cloudCategorieService);
-            $em->flush();
-            $request->getSession()->getFlashbag()->add('success', 'Votre inscription a été enregistré.');
-            return $this->redirectToRoute('categorie_service');
+//            return $this->redirectToRoute('compte', [
+//                'listCloudCategorieService' => $this->listCloudCategorieService,
+//            ]);
         }
-//        return $this->render(
-//        //On affiche  une vue twig simple (pas de head ni rien, donc aucun héritage de template...) qui sera intégrée dans la modale.
-//            'CloudCategorieServices/CloudCategorieServiceModale.html.twig', array('form' => $form->createView(), 'CloudCategorieService' => $cloudCategorieService
-//            )
-//        );
-        return $this->render('cloud_compte/params/modals/modalEditCloudCategorieService.html.twig', [
+        return $this->renderView('cloud_compte/params/modals/modalEditCloudCategorieService.html.twig', [
             'form' => $form->createView(),
-            'cloudCategorieService' => $cloudCategorieService,
-        ]);
-    }
-
-    public function modifier2(Request $request, CloudCategorieService $cloudCategorieService)
-    {
-        $deleteForm = $this->createDeleteForm($cloudCategorieService);
-        $editForm = $this->createForm(CloudCategorieServiceType::class, $cloudCategorieService, [
-            // Make sure to explicitly set the action.
-            'action' => $this->generateUrl('categorie_service_edit_modal', ['id' => $cloudCategorieService->getId()])
-        ]);
-        $editForm->add('save', SubmitType::class, ['label' => 'Edit']);
-
-        $editForm->handleRequest($request);
-
-        dump($cloudCategorieService);
-        if ($editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($cloudCategorieService);
-            $em->flush();
-
-            $this->addFlash('notice', 'Entity edited.');
-
-            // On success, redirection should be done by returning a new ModalRedirectResponse object.
-            return new ModalRedirectResponse($this->generateUrl('modal'));
-        }
-
-        return $this->render('cloud_compte/params/modals/modalEditCloudCategorieService.html.twig', [
-            'cloudCategorieService' => $cloudCategorieService,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'cloudCategorieService' => $cloudCategorieServiceEdit,
         ]);
     }
 
