@@ -3,6 +3,7 @@
 namespace App\Controller\CloudCompteControllers\Compte;
 
 use App\Entity\CloudFamilleCompte;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -66,6 +67,7 @@ class CloudFamilleCompteController extends AbstractController
 
     /**
      * @Route("/comptes/{id}/edit", name="compte_edit")
+     * @Method({"GET", "POST"})
      * Permet de modifier un compte famille !
      * @return Response
      */

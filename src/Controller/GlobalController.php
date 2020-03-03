@@ -8,22 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class GlobalController extends AbstractController
 {
-    /**
-     * @Route("/global", name="global")
-     */
-    public function index()
-    {
-        return $this->render('global/index.html.twig', [
-            'controller_name' => 'GlobalController',
-        ]);
-    }
 
     /* Permet d'enregistrer les actions qu'on peut intenter dans le système
      * @return void
      * */
     protected function saveAccountAction($code, $libelle, $description): void
     {
-        $accountAction = new AccountAction();
+        $repo = $this->getDoctrine()->getRepository(AccountAction::class);
+        $accountAction = $repo->find($code);
+
         $accountAction->setCode($code)
             ->setLibelle($libelle)
             ->setDescription($description);

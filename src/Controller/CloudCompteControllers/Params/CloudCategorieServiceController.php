@@ -56,26 +56,26 @@ class CloudCategorieServiceController extends GlobalController
 
     /**
      * @Route("/categorie_service/{id}/edit", name="categorie_service_edit_modal")
-     * @param CloudCategorieService $cloudCategorieService
      * @param Request $request
      * @param $id
-     * @return Response
+     * @return string|Response
      */
-    public function modifier(CloudCategorieService $cloudCategorieService, Request $request, $id): Response
+    public function modifier(Request $request, $id)
     {
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
-        $cloudCategorieServiceEdit = $repo->find($id);
+        $cloudCategorieService = $repo->find($id);
 
-        $form = $this->createForm(CloudCategorieServiceEditFormType::class, $cloudCategorieServiceEdit, [
-            'action' => $this->generateUrl('categorie_service_edit_modal'),
-            'method' => 'GET',
-        ]);
+        $form = $this->createForm(CloudCategorieServiceEditFormType::class, $cloudCategorieService);
+//        , [
+//            'action' => $this->generateUrl('categorie_service_edit_modal'),
+//            'method' => 'GET',
+//        ]);
         $form->handleRequest($request);
 //        dump($cloudCategorieService);
         if ($form->isSubmitted() && $form->isValid()) {
 //            dump($cloudCategorieService);
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($cloudCategorieServiceEdit);
+            $manager->persist($cloudCategorieService);
             $manager->flush();
             $this->addFlash('success', 'Modification effectuée avec succès !');
 
@@ -83,9 +83,9 @@ class CloudCategorieServiceController extends GlobalController
 //                'listCloudCategorieService' => $this->listCloudCategorieService,
 //            ]);
         }
-        return $this->renderView('cloud_compte/params/modals/modalEditCloudCategorieService.html.twig', [
+        return $this->render('cloud_compte/params/modals/modalEditCloudCategorieService.html.twig', [
             'form' => $form->createView(),
-            'cloudCategorieService' => $cloudCategorieServiceEdit,
+            'cloudCategorieService' => $cloudCategorieService
         ]);
     }
 
