@@ -21,14 +21,14 @@ class CloudCategorieServiceRepository extends ServiceEntityRepository
         
     }
 
-    public function findAllByIdCompte()
-    {
-        $qb = new QueryBuilder();
-        $qb->select('*')
-            ->from('CloudCategorieService', 'cat')
-            ->orderBy('cat.libelle', 'ASC');
-        return $qb;
-    }
+//    public function findAllByIdCompte()
+//    {
+//        $qb = new QueryBuilder();
+//        $qb->select('*')
+//            ->from('CloudCategorieService', 'cat')
+//            ->orderBy('cat.libelle', 'ASC');
+//        return $qb;
+//    }
 
     /*
     public function findOneBySomeField($value): ?CloudCategorieService

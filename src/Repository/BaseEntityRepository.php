@@ -2,81 +2,23 @@
 
 namespace App\Repository;
 
-use App\Entity\BaseEntity;
-use App\Entity\CloudCategorieService;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Doctrine\ORM\Mapping\Entity;
-use Doctrine\ORM\QueryBuilder;
+use Doctrine\ORM\EntityRepository;
 
-/**
- * @method BaseEntity|null find($id, $lockMode = null, $lockVersion = null)
- * @method BaseEntity|null findOneBy(array $criteria, array $orderBy = null)
- * @method BaseEntity[]    findAll()
- * @method BaseEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class BaseEntityRepository extends ServiceEntityRepository
+abstract class BaseEntityRepository extends EntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, BaseEntity::class);
-    }
-
-    /**
-     * //* @return BaseEntity[] Returns an array of BaseEntity objects
-     */
-    /*public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult();
-    }*/
-
-    /*
-     * @return CloudCategorieService[] Returns an array of BaseEntity objects
+    /* Permet de sélectionner toute les occurrences de l'entité à partir de idCompte
+     * @return array
      * */
-    // Sélectionner tout par idCompte
-    public function findAllByIdCompte():array
+    public function findAllByIdCompte($idCompte)
     {
-        $qb = new QueryBuilder();
-        $qb->select('*')
-            ->from('CloudCategorieService', 'cat')
-            ->orderBy('cat.libelle', 'ASC');
+        try {
+            //$this->_entityName
+            $em = $this->getEntityManager();
+            $query = $em->createQuery('SELECT e FROM ' + $this->_entityName + ' e WHERE e.idCompte = :idCompte');
+            $query->setParameter('idCompte', $idCompte);
+            $users = $query->getResult();
+        } catch (\Exception $ex) {
+
+        }
     }
-
-    public function findAllByActif($idCompte, $actif, $asc)
-    {
-
-    }
-
-    public function findAllByProperty($idCompte, $propriete, $valeur)
-    {
-
-    }
-
-    public function findAllByIntProperty($idCompte, $intPropriete, $intValeur)
-    {
-
-    }
-
-    public function findAllOrderBy($idCompte)
-    {
-
-    }
-
-    /*
-    public function findOneBySomeField($value): ?BaseEntity
-    {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

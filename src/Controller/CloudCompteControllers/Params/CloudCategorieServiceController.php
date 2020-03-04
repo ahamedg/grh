@@ -26,6 +26,11 @@ class CloudCategorieServiceController extends GlobalController
      */
     public function ajouter(Request $request)
     {
+        $code = "ajoutCloudCategorieService";
+        $libelle = "Ajouter une nouvelle catégorie service";
+        $description = "Permet d'ajouter une nouvelle catégorie service";
+//        $this->saveAccountAction($code, $libelle, $description);
+
         $listCloudCategorieService = $this->getListCloudCategorieService();
         $cloudCategorieService = new CloudCategorieService();
 

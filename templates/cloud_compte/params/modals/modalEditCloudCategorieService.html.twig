@@ -11,8 +11,8 @@
             <!-- Modal body -->
             <div class="modal-body">
                 Modal body..
-                                    {{ form_start(form, {'action': path('categorie_service_edit_modal', {'id': cloudCategorieService.id}), 'method': 'GET'}) }}
-{#                {{ form_start(form) }}#}
+{#                                    {{ form_start(form, {'action': path('categorie_service_edit_modal', {'id': cloudCategorieService.id}), 'method': 'GET'}) }}#}
+                {{ form_start(form) }}
 
                 {{ form_widget(form) }}
                 <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer</button>
