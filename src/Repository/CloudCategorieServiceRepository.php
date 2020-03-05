@@ -17,28 +17,9 @@ class CloudCategorieServiceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
+        $idCompte = 1;
         parent::__construct($registry, CloudCategorieService::class);
-        
-    }
+//        findAllByIdCompte2();
 
-//    public function findAllByIdCompte()
-//    {
-//        $qb = new QueryBuilder();
-//        $qb->select('*')
-//            ->from('CloudCategorieService', 'cat')
-//            ->orderBy('cat.libelle', 'ASC');
-//        return $qb;
-//    }
-
-    /*
-    public function findOneBySomeField($value): ?CloudCategorieService
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
     }
-    */
 }

@@ -5,8 +5,8 @@ namespace App\Controller\CloudCompteControllers\Params;
 use App\Controller\GlobalController;
 use App\Entity\CloudCategorieService;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use Exception;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use App\Form\CloudCompteForms\Params\CloudCategorieServiceFormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CloudCategorieServiceController extends GlobalController
 {
     private $num = 1;
+    private ObjectManager $manager;
     private CloudCategorieService $cloudCategorieServiceEdit;
 
     /**
@@ -30,8 +31,9 @@ class CloudCategorieServiceController extends GlobalController
         $libelle = "Ajouter une nouvelle catégorie service";
         $description = "Permet d'ajouter une nouvelle catégorie service";
 //        $this->saveAccountAction($code, $libelle, $description);
+//        $listCloudCategorieService = $this->getListCloudCategorieService();
 
-        $listCloudCategorieService = $this->getListCloudCategorieService();
+        $listCloudCategorieService = $this->selectionnerToutByIdCompte(CloudCategorieService::class,1);
         $cloudCategorieService = new CloudCategorieService();
 
         $form = $this->createForm(CloudCategorieServiceFormType::class, $cloudCategorieService);
@@ -48,7 +50,7 @@ class CloudCategorieServiceController extends GlobalController
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($cloudCategorieService);
             $manager->flush();
-            $listCloudCategorieService = $this->getListCloudCategorieService();
+//            $listCloudCategorieService = $this->getListCloudCategorieService();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
         }
 
@@ -103,4 +105,20 @@ class CloudCategorieServiceController extends GlobalController
         $repo = $this->getDoctrine()->getRepository(CloudCategorieService::class);
         return $repo->findAll();
     }
+
+//    private function findAllByIdCompte(int $int)
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $queryBuilder = $em->createQueryBuilder('e');
+//        $queryBuilder->select('e')
+//            ->from(CloudCategorieService::class, 'e')
+//            ->where('e.idCompte = :idCompte')
+//            ->orderBy('e.libelle', 'ASC');
+//            if($int!==null){
+//                $queryBuilder->setParameter('idCompte', $int);
+//            }
+//        $query = $queryBuilder->getQuery();
+//        $listActions = $query->getResult();
+//        return $listActions;
+//    }
 }
