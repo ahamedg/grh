@@ -2,6 +2,7 @@
 
 namespace App\Controller\AccountControllers;
 
+use App\Controller\GlobalController;
 use App\Entity\AccountProfil;
 use App\Form\AccountForms\AccountProfilFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccountProfilController extends AbstractController
+class AccountProfilController extends GlobalController
 {
     private $num = 1;
 

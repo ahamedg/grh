@@ -15,7 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class CloudCategorieServiceController extends GlobalController
 {
     private $num = 1;
-    private ObjectManager $manager;
     private CloudCategorieService $cloudCategorieServiceEdit;
 
     /**
@@ -27,13 +26,14 @@ class CloudCategorieServiceController extends GlobalController
      */
     public function ajouter(Request $request)
     {
-        $code = "ajoutCloudCategorieService";
-        $libelle = "Ajouter une nouvelle catégorie service";
-        $description = "Permet d'ajouter une nouvelle catégorie service";
-//        $this->saveAccountAction($code, $libelle, $description);
-//        $listCloudCategorieService = $this->getListCloudCategorieService();
+        $codeModule = 'moduleGestionCloud';
 
-        $listCloudCategorieService = $this->selectionnerToutByIdCompte(CloudCategorieService::class,1);
+        $code = 'ajoutCloudCategorieService';
+        $libelle = 'Ajouter une nouvelle catégorie service';
+        $description = 'Permet d\'ajouter une nouvelle catégorie service';
+        $this->saveAccountAction($code, $libelle, $description, $codeModule);
+
+        $listCloudCategorieService = $this->selectionnerToutByIdCompte(CloudCategorieService::class, 1);
         $cloudCategorieService = new CloudCategorieService();
 
         $form = $this->createForm(CloudCategorieServiceFormType::class, $cloudCategorieService);

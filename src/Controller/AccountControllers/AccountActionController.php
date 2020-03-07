@@ -2,6 +2,7 @@
 
 namespace App\Controller\AccountControllers;
 
+use App\Controller\GlobalController;
 use App\Entity\AccountAction;
 use App\Form\AccountForms\AccountActionFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -9,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccountActionController extends AbstractController
+class AccountActionController extends GlobalController
 {
     private $num = 1;
 
@@ -20,33 +21,12 @@ class AccountActionController extends AbstractController
      * @return Response
      * @throws \Exception
      */
-    public function ajouter(Request $request)
+    public function ajouter(Request $request): Response
     {
-        $listAccountAction = $this->getListAccountAction();
-        $accountAction = new AccountAction();
-
-        $form = $this->createForm(AccountActionFormType::class, $accountAction);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            //dump( $AccountAction );
-            $rand = random_int(100, 1000);
-            $code = "CODECAT$rand";
-            ///dump( $code );
-            $accountAction->setCode($code)
-                ->setActif(true);
-
-            $manager = $this->getDoctrine()->getManager();
-            $manager->persist($accountAction);
-            $manager->flush();
-            $listAccountAction = $this->getListAccountAction();
-            //$AccountAction = new AccountAction();
-            $this->addFlash('success', 'Enregistrement effectué avec succès !');
-        }
+        $listAccountAction = $this->selectionnerToutByIdCompteNull(AccountAction::class);
 
         return $this->render('account/accountAction.html.twig', [
             'num' => $this->num++,
-            'form' => $form->createView(),
             'listAccountAction' => $listAccountAction,
         ]);
     }

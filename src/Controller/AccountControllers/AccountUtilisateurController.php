@@ -2,6 +2,7 @@
 
 namespace App\Controller\AccountControllers;
 
+use App\Controller\GlobalController;
 use App\Entity\AccountUtilisateur;
 use App\Form\AccountForms\AccountUtilisateurFormType;
 use App\Form\AccountForms\AccountUtilisateurEditFormType;
@@ -11,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class AccountUtilisateurController extends AbstractController
+class AccountUtilisateurController extends GlobalController
 {
 
     private $listUtilisateur = [];

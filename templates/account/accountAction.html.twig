@@ -10,23 +10,8 @@
             {% include 'account/accountUserPills.html.twig' %}
             <br/>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card card-success">
-                    <div class="card-header">
-                        Nouveau
-                    </div>
-                    <div class="card-body">
-                        {{ form_start(form) }}
-                        {{ form_row(form.accountModule, {'attr': {'class': 'form-control form-control-sm'}}) }}
-                        {{ form_row(form.libelle, {'attr': {'class': 'form-control form-control-sm'}}) }}
-                        {{ form_row(form.description, {'attr': {'class': 'form-control form-control-sm'}}) }}
-                        <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer
-                        </button>
-                        {{ form_end(form) }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8">
+
+            <div class="col-md-12">
                 <div class="card card-secondary">
                     <div class="card-header">
                         Les différentes actions
@@ -36,10 +21,8 @@
                             <thead>
                             <tr>
                                 <th style="width: 3%">N°</th>
-                                <th style="width: 40%">Libellé</th>
-                                <th style="width: 40%">Module</th>
-                                <th style="width: 30%">Description</th>
-                                <th style="width: 7%">Action</th>
+                                <th style="width: 50%">Libellé</th>
+                                <th style="width: 30%">Module</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,15 +30,7 @@
                                 <tr>
                                     <td>{{ num }}</td>
                                     <td>{{ a.libelle }}</td>
-                                    <td>{{ a.accountModule }}</td>
-                                    <td>{{ a.description }}</td>
-                                    <td>
-                                        {# <a class="waves-effect waves-light btn modal-trigger" href="#editCloudCategorieServiceModal"> #}
-                                        <i id="btnEdit" class="btn-default fa fa-edit"></i>
-                                        {# </a> #}
-                                        &#160;&#160;
-                                        <i class="fas fa-list-alt"></i>
-                                    </td>
+                                    <td style="text-transform: uppercase;line-height: 100%;">{{ a.accountModule.libelle }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
