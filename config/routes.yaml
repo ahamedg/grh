@@ -11,3 +11,7 @@ logout:
 #categorie_service_edit_modal:
 #  path: /categorie_service/{id}/edit
 #  controller: App\Controller\CloudCompteControllers\Params\CloudCategorieServiceController::modifier
+
+modal:
+  path: /modal
+  controller: App\Controller\ModalController::modal

@@ -31,6 +31,11 @@ class Kernel extends BaseKernel
 //            // ...
 //            new SideclickBootstrapModalBundle,
 //        );
+        $bundles = array(
+            // ...
+            new SideclickBootstrapModalBundle(),
+//            new SideclickModal(),
+        );
     }
 
     public function getProjectDir(): string
