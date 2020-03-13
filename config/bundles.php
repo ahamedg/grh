@@ -18,4 +18,5 @@ return [
     Rares\ModalBundle\RaresModalBundle::class => ['all' => true],
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
+    PommProject\PommBundle\PommBundle::class => ['all' => true],
 ];

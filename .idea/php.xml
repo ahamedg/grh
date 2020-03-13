@@ -134,6 +134,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/pomm-project/pomm-symfony-bridge" />
+      <path value="$PROJECT_DIR$/vendor/pomm-project/pomm-bundle" />
+      <path value="$PROJECT_DIR$/vendor/pomm-project/model-manager" />
+      <path value="$PROJECT_DIR$/vendor/pomm-project/foundation" />
+      <path value="$PROJECT_DIR$/vendor/pomm-project/cli" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

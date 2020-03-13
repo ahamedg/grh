@@ -13,6 +13,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/pagerfanta/pagerfanta" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pomm-project/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pomm-project/foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pomm-project/model-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pomm-project/pomm-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pomm-project/pomm-symfony-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/rares/modal-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/select2/select2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sideclick/bootstrap-modal-bundle" />

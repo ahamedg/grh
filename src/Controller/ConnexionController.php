@@ -15,10 +15,11 @@ class ConnexionController extends AbstractController
     /**
      * Permet de se connecter
      * @Route("/", name="login")
+     * @param AuthenticationUtils $utils
+     * @param UserPasswordEncoderInterface $encoder
      * @return Response
-     * @throws \Exception
      */
-    public function login(AuthenticationUtils $utils, UserPasswordEncoderInterface $encoder)
+    public function login(AuthenticationUtils $utils, UserPasswordEncoderInterface $encoder): Response
     {
         $error = $utils->getLastAuthenticationError();
         //dump($error);

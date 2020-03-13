@@ -15,9 +15,11 @@ class MapCommuneController extends AbstractController
     /**
      * @Route( "/commune", name = "commune" )
      * Permet d'avoir la liste des communes
+     * @param Request $request
      * @return Response
+     * @throws \Exception
      */
-    public function ajouter(Request $request)
+    public function ajouter(Request $request): Response
     {
         $listMapCommune = $this->getListMapCommune();
         $mapCommune = new MapCommune();
@@ -25,7 +27,14 @@ class MapCommuneController extends AbstractController
         $form = $this->createForm(MapCommuneFormType::class, $mapCommune);
         $form->handleRequest($request);
 
+        $prefecture = $form->get('prefecture')->getData();
+
+        dump('=== out ===');
+        dump($prefecture);
+
         if ($form->isSubmitted() && $form->isValid()) {
+            dump('=== in ===');
+            dump($prefecture);
             //dump( $mapCommune );
             $rand = random_int(100, 1000);
             $code = "CODECOM$rand";

@@ -17,8 +17,10 @@
                     </div>
                     <div class="card-body">
                         {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <button type="submit" class="btn btn-success float-right">Enregistrer</button>
+                        {{ form_row(form.states, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        {{ form_row(form.libelle, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        {{ form_row(form.description, {'attr': {'class': 'form-control form-control-sm'}}) }}
+                        <button type="submit" class="btn btn-success btn-sm float-right">Enregistrer</button>
                         {{ form_end(form) }}
                     </div>
                 </div>

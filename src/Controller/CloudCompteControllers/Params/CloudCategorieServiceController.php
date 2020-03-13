@@ -33,6 +33,10 @@ class CloudCategorieServiceController extends GlobalController
         $description = 'Permet d\'ajouter une nouvelle catégorie service';
         $this->saveAccountAction($code, $libelle, $description, $codeModule);
 
+        $user = $this->getUser();
+
+        dump('user ====' . $user);
+
         $listCloudCategorieService = $this->selectionnerToutByIdCompte(CloudCategorieService::class, 1);
         $cloudCategorieService = new CloudCategorieService();
 
