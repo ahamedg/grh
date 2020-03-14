@@ -22,15 +22,20 @@ class MapVille
     private $nomVille;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapCommune", inversedBy="villes")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $states;
+    private $commune;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapCommune")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates", inversedBy="villes")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $commune;
+    private $state;
+
+
+
+
 
     public function getId(): ?int
     {
@@ -49,18 +54,6 @@ class MapVille
         return $this;
     }
 
-    public function getStates(): ?MapStates
-    {
-        return $this->states;
-    }
-
-    public function setStates(?MapStates $states): self
-    {
-        $this->states = $states;
-
-        return $this;
-    }
-
     public function getCommune(): ?MapCommune
     {
         return $this->commune;
@@ -72,4 +65,18 @@ class MapVille
 
         return $this;
     }
+
+    public function getState(): ?MapStates
+    {
+        return $this->state;
+    }
+
+    public function setState(?MapStates $state): self
+    {
+        $this->state = $state;
+
+        return $this;
+    }
+
+
 }

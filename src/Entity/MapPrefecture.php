@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Entity\BaseEntity;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -39,10 +41,22 @@ class MapPrefecture extends BaseEntity
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapStates", inversedBy="prefectures")
      * @ORM\JoinColumn(nullable=false)
      */
     private $states;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapCommune", mappedBy="prefecture")
+     */
+    private $communes;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->communes = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -96,4 +110,37 @@ class MapPrefecture extends BaseEntity
 
         return $this;
     }
+
+    /**
+     * @return Collection|MapCommune[]
+     */
+    public function getCommunes(): Collection
+    {
+        return $this->communes;
+    }
+
+    public function addCommune(MapCommune $commune): self
+    {
+        if (!$this->communes->contains($commune)) {
+            $this->communes[] = $commune;
+            $commune->setPrefecture($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommune(MapCommune $commune): self
+    {
+        if ($this->communes->contains($commune)) {
+            $this->communes->removeElement($commune);
+            // set the owning side to null (unless already changed)
+            if ($commune->getPrefecture() === $this) {
+                $commune->setPrefecture(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }
