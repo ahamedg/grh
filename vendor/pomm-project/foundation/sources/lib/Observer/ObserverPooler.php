@@ -1,0 +1,49 @@
+<?php
+/*
+ * This file is part of the Pomm's Foundation package.
+ *
+ * (c) 2014 - 2015 Grégoire HUBERT <hubert.greg@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace PommProject\Foundation\Observer;
+
+use PommProject\Foundation\Client\ClientPoolerInterface;
+use PommProject\Foundation\Client\ClientPooler;
+
+/**
+ * ObserverPooler
+ *
+ * Pooler for observer clients.
+ *
+ * @package   Foundation
+ * @copyright 2014 - 2015 Grégoire HUBERT
+ * @author    Grégoire HUBERT
+ * @license   X11 {@link http://opensource.org/licenses/mit-license.php}
+ * @see       ClientPooler
+ */
+class ObserverPooler extends ClientPooler
+{
+    /**
+     * getPoolerType
+     *
+     * @see ClientPoolerInterface
+     */
+    public function getPoolerType()
+    {
+        return 'observer';
+    }
+
+    /**
+     * createClient
+     *
+     * @see    ClientPooler
+     * @param  string   $channel
+     * @return Observer
+     */
+    protected function createClient($channel)
+    {
+        return new Observer($channel);
+    }
+}

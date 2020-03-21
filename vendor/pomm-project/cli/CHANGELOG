@@ -1,0 +1,56 @@
+== VERSION 2.0.2
+
+ * Add sf4 dependency support
+
+== VERSION 2.0.1
+
+ * Switch to 2.0 stable branch
+ * Test compatibility with PHP 7.0
+ * Allow sf3 components
+ * Add warning message for empty schemas
+
+== VERSION 2.0.0
+
+ *  Add generate:entity online help
+ *  correct typo ltrim to rtrim
+ *  Update copyright information
+ *  Add travis tests for PHP 5.6
+ *  Make tests run on Windows too
+
+== VERSION 2.0.0-rc.3
+
+ *  Update references
+ *  Fix typos
+ *  Refactor session class checks
+ *  Add readable message for session misconfiguration
+ *  Fix tests with ModelManager sessions.
+ *  Add PHPDoc @throws statements
+ *  Remove useless use statements
+ *  Fix #21 - useless @return void|null in .ctor()
+ *  Fix #22
+
+== VERSION 2.0.0-rc.2
+
+ *  Adapt tests to new model generator.
+ *  Correct typo and Docs
+ *  Add default session in inspect:config command.
+ *  Updated README.
+ *  Updated VERSION for dev.
+
+== VERSION 2.0.0-rc.1
+
+ *  Add option psr4
+ *  Inspect materialized views
+ *  Rename getFileName to getPathFile
+ *  Bug on output for packaged commands.
+ *  Working with MM generators.
+
+== VERSION 2.0.0-beta.2
+
+ * Added inspect:config command.
+ * Added option to overwrite default FlexibleContainer with a custom container.
+ * Added PommAwareCommand::setPomm().
+ * Add pomm: prefix to command names
+ * More flexible version of symfony/console required
+
+== VERSION 2.0.0-beta.1

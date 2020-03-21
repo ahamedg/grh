@@ -27,6 +27,11 @@ class MapStates
      */
     private $pays;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapVille", mappedBy="states")
+     * */
+    private $villes;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -55,4 +60,26 @@ class MapStates
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVilles()
+    {
+        return $this->villes;
+    }
+
+    /**
+     * @param mixed $villes
+     */
+    public function setVilles($villes): void
+    {
+        $this->villes = $villes;
+    }
+
+    public function __toString()
+    {
+        return $this->nomStates;
+    }
+
 }

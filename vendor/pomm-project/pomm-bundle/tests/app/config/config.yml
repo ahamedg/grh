@@ -1,0 +1,49 @@
+imports:
+    - { resource: parameters.yml }
+
+framework:
+    #esi:             ~
+    #translator:      { fallback: "%locale%" }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    session:
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+    serializer:
+        enabled: true
+    property_info:
+        enabled: true
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+pomm:
+    configuration:
+        my_db1:
+            dsn: "pgsql://%database_user%:%database_password%@%database_host%:%database_port%/%database_name%"
+            session_builder: "pomm.model_manager.session_builder"
+            pomm:default: true
+        my_db2:
+            dsn: "pgsql://%database_user%:%database_password%@%database_host%:%database_port%/%database_name%_2"
+            class:session_builder: "PommProject\\ModelManager\\SessionBuilder"
+        service_db:
+            dsn: "pgsql://%database_user%:%database_password%@%database_host%:%database_port%/%database_name%"
+            session_builder: "pomm.session_builder"
+        default_session_builder:
+            dsn: "pgsql://%database_user%:%database_password%@%database_host%:%database_port%/%database_name%"
+    logger:
+        service: "@logger"

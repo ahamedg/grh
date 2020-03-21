@@ -1,0 +1,10 @@
+/web/bundles/
+/app/config/parameters.yml
+/build/
+/vendor/
+/bin/
+/composer.phar
+/composer.lock
+/behat.yml
+/var
+/src/AppBundle/Model/

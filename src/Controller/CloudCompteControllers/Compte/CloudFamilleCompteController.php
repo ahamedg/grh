@@ -42,7 +42,7 @@ class CloudFamilleCompteController extends AbstractController
 
         $form = $this->createForm(CloudFamilleCompteFormType::class, $cloudFamilleCompte);
         $form->handleRequest($request);
-        dump($cloudFamilleCompte);
+//        dump($cloudFamilleCompte);
         if ($form->isSubmitted() && $form->isValid()) {
             $rand = random_int(100, 1000);
             $code = "CODECP$rand";
@@ -51,13 +51,13 @@ class CloudFamilleCompteController extends AbstractController
             $cloudFamilleCompte->setCode($code);
             dump($cloudFamilleCompte);
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($cloudFamilleCompte);
-            $manager->flush();
+//            $manager->persist($cloudFamilleCompte);
+//            $manager->flush();
             $this->addFlash('success', 'Enregistrement effectué avec succès !');
 
-            return $this->redirectToRoute('compte', [
-                'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
-            ]);
+//            return $this->redirectToRoute('compte', [
+//                'listCloudFamilleCompte' => $this->listCloudFamilleCompte,
+//            ]);
         }
 
         return $this->render('cloud_compte/compte/nouveauCloudFamilleCompte.html.twig', [

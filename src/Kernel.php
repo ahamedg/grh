@@ -27,14 +27,9 @@ class Kernel extends BaseKernel
 
 //        Ajouté par Désiré
 //        /** @var TYPE_NAME $bundles */
-//        $bundles = array(
-//            // ...
-//            new SideclickBootstrapModalBundle,
-//        );
         $bundles = array(
             // ...
-            new SideclickBootstrapModalBundle(),
-//            new SideclickModal(),
+            new SideclickBootstrapModalBundle,
         );
     }
 

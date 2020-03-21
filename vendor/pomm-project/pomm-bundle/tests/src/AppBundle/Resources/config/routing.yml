@@ -1,0 +1,64 @@
+index:
+    path: /
+    defaults: { _controller: index_controller:indexAction }
+    methods: [GET]
+
+get_default:
+    path: /get
+    defaults: { _controller: index_controller:getAction }
+    methods: [GET]
+
+get:
+    path: /get/{name}
+    defaults: { _controller: index_controller:getAction }
+    methods: [GET]
+
+get_session_default:
+    path: /get_session_default/{name}
+    defaults: { _controller: index_controller:getSession2Action }
+    methods: [GET]
+
+get_session:
+    path: /get_session_1/{name}
+    defaults: { _controller: index_controller:getSession2Action }
+    methods: [GET]
+
+get_session_2:
+    path: /get_session_2/{name}
+    defaults: { _controller: index_controller:getSession2Action }
+    methods: [GET]
+
+serialize:
+    path: /serialize
+    defaults: { _controller: index_controller:serializeAction }
+    methods: [GET]
+
+deserialize:
+    path: /deserialize
+    defaults: { _controller: index_controller:deserializeAction }
+    methods: [GET]
+
+property_list:
+    path: /property
+    defaults: { _controller: index_controller:propertyListAction }
+    methods: [GET]
+
+property_type:
+    path: /property/{property}
+    defaults: { _controller: index_controller:propertyTypeAction }
+    methods: [GET]
+
+serviceModel:
+    path: /serviceModel
+    defaults: { _controller: index_controller:serviceModelAction }
+    methods: [GET]
+
+serviceContainer:
+    path: /serviceContainer
+    defaults: { _controller: index_controller:serviceContainerAction }
+    methods: [GET]
+
+get_autowire:
+    path: /get_autowire/{name}
+    defaults: { _controller: autowire_controller:getAutowireAction }
+    methods: [GET]

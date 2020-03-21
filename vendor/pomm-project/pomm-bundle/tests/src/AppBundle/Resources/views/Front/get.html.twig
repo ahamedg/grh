@@ -1,0 +1,13 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+Pomm bundle test app
+{% endblock %}
+
+{% block body %}
+    {% if config is not null %}
+        {{ config.name }} =&gt; {{ config.value }}
+    {% else %}
+        config =&gt; null
+    {% endif %}
+{% endblock %}

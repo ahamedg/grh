@@ -29,6 +29,7 @@ class MapVille
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\MapCommune")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $commune;
 
@@ -71,5 +72,10 @@ class MapVille
         $this->commune = $commune;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->nomVille;
     }
 }

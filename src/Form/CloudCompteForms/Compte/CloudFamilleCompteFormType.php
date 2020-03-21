@@ -37,9 +37,17 @@ class CloudFamilleCompteFormType extends ApplicationType
             ->add('logoCloudFamilleCompte', FileType::class, $this->getConfiguration('Logo', 'Chercher un logo...', ['required' => false]))
             ->add('adresseCloudFamilleCompte', TextareaType::class, $this->getConfiguration('Adresse', 'Mettre une adresse...', ['required' => false]))
             ->add('descriptionCloudFamilleCompte', TextareaType::class, $this->getConfiguration('Description', 'Mettre une description...', ['required' => false]));
-        //->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
+//        //->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
         // ... adding the name field if needed
         //});
+
+        $builder->get('pays')->addEventListener(
+            FormEvents::POST_SUBMIT,
+            function (FormEvent $event){
+                dump($event->getForm());
+                dump($event->getData());
+            }
+        );
     }
 
     public function configureOptions(OptionsResolver $resolver)

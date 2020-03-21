@@ -1,0 +1,45 @@
+{
+  "name": "pomm-project/pomm-bundle",
+  "type": "symfony-bundle",
+  "description": "The Symfony2 bundle for Pomm2",
+  "keywords": ["orm", "postgresql", "database", "symfony", "pomm"],
+  "homepage": "http://www.pomm-project.org",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nicolas JOSEPH",
+      "email": "nicolas.joseph@homecomputing.fr"
+    },
+    {
+      "name": "Grégoire HUBERT",
+      "email": "hubert.greg@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.4",
+    "jdorn/sql-formatter": "~1.2",
+    "pomm-project/model-manager": "~2.0",
+    "pomm-project/cli": "~2.0",
+    "pomm-project/pomm-symfony-bridge": "~2.5",
+    "symfony/framework-bundle": "~2.8|~3.0|~4.0"
+  },
+  "require-dev": {
+    "symfony/console": "~2.6|~3.0|~4.0",
+    "squizlabs/php_codesniffer": "~2.7"
+  },
+  "suggest": {
+      "symfony/web-profiler-bundle": "Display queries log",
+      "sensio/distribution-bundle": "To use the entity param converter"
+  },
+  "autoload": {
+    "psr-4": {
+      "PommProject\\PommBundle\\": "sources/lib/"
+    }
+  },
+  "extra": {
+      "branch-alias": {
+          "dev-master": "2.0-dev"
+      }
+  }
+}
+
