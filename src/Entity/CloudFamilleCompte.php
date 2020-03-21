@@ -83,7 +83,7 @@ class CloudFamilleCompte extends BaseEntity
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\MapStates")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\NotNull(message="Veuillez sélectionner une région !")
+     * @Assert\NotNull(message="Veuillez sélectionner un département !")
      */
     private $states;
 
